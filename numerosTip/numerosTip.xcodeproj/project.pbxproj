@@ -339,6 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q2AUK3F279;
 				INFOPLIST_FILE = numerosTip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jpv.ulpgc.es.numerosTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q2AUK3F279;
 				INFOPLIST_FILE = numerosTip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jpv.ulpgc.es.numerosTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,6 +381,7 @@
 				7F0098691F4B3CE600F9B7C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
