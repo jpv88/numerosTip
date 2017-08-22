@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func actionButton(_ sender: Any) {
-                
+        Network.requestWebService()
     }
 
 }
