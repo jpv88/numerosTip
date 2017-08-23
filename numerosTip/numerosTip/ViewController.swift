@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, activityIndicatorDelegate {
 
     @IBOutlet weak var inputTextfield: UITextField!
     
@@ -23,7 +23,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func actionButton(_ sender: Any) {
-        Network.requestWebService()
+        Network.delegate = self
+        Network.requestWebService(reference: self)
+    }    
+    
+    func showLoading() {
+        
+    }
+    
+    func hideLoading() {
+        
     }
 
 }
