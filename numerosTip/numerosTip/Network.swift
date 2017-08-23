@@ -39,14 +39,18 @@ class Network: NSObject {
                                 // got an error in getting the data, need to handle it
                                 print("error calling POST on /todos/1")
                                 print(response.result.error!)
-                                hideIndicatorInCaller()
+                                if (reference != nil){
+                                    hideIndicatorInCaller()
+                                }
                                 return
                             }
                             // make sure we got some JSON since that's what we expect
                             guard let json = response.result.value as? [String: Any] else {
                                 print("didn't get todo object as JSON from API")
                                 print("Error: \(String(describing: response.result.error))")
-                                hideIndicatorInCaller()
+                                if (reference != nil){
+                                    hideIndicatorInCaller()
+                                }
                                 return
                             }
 //                            print(json)
