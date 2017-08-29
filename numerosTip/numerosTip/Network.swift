@@ -10,24 +10,21 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-protocol activityIndicatorDelegate {
-    func showLoading()
-    func hideLoading()
+protocol networkingActionsDelegate {
+    func doActions()
 }
 
 class Network: NSObject {
 
-    static var delegate: activityIndicatorDelegate?
+    static var delegate: networkingActionsDelegate?
     static var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     static var spinnerContainer: UIView = UIView()
     
     class func requestWebService(reference: UIViewController? = nil) {
         
-//        if (reference != nil){
-//          self.delegate?.showLoading()
-//        }
-        
-        showIndicatorInCaller(parent: reference!)
+        if (reference != nil){
+            showIndicatorInCaller(parent: reference!)
+        }
         
         let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/ConvierteNumero"
         let inputJson: [String : Any] = ["numeroText":13,
@@ -62,11 +59,16 @@ class Network: NSObject {
 //                            if (reference != nil){
 //                                self.delegate?.hideLoading()
 //                            }
+                            
                             hideIndicatorInCaller()
+                            // Do protocol actions
+                            delegate?.doActions()
         }
     }
     
     static func showIndicatorInCaller(parent: UIViewController) {
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         self.spinnerContainer.frame = parent.view.frame
         self.spinnerContainer.center = parent.view.center
@@ -93,7 +95,6 @@ class Network: NSObject {
         
         self.activityIndicator.startAnimating()
         
-        UIApplication.shared.beginIgnoringInteractionEvents()
     }
 
     static func hideIndicatorInCaller() {
