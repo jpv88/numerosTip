@@ -11,7 +11,7 @@ import SwiftyJSON
 import Alamofire
 
 protocol networkingActionsDelegate {
-    func doActions()
+    func doActions(dataModel: NumerosTipDataModel)
 }
 
 class Network: NSObject {
@@ -28,7 +28,8 @@ class Network: NSObject {
         
         let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/ConvierteNumero"
         let inputJson: [String : Any] = ["numeroText":13,
-                                         "lang":"es"]
+                                         "lang":"en"]
+        var dataModel : NumerosTipDataModel?
         
         Alamofire.request(url, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
@@ -56,13 +57,13 @@ class Network: NSObject {
                            
                             
                             print("finalizado")
-//                            if (reference != nil){
-//                                self.delegate?.hideLoading()
-//                            }
+                            if (reference != nil){
+                                hideIndicatorInCaller()
+                            }
                             
-                            hideIndicatorInCaller()
                             // Do protocol actions
-                            delegate?.doActions()
+                            delegate?.doActions(dataModel: NumerosTipDataModel(data: jsonCopy))
+                            
         }
     }
     

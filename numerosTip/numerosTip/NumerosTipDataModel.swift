@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class NumerosTipDataModel: NSObject {
 
+    init(data: JSON) {
+        
+    }
 }

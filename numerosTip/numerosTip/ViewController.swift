@@ -24,12 +24,12 @@ class ViewController: UIViewController, networkingActionsDelegate {
 
     @IBAction func actionButton(_ sender: Any) {
         Network.delegate = self
-        Network.requestWebService(reference: self)
+        Network.requestWebService()
     }    
     
     // MARK:- Network Delegate
     
-    func doActions(){
+    func doActions(dataModel: NumerosTipDataModel) {
         
     }
 
