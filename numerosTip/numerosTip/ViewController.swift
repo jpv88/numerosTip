@@ -8,30 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController, networkingActionsDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var inputTextfield: UITextField!
     
+    var controller: NumerosTipController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        controller = NumerosTipController.sharedInstance
     }
 
     @IBAction func actionButton(_ sender: Any) {
-        Network.delegate = self
-        Network.requestWebService()
-    }    
-    
-    // MARK:- Network Delegate
-    
-    func doActions(dataModel: NumerosTipDataModel) {
-        
+        controller?.llamadaServicioWeb(viewController: self){
+            response in
+            print("acabado")
+        }
     }
+    
 
 }
 

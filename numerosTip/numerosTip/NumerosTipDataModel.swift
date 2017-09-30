@@ -11,7 +11,9 @@ import SwiftyJSON
 
 class NumerosTipDataModel: NSObject {
 
+    var name: String?
+    
     init(data: JSON) {
-        
+        name = "Prueba"
     }
 }

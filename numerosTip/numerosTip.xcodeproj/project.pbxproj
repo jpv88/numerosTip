@@ -12,6 +12,7 @@
 		7F00985E1F4B3CE600F9B7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F00985C1F4B3CE600F9B7C4 /* Main.storyboard */; };
 		7F0098601F4B3CE600F9B7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */; };
 		7F0098631F4B3CE600F9B7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */; };
+		7F2C25E41F7FE8B2009C3671 /* NumerosTipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C25E31F7FE8B2009C3671 /* NumerosTipController.swift */; };
 		7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */; };
 		7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72E0F21F4C8D3F001B0DDA /* Network.swift */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
@@ -26,6 +27,7 @@
 		7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0098621F4B3CE600F9B7C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0098641F4B3CE600F9B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F2C25E31F7FE8B2009C3671 /* NumerosTipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerosTipController.swift; sourceTree = "<group>"; };
 		7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumerosTipDataModel.swift; sourceTree = "<group>"; };
 		7F72E0F21F4C8D3F001B0DDA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,23 +67,31 @@
 		7F0098571F4B3CE600F9B7C4 /* numerosTip */ = {
 			isa = PBXGroup;
 			children = (
+				7F2C25E21F7FE897009C3671 /* Controller */,
 				7F72E0F51F4C8F6D001B0DDA /* Models */,
 				7F72E0F41F4C8F64001B0DDA /* Network */,
 				7F0098581F4B3CE600F9B7C4 /* AppDelegate.swift */,
 				7F00985A1F4B3CE600F9B7C4 /* ViewController.swift */,
-				7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */,
 				7F00985C1F4B3CE600F9B7C4 /* Main.storyboard */,
 				7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */,
 				7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */,
 				7F0098641F4B3CE600F9B7C4 /* Info.plist */,
-				7F72E0F21F4C8D3F001B0DDA /* Network.swift */,
 			);
 			path = numerosTip;
+			sourceTree = "<group>";
+		};
+		7F2C25E21F7FE897009C3671 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7F2C25E31F7FE8B2009C3671 /* NumerosTipController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		7F72E0F41F4C8F64001B0DDA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7F72E0F21F4C8D3F001B0DDA /* Network.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -89,6 +99,7 @@
 		7F72E0F51F4C8F6D001B0DDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 				7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */,
 				7F0098591F4B3CE600F9B7C4 /* AppDelegate.swift in Sources */,
 				7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */,
+				7F2C25E41F7FE8B2009C3671 /* NumerosTipController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
