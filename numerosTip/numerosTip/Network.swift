@@ -22,7 +22,7 @@ class Network: NSObject {
         
         let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/ConvierteNumero"
         let inputJson: [String : Any] = ["numeroText":13,
-                                         "lang":"en"]
+                                         "lang":"es"]
         Alamofire.request(url, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
                             guard response.result.error == nil else {
@@ -41,8 +41,6 @@ class Network: NSObject {
                             }
 
                             let jsonCopy = JSON(data: response.data!)
-                            print(jsonCopy)
-                           
                             
                             print("finalizado")
                             hideIndicatorInCaller()

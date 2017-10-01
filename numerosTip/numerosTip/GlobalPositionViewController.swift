@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GlobalPositionViewController.swift
 //  numerosTip
 //
 //  Created by Jared Perez Vega on 21/8/17.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var inputTextfield: UITextField!
+class GlobalPositionViewController: UIViewController {
     
     var controller: NumerosTipController?
     
