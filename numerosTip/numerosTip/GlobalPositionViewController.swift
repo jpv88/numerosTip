@@ -64,6 +64,7 @@ class GlobalPositionViewController: UIViewController {
     }
     
     func addCancelGestureRecognizer() {
+        // Poner controlador para que solo pueda hacer clic 1 vez
         let gesture = UITapGestureRecognizer()
         gesture.addTarget(self, action: #selector(GlobalPositionViewController.removeFocusSearchBar))
         self.view.addGestureRecognizer(gesture)
@@ -75,10 +76,15 @@ class GlobalPositionViewController: UIViewController {
     }
     
     func loadLanguageSelector() {
-        
         let dataSource = NumerosTipLanguageCollectionDataSource()
+        let delegate = NumerosTipLanguageCollectionDelegate()
         languageCollectionView.dataSource = dataSource
-        languageCollectionView.delegate = NumerosTipLanguageCollectionDelegate()
+        languageCollectionView.delegate = delegate
+        
+        languageCollectionView.register(UINib(nibName: "NumerosTipLanguageCell", bundle: nil), forCellWithReuseIdentifier: "NumerosTipLanguageCell")
+        
+        languageCollectionView.setNeedsLayout()
+
     }
     
     func viewHandler() {
@@ -109,12 +115,14 @@ extension GlobalPositionViewController: UISearchBarDelegate {
         searchBar.text = nil
     }
     
-    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        print("clic fuera del searchBar?")
-    }
+//    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        print("clic fuera del searchBar?")
+//
+//    }
     
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        self.searchDisplayController?.setActive(false, animated: true)
+//          searchBar.text = nil
+        
     }
     
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

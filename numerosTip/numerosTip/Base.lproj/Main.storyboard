@@ -25,17 +25,16 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lih-2I-Ydd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Des-Nu-9nO"/>
-                                    <constraint firstAttribute="height" constant="56" id="gud-do-1ZF"/>
+                                    <constraint firstAttribute="width" constant="375" id="BSD-ST-but"/>
+                                    <constraint firstAttribute="height" constant="56" id="adQ-2r-lFu"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5Rh-Dt-GpM"/>
                                 </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jan-V3-jOL">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jan-V3-jOL">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMn-J9-uzM"/>
@@ -45,8 +44,8 @@
                                 <rect key="frame" x="16" y="120" width="343" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="WZ1-b5-Wva"/>
-                                    <constraint firstAttribute="height" constant="80" id="qnH-Na-jxZ"/>
+                                    <constraint firstAttribute="height" constant="80" id="3VH-4i-K1X"/>
+                                    <constraint firstAttribute="width" constant="343" id="WvC-Xk-u3G"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NdX-KK-POW">
                                     <size key="itemSize" width="50" height="50"/>
@@ -55,13 +54,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="y1c-Sp-mQe">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="y1c-Sp-mQe" customClass="NumerosTipLanguageCell" customModule="numerosTip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="15" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <size key="customSize" width="50" height="50"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -72,13 +72,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4x6-9U-7WC"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="XJn-VD-Mn9" secondAttribute="bottom" constant="467" id="Dl1-Be-pMI"/>
-                            <constraint firstAttribute="trailing" secondItem="lih-2I-Ydd" secondAttribute="trailing" id="F4B-pB-rhC"/>
-                            <constraint firstItem="lih-2I-Ydd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LVd-uR-J3T"/>
-                            <constraint firstItem="lih-2I-Ydd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M8j-M8-Zeo"/>
-                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="top" secondItem="lih-2I-Ydd" secondAttribute="bottom" id="QpF-UC-kVZ"/>
-                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="txx-I6-hAp"/>
+                            <constraint firstItem="Jan-V3-jOL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="148" id="4uq-rB-YU5"/>
+                            <constraint firstItem="lih-2I-Ydd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Eka-UR-DTo"/>
+                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="top" secondItem="lih-2I-Ydd" secondAttribute="bottom" id="VIn-UG-ZEd"/>
+                            <constraint firstAttribute="trailing" secondItem="lih-2I-Ydd" secondAttribute="trailing" id="aXA-dG-nTj"/>
+                            <constraint firstItem="lih-2I-Ydd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ase-kT-LTn"/>
+                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kh3-qs-6sh"/>
+                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="top" secondItem="lih-2I-Ydd" secondAttribute="bottom" id="nRp-D5-k7G"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jan-V3-jOL" secondAttribute="trailingMargin" id="r9c-Se-WZl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jan-V3-jOL" secondAttribute="bottom" constant="20" id="u38-cL-9MJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="XJn-VD-Mn9" secondAttribute="bottom" constant="467" id="vQ4-xf-1LK"/>
+                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wq2-gO-Cok"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8pd-UK-upW"/>

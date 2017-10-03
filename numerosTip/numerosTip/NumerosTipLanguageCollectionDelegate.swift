@@ -10,7 +10,7 @@ import UIKit
 
 class NumerosTipLanguageCollectionDelegate: NSObject, UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        
+        print("estas pulsando la posicion: \(indexPath.row)")
     }
 }
 

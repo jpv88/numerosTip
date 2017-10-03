@@ -62,17 +62,18 @@ class NumerosTipLanguageCollectionDataSource: NSObject, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumerosTipLanguageCell", for: indexPath) as! NumerosTipLanguageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumerosTipLanguageCell", for: indexPath) as! NumerosTipLanguageCell
         
-//        switch indexPath.row {
-//            case 0:
-//                cell.imageView.image = #imageLiteral(resourceName: "Spain")
-//                break
-//            default:
-//                break
-//        }
+        switch indexPath.row {
+            case 0:
+                cell.imageView.image = #imageLiteral(resourceName: "Spain")
+                cell.drawLineLayout.backgroundColor = .black
+                break
+            default:
+                break
+        }
         
         
-        return UICollectionViewCell()
+        return cell
     }                
 }
