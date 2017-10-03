@@ -8,14 +8,39 @@
 
 import UIKit
 
+enum viewState {
+    case InitialView
+    case ResultView
+    case ErrorView
+    init() {
+        self = .InitialView
+    }
+    mutating func changeState(newState: viewState) {
+        self = newState
+    }
+}
+
 class GlobalPositionViewController: UIViewController {
+    
+    @IBOutlet weak var languageCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var currentState = viewState()
+    
     
     var controller: NumerosTipController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup
+        loadNavBar()
+        loadSearchBar()
+
         controller = NumerosTipController.sharedInstance
+        
+        // Change necessary View
+        viewHandler()
     }
 
     @IBAction func actionButton(_ sender: Any) {
@@ -25,6 +50,68 @@ class GlobalPositionViewController: UIViewController {
         }
     }
     
+    func removeSubview(tag: Int){
+        if let viewWithTag = self.view.viewWithTag(tag) {
+            viewWithTag.removeFromSuperview()
+        }
+    }
+    
+    func loadNavBar() {
+        self.navigationItem.title = "Numeros Tip"
+        self.navigationController?.navigationBar.barTintColor = .lightGray
+    }
+    
+    func loadSearchBar() {
+        searchBar.placeholder = "Introduce un número entero o romano"
+//        searchBar.showsCancelButton = true
+    }
+    
+    func viewHandler() {
+        switch self.currentState {
+        case .InitialView:
+            break
+        case .ResultView:
+            break
+        case .ErrorView:
+            break
+        default:
+            break
+        }
+    }
+
+}
+
+// MARK: - SearchBar Delegate
+
+extension GlobalPositionViewController: UISearchBarDelegate {
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("clic en la searchBar")
+        searchBar.text = nil
+    }
+    
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("clic fuera del searchBar?")
+    }
+    
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        self.searchDisplayController?.setActive(false, animated: true)
+    }
+    
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("texto cambiado")
+    }
+    
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("clic en buscar")
+        
+//        searchBar.text = nil
+//        searchBar.endEditing(true)
+        
+        searchBar.resignFirstResponder()
+        
+        // Iniciar llamada al servicio
+        
+    }
 
 }
 

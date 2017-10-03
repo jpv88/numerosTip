@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NumerosTipLanguageCell" customModule="numerosTip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QGQ-3W-ydL">
+                        <rect key="frame" x="12" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="g1G-8G-hic"/>
+                            <constraint firstAttribute="width" constant="50" id="hBs-kR-pra"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGi-Sv-PaM" userLabel="draw Line">
+                        <rect key="frame" x="0.0" y="58" width="75" height="10"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="3nt-SK-Eec"/>
+                            <constraint firstAttribute="width" constant="75" id="Zq4-YL-jde"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="QGQ-3W-ydL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="3Gv-kh-3mL"/>
+                <constraint firstItem="QGQ-3W-ydL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="43z-Zs-DJ4"/>
+                <constraint firstAttribute="trailing" secondItem="QGQ-3W-ydL" secondAttribute="trailing" constant="13" id="8sa-1W-MCb"/>
+                <constraint firstAttribute="bottom" secondItem="IGi-Sv-PaM" secondAttribute="bottom" constant="12" id="9hp-l8-rRf"/>
+                <constraint firstItem="IGi-Sv-PaM" firstAttribute="top" secondItem="QGQ-3W-ydL" secondAttribute="bottom" constant="8" id="Ax6-Ee-9FD"/>
+                <constraint firstItem="QGQ-3W-ydL" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Kb2-OS-6zE"/>
+                <constraint firstItem="IGi-Sv-PaM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ejE-zM-aRA"/>
+                <constraint firstItem="IGi-Sv-PaM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="gQh-Nf-FVV"/>
+                <constraint firstAttribute="trailing" secondItem="IGi-Sv-PaM" secondAttribute="trailing" id="ok0-GE-hlY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="drawLineLayout" destination="IGi-Sv-PaM" id="eBw-wI-MnR"/>
+                <outlet property="imageView" destination="QGQ-3W-ydL" id="lY6-wE-r6C"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
