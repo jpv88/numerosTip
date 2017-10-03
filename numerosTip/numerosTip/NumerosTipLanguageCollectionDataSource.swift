@@ -61,6 +61,10 @@ class NumerosTipLanguageCollectionDataSource: NSObject, UICollectionViewDataSour
         return data.count
     }
     
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        return CGSize(width: 100, height: 100);
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumerosTipLanguageCell", for: indexPath) as! NumerosTipLanguageCell
         

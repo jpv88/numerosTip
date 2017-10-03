@@ -8,9 +8,15 @@
 
 import UIKit
 
-class NumerosTipLanguageCollectionDelegate: NSObject, UICollectionViewDelegate {
+class NumerosTipLanguageCollectionDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         print("estas pulsando la posicion: \(indexPath.row)")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize(width: 75.0, height: 80.0)
     }
 }
 

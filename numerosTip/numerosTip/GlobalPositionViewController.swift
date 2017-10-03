@@ -83,7 +83,8 @@ class GlobalPositionViewController: UIViewController {
         
         languageCollectionView.register(UINib(nibName: "NumerosTipLanguageCell", bundle: nil), forCellWithReuseIdentifier: "NumerosTipLanguageCell")
         
-        languageCollectionView.setNeedsLayout()
+        languageCollectionView.sizeToFit()
+        languageCollectionView.layoutIfNeeded()
 
     }
     

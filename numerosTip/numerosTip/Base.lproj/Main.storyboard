@@ -40,22 +40,22 @@
                                     <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMn-J9-uzM"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XJn-VD-Mn9">
-                                <rect key="frame" x="16" y="120" width="343" height="80"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XJn-VD-Mn9">
+                                <rect key="frame" x="16" y="169" width="343" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="3VH-4i-K1X"/>
+                                    <constraint firstAttribute="height" constant="100" id="3VH-4i-K1X"/>
                                     <constraint firstAttribute="width" constant="343" id="WvC-Xk-u3G"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NdX-KK-POW">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="75" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="y1c-Sp-mQe" customClass="NumerosTipLanguageCell" customModule="numerosTip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="15" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="25" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -74,14 +74,13 @@
                         <constraints>
                             <constraint firstItem="Jan-V3-jOL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="148" id="4uq-rB-YU5"/>
                             <constraint firstItem="lih-2I-Ydd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Eka-UR-DTo"/>
-                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="top" secondItem="lih-2I-Ydd" secondAttribute="bottom" id="VIn-UG-ZEd"/>
+                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="top" secondItem="lih-2I-Ydd" secondAttribute="bottom" constant="49" id="VIn-UG-ZEd"/>
                             <constraint firstAttribute="trailing" secondItem="lih-2I-Ydd" secondAttribute="trailing" id="aXA-dG-nTj"/>
                             <constraint firstItem="lih-2I-Ydd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ase-kT-LTn"/>
                             <constraint firstItem="XJn-VD-Mn9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kh3-qs-6sh"/>
-                            <constraint firstItem="XJn-VD-Mn9" firstAttribute="top" secondItem="lih-2I-Ydd" secondAttribute="bottom" id="nRp-D5-k7G"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jan-V3-jOL" secondAttribute="trailingMargin" id="r9c-Se-WZl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jan-V3-jOL" secondAttribute="bottom" constant="20" id="u38-cL-9MJ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="XJn-VD-Mn9" secondAttribute="bottom" constant="467" id="vQ4-xf-1LK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="XJn-VD-Mn9" secondAttribute="bottom" constant="398" id="vQ4-xf-1LK"/>
                             <constraint firstItem="XJn-VD-Mn9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wq2-gO-Cok"/>
                         </constraints>
                     </view>
