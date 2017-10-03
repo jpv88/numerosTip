@@ -36,6 +36,9 @@ class GlobalPositionViewController: UIViewController {
         // Setup
         loadNavBar()
         loadSearchBar()
+        addCancelGestureRecognizer()
+        loadLanguageSelector()
+        
 
         controller = NumerosTipController.sharedInstance
         
@@ -50,12 +53,6 @@ class GlobalPositionViewController: UIViewController {
         }
     }
     
-    func removeSubview(tag: Int){
-        if let viewWithTag = self.view.viewWithTag(tag) {
-            viewWithTag.removeFromSuperview()
-        }
-    }
-    
     func loadNavBar() {
         self.navigationItem.title = "Numeros Tip"
         self.navigationController?.navigationBar.barTintColor = .lightGray
@@ -66,6 +63,23 @@ class GlobalPositionViewController: UIViewController {
 //        searchBar.showsCancelButton = true
     }
     
+    func addCancelGestureRecognizer() {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(GlobalPositionViewController.removeFocusSearchBar))
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+    func removeFocusSearchBar() {
+        print("remove")
+        searchBar.resignFirstResponder()
+    }
+    
+    func loadLanguageSelector() {
+        
+        languageCollectionView.dataSource = NumerosTipLanguageCollectionDataSource()
+        languageCollectionView.delegate = NumerosTipLanguageCollectionDelegate()
+    }
+    
     func viewHandler() {
         switch self.currentState {
         case .InitialView:
@@ -74,8 +88,13 @@ class GlobalPositionViewController: UIViewController {
             break
         case .ErrorView:
             break
-        default:
-            break
+        }
+    }
+    
+    
+    func removeSubview(tag: Int){
+        if let viewWithTag = self.view.viewWithTag(tag) {
+            viewWithTag.removeFromSuperview()
         }
     }
 
@@ -104,9 +123,7 @@ extension GlobalPositionViewController: UISearchBarDelegate {
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("clic en buscar")
         
-//        searchBar.text = nil
-//        searchBar.endEditing(true)
-        
+        // Quit focus
         searchBar.resignFirstResponder()
         
         // Iniciar llamada al servicio

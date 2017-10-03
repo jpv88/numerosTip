@@ -17,6 +17,8 @@
 		7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72E0F21F4C8D3F001B0DDA /* Network.swift */; };
 		7F7FE9F41F8390510010C6F0 /* NumerosTipLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FE9F21F8390510010C6F0 /* NumerosTipLanguageCell.swift */; };
 		7F7FE9F51F8390510010C6F0 /* NumerosTipLanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F7FE9F31F8390510010C6F0 /* NumerosTipLanguageCell.xib */; };
+		7FD677781F839ABE006AC1EF /* NumerosTipLanguageCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD677771F839ABE006AC1EF /* NumerosTipLanguageCollectionDelegate.swift */; };
+		7FD6777A1F839B45006AC1EF /* NumerosTipLanguageCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD677791F839B45006AC1EF /* NumerosTipLanguageCollectionDataSource.swift */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		7F72E0F21F4C8D3F001B0DDA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7F7FE9F21F8390510010C6F0 /* NumerosTipLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerosTipLanguageCell.swift; sourceTree = "<group>"; };
 		7F7FE9F31F8390510010C6F0 /* NumerosTipLanguageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumerosTipLanguageCell.xib; sourceTree = "<group>"; };
+		7FD677771F839ABE006AC1EF /* NumerosTipLanguageCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerosTipLanguageCollectionDelegate.swift; sourceTree = "<group>"; };
+		7FD677791F839B45006AC1EF /* NumerosTipLanguageCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerosTipLanguageCollectionDataSource.swift; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
 		FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_numerosTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,10 +132,20 @@
 		7F7FE9EF1F838AED0010C6F0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				7F7FE9F21F8390510010C6F0 /* NumerosTipLanguageCell.swift */,
-				7F7FE9F31F8390510010C6F0 /* NumerosTipLanguageCell.xib */,
+				7FD677761F8399E2006AC1EF /* LanguageCollectionView */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		7FD677761F8399E2006AC1EF /* LanguageCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7F7FE9F21F8390510010C6F0 /* NumerosTipLanguageCell.swift */,
+				7F7FE9F31F8390510010C6F0 /* NumerosTipLanguageCell.xib */,
+				7FD677771F839ABE006AC1EF /* NumerosTipLanguageCollectionDelegate.swift */,
+				7FD677791F839B45006AC1EF /* NumerosTipLanguageCollectionDataSource.swift */,
+			);
+			name = LanguageCollectionView;
 			sourceTree = "<group>";
 		};
 		E0D236B00F82643A3F16BF51 /* Frameworks */ = {
@@ -276,6 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD6777A1F839B45006AC1EF /* NumerosTipLanguageCollectionDataSource.swift in Sources */,
+				7FD677781F839ABE006AC1EF /* NumerosTipLanguageCollectionDelegate.swift in Sources */,
 				7F00985B1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift in Sources */,
 				7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */,
 				7F0098591F4B3CE600F9B7C4 /* AppDelegate.swift in Sources */,
