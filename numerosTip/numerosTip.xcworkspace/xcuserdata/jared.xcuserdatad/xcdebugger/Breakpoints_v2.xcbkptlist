@@ -9,109 +9,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "numerosTip/Network.swift"
-            timestampString = "528571561.613477"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "requestWebService(reference:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/Network.swift"
-            timestampString = "528571561.61403"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "requestWebService(reference:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.614142"
+            filePath = "numerosTip/NumerosTipLanguageCollectionDataSource.swift"
+            timestampString = "528736958.336864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "init(data:)"
+            landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.615141"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "init(initialArray:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/GlobalPositionViewController.swift"
-            timestampString = "528719799.87608"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "actionButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.615989"
+            filePath = "numerosTip/NumerosTipLanguageCollectionDataSource.swift"
+            timestampString = "528736958.337621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "init(array:)"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.616632"
+            filePath = "numerosTip/NumerosTipLanguageCollectionDataSource.swift"
+            timestampString = "528736958.338034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "init(array:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.33863"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "loadLanguageSelector()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,77 +73,459 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.617049"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.338807"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "loadLanguageSelector()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/NumerosTipLanguageCollectionDataSource.swift"
+            timestampString = "528736958.339047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.339493"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "loadLanguageSelector()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.339594"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "GlobalPositionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.languageCollectionView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UICollectionView&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.515113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.languageCollectionView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UICollectionView&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.516916"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(collectionViewLayout: __ObjC.UICollectionViewLayout) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.518808"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.521657"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;numerosTip.GlobalPositionViewController&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.523697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.339733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "GlobalPositionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.searchBar.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UISearchBar&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.533581"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.searchBar.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UISearchBar&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.536116"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(collectionViewLayout: __ObjC.UICollectionViewLayout) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.538411"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "181">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.540841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;numerosTip.GlobalPositionViewController&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.542619"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "166">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.339865"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "GlobalPositionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.currentState.getter : numerosTip.viewState"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.550275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.currentState.setter : numerosTip.viewState"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.552993"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(collectionViewLayout: __ObjC.UICollectionViewLayout) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.554849"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "297">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.557152"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "321">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;numerosTip.GlobalPositionViewController&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.558937"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.339975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "GlobalPositionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.controller.getter : Swift.Optional&lt;numerosTip.NumerosTipController&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.566903"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.controller.setter : Swift.Optional&lt;numerosTip.NumerosTipController&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.569047"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(collectionViewLayout: __ObjC.UICollectionViewLayout) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.571012"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "415">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; numerosTip.GlobalPositionViewController"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.573771"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "461">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "numerosTip.GlobalPositionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;numerosTip.GlobalPositionViewController&gt;"
+                  moduleName = "numerosTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jared/proyectos/numerosTip/numerosTip/numerosTip/GlobalPositionViewController.swift"
+                  timestampString = "528735868.575979"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.34008"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "numerosTip/GlobalPositionViewController.swift"
+            timestampString = "528736958.340177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "init(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.617411"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "init(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.617733"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "init(array:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/NumerosTipDataModel.swift"
-            timestampString = "528571561.618051"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "init(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/GlobalPositionViewController.swift"
-            timestampString = "528719799.883544"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,29 +535,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "numerosTip/GlobalPositionViewController.swift"
-            timestampString = "528719799.884538"
+            filePath = "numerosTip/NumerosTipLanguageCollectionDataSource.swift"
+            timestampString = "528736958.340288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "searchBarSearchButtonClicked(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "numerosTip/GlobalPositionViewController.swift"
-            timestampString = "528719799.885217"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "searchBarTextDidEndEditing(_:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -233,13 +551,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "numerosTip/GlobalPositionViewController.swift"
-            timestampString = "528719799.885872"
+            filePath = "numerosTip/NumerosTipLanguageCollectionDataSource.swift"
+            timestampString = "528736958.340698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "removeFocusSearchBar()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

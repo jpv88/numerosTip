@@ -76,7 +76,8 @@ class GlobalPositionViewController: UIViewController {
     
     func loadLanguageSelector() {
         
-        languageCollectionView.dataSource = NumerosTipLanguageCollectionDataSource()
+        let dataSource = NumerosTipLanguageCollectionDataSource()
+        languageCollectionView.dataSource = dataSource
         languageCollectionView.delegate = NumerosTipLanguageCollectionDelegate()
     }
     

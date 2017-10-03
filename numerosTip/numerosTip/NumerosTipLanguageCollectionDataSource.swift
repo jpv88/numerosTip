@@ -26,7 +26,7 @@ class NumerosTipLanguageCollectionDataSource: NSObject, UICollectionViewDataSour
     var data: [LanguageModel] = []
     
     override init() {
-        for index in 1...4 {
+        for index in 0...3 {
             var lng: LanguageModel
             switch index {
             case 0:
@@ -62,17 +62,17 @@ class NumerosTipLanguageCollectionDataSource: NSObject, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumerosTipLanguageCell", for: indexPath) as! NumerosTipLanguageCell
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NumerosTipLanguageCell", for: indexPath) as! NumerosTipLanguageCell
         
-        switch indexPath.row {
-            case 0:
-                cell.imageView.image = #imageLiteral(resourceName: "Spain")                
-                break
-            default:
-                break
-        }
+//        switch indexPath.row {
+//            case 0:
+//                cell.imageView.image = #imageLiteral(resourceName: "Spain")
+//                break
+//            default:
+//                break
+//        }
         
         
-        return cell
+        return UICollectionViewCell()
     }                
 }
