@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
         <array key="ArialBoldItalic.ttf">
             <string>Arial-BoldItalicMT</string>
         </array>
@@ -72,6 +75,15 @@
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardAppearance="light"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convertir a:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-7P-sab" userLabel="language information">
+                                <rect key="frame" x="20" y="380" width="88" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5Bh-Dc-58c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -81,6 +93,8 @@
                             <constraint firstItem="HlH-DD-W1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BBa-Om-nyO"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="top" secondItem="rNA-G1-gaL" secondAttribute="bottom" constant="-1" id="Cv3-kX-LCY"/>
                             <constraint firstItem="ERA-Gd-gpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="DhK-ZX-Wsc"/>
+                            <constraint firstItem="f1M-7P-sab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="ELN-16-mSq"/>
+                            <constraint firstItem="f1M-7P-sab" firstAttribute="top" secondItem="ERA-Gd-gpQ" secondAttribute="bottom" constant="107" id="Keg-Q2-R42"/>
                             <constraint firstAttribute="trailing" secondItem="ioP-KS-5GR" secondAttribute="trailing" id="OJz-ni-7sh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K1Q-r6-wbz" secondAttribute="trailing" constant="18" id="UAp-41-711"/>
                             <constraint firstItem="ERA-Gd-gpQ" firstAttribute="top" secondItem="rKl-Wh-Wnt" secondAttribute="bottom" constant="29" id="YGB-uX-OGh"/>
