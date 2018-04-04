@@ -20,10 +20,15 @@ class Network: NSObject {
         
         showIndicatorInCaller(parent: reference)
         
-        let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/ConvierteNumero"
-        let inputJson: [String : Any] = ["numeroText":13,
-                                         "lang":"es"]
-        Alamofire.request(url, method: .post, parameters: inputJson,
+        let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/"
+        let method = "Convertir"
+        let absolutPath = url + method
+        let inputJson: [String : Any] = ["numeroText":"13",
+                                         "lang":"es",
+                                         "langInterface":"es",
+                                         "token":"9P384RUPIQW7RY5234"
+                                         ]
+        Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
                             if let status = response.response?.statusCode {
@@ -42,7 +47,7 @@ class Network: NSObject {
                                 print(prettyStr)
                                 do {
                                     let numbersTipModel = try NumbersTipModel.init(prettyStr)
-                                    print(numbersTipModel as Any)
+//                                    print(numbersTipModel as Any)
                                 } catch _ as NSError {
                                     
                                 }
@@ -80,6 +85,8 @@ class Network: NSObject {
 //                            completionHandler(response)
         }
     }
+    
+    // MARK: - Loading Spinner
     
     static func showIndicatorInCaller(parent: UIViewController) {
         
