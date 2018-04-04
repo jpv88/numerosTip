@@ -6,8 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialBoldItalic.ttf">
+            <string>Arial-BoldItalicMT</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Global Position View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -21,30 +27,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new cabecera" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioP-KS-5GR" userLabel="cabecera image">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new cabecera" translatesAutoresizingMaskIntoConstraints="NO" id="ioP-KS-5GR" userLabel="cabecera image">
                                 <rect key="frame" x="-1" y="29" width="376" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="wdK-bF-dsG"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNA-G1-gaL" userLabel="status image">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" translatesAutoresizingMaskIntoConstraints="NO" id="rNA-G1-gaL" userLabel="status image">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TUO-cO-mGk"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-DD-W1C" userLabel="body extension image">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-DD-W1C" userLabel="body extension image">
                                 <rect key="frame" x="0.0" y="178" width="375" height="489"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduzca un numéro en cifras a letras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKl-Wh-Wnt" userLabel="introduction text">
+                                <rect key="frame" x="45" y="178" width="261.5" height="16"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="14"/>
+                                <color key="textColor" red="0.53090518712997437" green="0.80187565088272095" blue="0.95218843221664429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HlH-DD-W1C" firstAttribute="top" secondItem="ioP-KS-5GR" secondAttribute="bottom" constant="-1" id="2jf-7M-x3j"/>
                             <constraint firstAttribute="bottom" secondItem="HlH-DD-W1C" secondAttribute="bottom" id="6Qo-Xn-df3"/>
+                            <constraint firstItem="rKl-Wh-Wnt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="86r-tC-rzO"/>
                             <constraint firstItem="HlH-DD-W1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BBa-Om-nyO"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="top" secondItem="rNA-G1-gaL" secondAttribute="bottom" constant="-1" id="Cv3-kX-LCY"/>
                             <constraint firstAttribute="trailing" secondItem="ioP-KS-5GR" secondAttribute="trailing" id="OJz-ni-7sh"/>
                             <constraint firstAttribute="trailing" secondItem="rNA-G1-gaL" secondAttribute="trailing" id="Zvu-vl-MVt"/>
+                            <constraint firstItem="rKl-Wh-Wnt" firstAttribute="top" secondItem="ioP-KS-5GR" secondAttribute="bottom" constant="-1" id="c4D-nr-DRF"/>
                             <constraint firstItem="rNA-G1-gaL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oVc-LI-lo8"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-1" id="rhk-DK-0sh"/>
                             <constraint firstAttribute="trailing" secondItem="HlH-DD-W1C" secondAttribute="trailing" id="tRg-HR-Ryy"/>
