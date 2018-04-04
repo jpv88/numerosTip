@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,20 +21,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jan-V3-jOL">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="actionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMn-J9-uzM"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new cabecera" translatesAutoresizingMaskIntoConstraints="NO" id="ioP-KS-5GR" userLabel="cabecera image">
+                                <rect key="frame" x="-1" y="29" width="376" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="wdK-bF-dsG"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" translatesAutoresizingMaskIntoConstraints="NO" id="rNA-G1-gaL" userLabel="status image">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TUO-cO-mGk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HlH-DD-W1C" userLabel="body extension image">
+                                <rect key="frame" x="0.0" y="178" width="375" height="489"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HlH-DD-W1C" firstAttribute="top" secondItem="ioP-KS-5GR" secondAttribute="bottom" constant="-1" id="2jf-7M-x3j"/>
+                            <constraint firstAttribute="bottom" secondItem="HlH-DD-W1C" secondAttribute="bottom" id="6Qo-Xn-df3"/>
+                            <constraint firstItem="HlH-DD-W1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BBa-Om-nyO"/>
+                            <constraint firstItem="ioP-KS-5GR" firstAttribute="top" secondItem="rNA-G1-gaL" secondAttribute="bottom" constant="-1" id="Cv3-kX-LCY"/>
+                            <constraint firstAttribute="trailing" secondItem="ioP-KS-5GR" secondAttribute="trailing" id="OJz-ni-7sh"/>
+                            <constraint firstAttribute="trailing" secondItem="rNA-G1-gaL" secondAttribute="trailing" id="Zvu-vl-MVt"/>
+                            <constraint firstItem="rNA-G1-gaL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oVc-LI-lo8"/>
+                            <constraint firstItem="ioP-KS-5GR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-1" id="rhk-DK-0sh"/>
+                            <constraint firstAttribute="trailing" secondItem="HlH-DD-W1C" secondAttribute="trailing" id="tRg-HR-Ryy"/>
+                            <constraint firstItem="rNA-G1-gaL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y5G-Vh-1cL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="body extension" width="634" height="270"/>
+        <image name="new cabecera" width="1335" height="694"/>
+    </resources>
 </document>
