@@ -25,30 +25,59 @@ class Network: NSObject {
                                          "lang":"es"]
         Alamofire.request(url, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
-                            guard response.result.error == nil else {
-                                // got an error in getting the data, need to handle it
-                                print("error calling POST on /todos/1")
-                                print(response.result.error!)
-                                hideIndicatorInCaller()
-                                return
-                            }
-                            // make sure we got some JSON since that's what we expect
-                            guard let json = response.result.value as? [String: Any] else {
-                                print("didn't get todo object as JSON from API")
-                                print("Error: \(String(describing: response.result.error))")
-                                hideIndicatorInCaller()
-                                return
-                            }
-
-                            let jsonCopy = JSON(data: response.data!)
                             
-                            print("finalizado")
+                            if let status = response.response?.statusCode {
+                                switch(status){
+                                case 201:
+                                    print("example success")
+                                default:
+                                    print("error with response status: \(status)")
+                                }
+                            }
+                            
+                            if let result = response.result.value {
+                                let dictionary = result as! NSDictionary
+                                let jsonData: NSData = try! JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                                let prettyStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
+                                print(prettyStr)
+                                do {
+                                    let numbersTipModel = try NumbersTipModel.init(prettyStr)
+                                    print(numbersTipModel as Any)
+                                } catch _ as NSError {
+                                    
+                                }
+
+                                
+                            }
                             hideIndicatorInCaller()
                             
-                            let response = NumerosTipDataModel(data: jsonCopy)
+                            
+                            
+//                            
+//                            guard response.result.error == nil else {
+//                                // got an error in getting the data, need to handle it
+//                                print("error calling POST on /todos/1")
+//                                print(response.result.error!)
+//                                hideIndicatorInCaller()
+//                                return
+//                            }
+//                            // make sure we got some JSON since that's what we expect
+//                            guard let json = response.result.value as? [String: Any] else {
+//                                print("didn't get todo object as JSON from API")
+//                                print("Error: \(String(describing: response.result.error))")
+//                                hideIndicatorInCaller()
+//                                return
+//                            }
+//
+//                            let jsonCopy = JSON(data: response.data!)
+//                            
+//                            print("finalizado")
+//                            hideIndicatorInCaller()
+//                            
+//                            let response = NumerosTipDataModel(data: jsonCopy)
                             
                             // Do actions
-                            completionHandler(response)
+//                            completionHandler(response)
         }
     }
     
