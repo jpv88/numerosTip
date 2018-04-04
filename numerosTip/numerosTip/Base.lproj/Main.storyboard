@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="16" id="Baj-4x-qje"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="14"/>
-                                <color key="textColor" red="0.53090518712997437" green="0.80187565088272095" blue="0.95218843221664429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.52549019607843139" green="0.79607843137254897" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Q-r6-wbz" userLabel="Settings">
@@ -64,6 +64,14 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Escriba un número con cifras o romano" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERA-Gd-gpQ">
+                                <rect key="frame" x="20" y="223" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H4h-RG-P7f"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardAppearance="light"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -72,9 +80,12 @@
                             <constraint firstItem="rKl-Wh-Wnt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="86r-tC-rzO"/>
                             <constraint firstItem="HlH-DD-W1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BBa-Om-nyO"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="top" secondItem="rNA-G1-gaL" secondAttribute="bottom" constant="-1" id="Cv3-kX-LCY"/>
+                            <constraint firstItem="ERA-Gd-gpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="DhK-ZX-Wsc"/>
                             <constraint firstAttribute="trailing" secondItem="ioP-KS-5GR" secondAttribute="trailing" id="OJz-ni-7sh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K1Q-r6-wbz" secondAttribute="trailing" constant="18" id="UAp-41-711"/>
+                            <constraint firstItem="ERA-Gd-gpQ" firstAttribute="top" secondItem="rKl-Wh-Wnt" secondAttribute="bottom" constant="29" id="YGB-uX-OGh"/>
                             <constraint firstAttribute="trailing" secondItem="rNA-G1-gaL" secondAttribute="trailing" id="Zvu-vl-MVt"/>
+                            <constraint firstAttribute="trailing" secondItem="ERA-Gd-gpQ" secondAttribute="trailing" constant="20" id="aPu-AO-ejP"/>
                             <constraint firstItem="rKl-Wh-Wnt" firstAttribute="top" secondItem="ioP-KS-5GR" secondAttribute="bottom" constant="-1" id="c4D-nr-DRF"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="bottom" secondItem="K1Q-r6-wbz" secondAttribute="bottom" constant="5" id="m6Y-8C-88a"/>
                             <constraint firstItem="rNA-G1-gaL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oVc-LI-lo8"/>
@@ -83,6 +94,9 @@
                             <constraint firstItem="rNA-G1-gaL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y5G-Vh-1cL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="ERA-Gd-gpQ" id="ZZ0-QS-MTE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
