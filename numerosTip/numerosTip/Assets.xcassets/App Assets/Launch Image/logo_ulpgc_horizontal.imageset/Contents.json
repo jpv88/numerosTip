@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "NumerosTipLaunchImage.png",
+      "filename" : "logo_ulpgc_horizontal.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "NumerosTipLaunchImage@2x.png",
+      "filename" : "logo_ulpgc_horizontal@2x.png",
       "scale" : "2x"
     },
     {
