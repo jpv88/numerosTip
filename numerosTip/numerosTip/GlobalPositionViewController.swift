@@ -55,6 +55,7 @@ class GlobalPositionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         setupUI()
         controller = NumerosTipController.sharedInstance
         self.languageData = createDataModelLanguage()
