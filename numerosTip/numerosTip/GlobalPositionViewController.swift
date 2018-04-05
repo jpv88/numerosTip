@@ -8,16 +8,75 @@
 
 import UIKit
 
+enum LanguagesDisponibility {
+    case Español
+    case Inglés
+    case Alemán
+    case Italiano
+    
+    func getLanguage() -> String {
+        switch self {
+        case .Español:
+            return "Español"
+        case .Inglés:
+            return "Inglés"
+        case .Alemán:
+            return "Alemán"
+        case .Italiano:
+            return "Italiano"
+        }
+    }
+    
+    func getColor() -> UIColor {
+        switch self {
+        case .Español:
+            return UIColor(rgb: 0x95CBEE)
+        case .Inglés:
+            return UIColor(rgb: 0x74B5DD)
+        case .Alemán:
+            return UIColor(rgb: 0x3B98C6)
+        case .Italiano:
+            return UIColor(rgb: 0x1A7A9F)
+        }
+    }
+    
+    init(obj: LanguagesDisponibility) {
+        self = obj
+    }
+}
 class GlobalPositionViewController: UIViewController {
     
+    @IBOutlet weak var languageTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     var controller: NumerosTipController?
+    
+    fileprivate var languageData: [LanguagesDisponibility]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         controller = NumerosTipController.sharedInstance
+        self.languageData = createDataModelLanguage()
+        setupTableView()
+    }
+    
+    func createDataModelLanguage() -> [LanguagesDisponibility] {
+        var array: [LanguagesDisponibility] = []
+        array.append(LanguagesDisponibility(obj: .Español))
+        array.append(LanguagesDisponibility(obj: .Inglés))
+        array.append(LanguagesDisponibility(obj: .Alemán))
+        array.append(LanguagesDisponibility(obj: .Italiano))
+        
+        return array
+        
+    }
+    
+    func setupTableView() {
+        languageTableView.delegate = self
+        languageTableView.dataSource = self
+        languageTableView.rowHeight = 60.0
+        languageTableView.bounces = false
     }
     
     func setupUI() {
@@ -38,3 +97,28 @@ class GlobalPositionViewController: UIViewController {
 
 }
 
+extension GlobalPositionViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return languageData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        cell.textLabel?.text = languageData[indexPath.row].getLanguage()
+        cell.textLabel?.textColor = UIColor.white
+        cell.backgroundColor = languageData[indexPath.row].getColor()
+        let disclosureImage = UIImage(named: "chevron-right")
+        let disclosureView = UIImageView(image: disclosureImage)
+        disclosureView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        disclosureView.tintColor = UIColor.white
+        cell.accessoryView = disclosureView
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}

@@ -76,7 +76,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardAppearance="light"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convertir a:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-7P-sab" userLabel="language information">
-                                <rect key="frame" x="20" y="380" width="88" height="24"/>
+                                <rect key="frame" x="20" y="353" width="88" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="5Bh-Dc-58c"/>
                                 </constraints>
@@ -84,23 +84,34 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ka4-0j-YEf">
+                                <rect key="frame" x="0.0" y="385" width="375" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="NU3-Kg-Xe1"/>
+                                    <constraint firstAttribute="height" constant="240" id="Wbv-Ll-2Pi"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HlH-DD-W1C" firstAttribute="top" secondItem="ioP-KS-5GR" secondAttribute="bottom" constant="-1" id="2jf-7M-x3j"/>
                             <constraint firstAttribute="bottom" secondItem="HlH-DD-W1C" secondAttribute="bottom" id="6Qo-Xn-df3"/>
+                            <constraint firstItem="Ka4-0j-YEf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="75O-Xg-VwZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Ka4-0j-YEf" secondAttribute="trailing" id="7NF-hf-7p9"/>
                             <constraint firstItem="rKl-Wh-Wnt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="86r-tC-rzO"/>
                             <constraint firstItem="HlH-DD-W1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BBa-Om-nyO"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="top" secondItem="rNA-G1-gaL" secondAttribute="bottom" constant="-1" id="Cv3-kX-LCY"/>
                             <constraint firstItem="ERA-Gd-gpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="DhK-ZX-Wsc"/>
                             <constraint firstItem="f1M-7P-sab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="ELN-16-mSq"/>
-                            <constraint firstItem="f1M-7P-sab" firstAttribute="top" secondItem="ERA-Gd-gpQ" secondAttribute="bottom" constant="107" id="Keg-Q2-R42"/>
+                            <constraint firstItem="f1M-7P-sab" firstAttribute="top" secondItem="ERA-Gd-gpQ" secondAttribute="bottom" constant="80" id="Keg-Q2-R42"/>
                             <constraint firstAttribute="trailing" secondItem="ioP-KS-5GR" secondAttribute="trailing" id="OJz-ni-7sh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K1Q-r6-wbz" secondAttribute="trailing" constant="18" id="UAp-41-711"/>
                             <constraint firstItem="ERA-Gd-gpQ" firstAttribute="top" secondItem="rKl-Wh-Wnt" secondAttribute="bottom" constant="29" id="YGB-uX-OGh"/>
                             <constraint firstAttribute="trailing" secondItem="rNA-G1-gaL" secondAttribute="trailing" id="Zvu-vl-MVt"/>
                             <constraint firstAttribute="trailing" secondItem="ERA-Gd-gpQ" secondAttribute="trailing" constant="20" id="aPu-AO-ejP"/>
                             <constraint firstItem="rKl-Wh-Wnt" firstAttribute="top" secondItem="ioP-KS-5GR" secondAttribute="bottom" constant="-1" id="c4D-nr-DRF"/>
+                            <constraint firstItem="Ka4-0j-YEf" firstAttribute="top" secondItem="f1M-7P-sab" secondAttribute="bottom" constant="8" id="jLd-i3-UeB"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="bottom" secondItem="K1Q-r6-wbz" secondAttribute="bottom" constant="5" id="m6Y-8C-88a"/>
                             <constraint firstItem="rNA-G1-gaL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oVc-LI-lo8"/>
                             <constraint firstItem="ioP-KS-5GR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-1" id="rhk-DK-0sh"/>
@@ -109,6 +120,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="languageTableView" destination="Ka4-0j-YEf" id="wLB-So-XLl"/>
                         <outlet property="searchBar" destination="ERA-Gd-gpQ" id="ZZ0-QS-MTE"/>
                     </connections>
                 </viewController>
