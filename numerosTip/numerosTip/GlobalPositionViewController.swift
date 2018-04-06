@@ -61,7 +61,7 @@ class GlobalPositionViewController: UIViewController {
     
     func createDataModelLanguage() -> [LanguagesDisponibility] {
         var array: [LanguagesDisponibility] = []
-        for element in iterateEnum(LanguagesDisponibility.self) {
+        for element in Helper.iterateEnum(LanguagesDisponibility.self) {
             array.append(element)
         }
         
@@ -98,16 +98,6 @@ class GlobalPositionViewController: UIViewController {
     }
     
     // MARK: - Utils
-    
-    func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
-        var i = 0
-        return AnyIterator {
-            let next = withUnsafeBytes(of: &i) { $0.load(as: T.self) }
-            if next.hashValue != i { return nil }
-            i += 1
-            return next
-        }
-    }
 
 }
 
@@ -118,7 +108,7 @@ extension GlobalPositionViewController: UITableViewDelegate, UITableViewDataSour
         return languageData.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = languageData[indexPath.row].getLanguage()
         cell.textLabel?.textColor = UIColor.white
