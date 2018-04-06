@@ -39,10 +39,6 @@ enum LanguagesDisponibility {
             return UIColor(rgb: 0x1A7A9F)
         }
     }
-    
-    init(obj: LanguagesDisponibility) {
-        self = obj
-    }
 }
 class GlobalPositionViewController: UIViewController {
     
@@ -55,6 +51,7 @@ class GlobalPositionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.isNavigationBarHidden = true
         setupUI()
         controller = NumerosTipController.sharedInstance
@@ -63,14 +60,13 @@ class GlobalPositionViewController: UIViewController {
     }
     
     func createDataModelLanguage() -> [LanguagesDisponibility] {
-        var array: [LanguagesDisponibility] = []
-        array.append(LanguagesDisponibility(obj: .Español))
-        array.append(LanguagesDisponibility(obj: .Inglés))
-        array.append(LanguagesDisponibility(obj: .Alemán))
-        array.append(LanguagesDisponibility(obj: .Italiano))
-
-        return array
         
+        var array: [LanguagesDisponibility] = []
+        for element in iterateEnum(LanguagesDisponibility.self) {
+            array.append(element)
+        }
+        
+        return array
     }
     
     private func setupTableView() {
@@ -102,8 +98,21 @@ class GlobalPositionViewController: UIViewController {
         }
     }
     
+    // MARK: - Utils
+    
+    func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+        var i = 0
+        return AnyIterator {
+            let next = withUnsafeBytes(of: &i) { $0.load(as: T.self) }
+            if next.hashValue != i { return nil }
+            i += 1
+            return next
+        }
+    }
 
 }
+
+// MARK: - TableView
 
 extension GlobalPositionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
