@@ -49,7 +49,7 @@ class GlobalPositionViewController: UIViewController {
     @IBOutlet weak var languageTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var controller: NumerosTipController?
+    private var controller: NumerosTipController?
     
     fileprivate var languageData: [LanguagesDisponibility]!
     
@@ -68,23 +68,30 @@ class GlobalPositionViewController: UIViewController {
         array.append(LanguagesDisponibility(obj: .Inglés))
         array.append(LanguagesDisponibility(obj: .Alemán))
         array.append(LanguagesDisponibility(obj: .Italiano))
-        
+
         return array
         
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         languageTableView.delegate = self
         languageTableView.dataSource = self
         languageTableView.rowHeight = 60.0
         languageTableView.bounces = false
     }
     
-    func setupUI() {
+    private func setupUI() {
         if let font = UIFont(name: "Arial-BoldItalicMT", size: 14) {
             let textColor = UIColor.white
             let textFieldBackgroundColor = UIColor(rgb: 0xCACFD2)
             searchBar.change(textFont: font, textColor: textColor, textFieldBackgroundColor: textFieldBackgroundColor)
+        }
+        let filteredConstraints = self.view.constraints.filter{ $0.identifier == "languageInformationConstraint" }
+        if let languageConstraint = filteredConstraints.first {
+            let deviceType = UIDevice.current.screenType.rawValue
+            if case deviceType = UIDevice.ScreenType.iPhones_5_5s_5c_SE.rawValue {
+                languageConstraint.constant = 20
+            }
         }
     }
 
