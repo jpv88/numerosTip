@@ -90,7 +90,7 @@ class GlobalPositionViewController: UIViewController {
         if let languageConstraint = filteredConstraints.first {
             let deviceType = UIDevice.current.screenType.rawValue
             if case deviceType = UIDevice.ScreenType.iPhones_5_5s_5c_SE.rawValue {
-                languageConstraint.constant = 20
+                languageConstraint.constant = 10
             }
         }
     }
