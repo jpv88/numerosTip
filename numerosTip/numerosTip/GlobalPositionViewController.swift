@@ -60,7 +60,6 @@ class GlobalPositionViewController: UIViewController {
     }
     
     func createDataModelLanguage() -> [LanguagesDisponibility] {
-        
         var array: [LanguagesDisponibility] = []
         for element in iterateEnum(LanguagesDisponibility.self) {
             array.append(element)
@@ -119,9 +118,8 @@ extension GlobalPositionViewController: UITableViewDelegate, UITableViewDataSour
         return languageData.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
         let cell = UITableViewCell()
-        
         cell.textLabel?.text = languageData[indexPath.row].getLanguage()
         cell.textLabel?.textColor = UIColor.white
         cell.backgroundColor = languageData[indexPath.row].getColor()
