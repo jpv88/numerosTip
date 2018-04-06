@@ -40,11 +40,12 @@ enum LanguagesDisponibility {
         }
     }
 }
-class GlobalPositionViewController: UIViewController {
+class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
     
     @IBOutlet weak var languageTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    private var languageTableViewController: LanguageTableViewController?
     private var controller: NumerosTipController?
     
     fileprivate var languageData: [LanguagesDisponibility]!
@@ -69,8 +70,10 @@ class GlobalPositionViewController: UIViewController {
     }
     
     private func setupTableView() {
-        languageTableView.delegate = self
-        languageTableView.dataSource = self
+        languageTableViewController = LanguageTableViewController(data: languageData)
+        languageTableViewController?.delegate = self
+        languageTableView.delegate = languageTableViewController
+        languageTableView.dataSource = languageTableViewController
         languageTableView.rowHeight = 60.0
         languageTableView.bounces = false
     }
@@ -89,41 +92,15 @@ class GlobalPositionViewController: UIViewController {
             }
         }
     }
-
-    @IBAction func actionButton(_ sender: Any) {
+    
+    // MARK: - TableView Delegate
+    
+    func doAction() {
+        print("accion...!")
         controller?.llamadaServicioWeb(viewController: self){
             response in
             print("acabado")
         }
     }
-    
-    // MARK: - Utils
 
-}
-
-// MARK: - TableView
-
-extension GlobalPositionViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return languageData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = languageData[indexPath.row].getLanguage()
-        cell.textLabel?.textColor = UIColor.white
-        cell.backgroundColor = languageData[indexPath.row].getColor()
-        let disclosureImage = UIImage(named: "chevron-right")
-        let disclosureView = UIImageView(image: disclosureImage)
-        disclosureView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        disclosureView.tintColor = UIColor.white
-        cell.accessoryView = disclosureView
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
 }

@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol LanguageActionsProtocol {
+    func doAction()
+}
+
 class LanguageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource {
     
+    var delegate: LanguageActionsProtocol?
     var data: [LanguagesDisponibility]!
     
     convenience init(data: [LanguagesDisponibility]) {
@@ -38,6 +43,7 @@ class LanguageTableViewController: NSObject, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("click..")
         tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.doAction()
     }
     
     
