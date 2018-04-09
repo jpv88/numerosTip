@@ -9,7 +9,8 @@
 import Foundation
 
 final class Helper {
-    static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+    
+    private static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
         var i = 0
         return AnyIterator {
             let next = withUnsafeBytes(of: &i) { $0.load(as: T.self) }
@@ -18,4 +19,15 @@ final class Helper {
             return next
         }
     }
+    
+    static func getArrayFromEnumCases<T: Hashable>(enumType: T.Type) -> [T] {
+        var array: [T] = []
+        for element in self.iterateEnum(T.self) {
+            array.append(element)
+        }
+        return array
+    }
+    
+    
+    
 }

@@ -56,17 +56,8 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
         self.navigationController?.isNavigationBarHidden = true
         setupUI()
         controller = NumerosTipController.sharedInstance
-        self.languageData = createDataModelLanguage()
+        self.languageData = Helper.getArrayFromEnumCases(enumType: LanguagesDisponibility.self)
         setupTableView()
-    }
-    
-    func createDataModelLanguage() -> [LanguagesDisponibility] {
-        var array: [LanguagesDisponibility] = []
-        for element in Helper.iterateEnum(LanguagesDisponibility.self) {
-            array.append(element)
-        }
-        
-        return array
     }
     
     private func setupTableView() {
