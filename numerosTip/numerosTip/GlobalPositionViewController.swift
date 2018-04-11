@@ -81,9 +81,8 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
             searchBar.change(textFont: font, textColor: textColor, textFieldBackgroundColor: textFieldBackgroundColor)
         }
         let filteredConstraints = self.view.constraints.filter{ $0.identifier == "languageInformationConstraint" }
-        if let languageConstraint = filteredConstraints.first {
-            let deviceType = UIDevice.current.screenType.rawValue
-            if case deviceType = UIDevice.ScreenType.iPhones_5_5s_5c_SE.rawValue {
+        if let languageConstraint = filteredConstraints.first {            
+            if case UIDevice.current.screenType.rawValue = UIDevice.ScreenType.iPhones_5_5s_5c_SE.rawValue {
                 languageConstraint.constant = 10
             }
         }
