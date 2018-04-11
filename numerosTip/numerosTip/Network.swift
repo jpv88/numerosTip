@@ -40,6 +40,15 @@ class Network: NSObject {
                                 }
                             }
                             
+                            switch response.result {
+                            case .success(let value):
+                                print(value)
+                                break
+                            case .failure(let error):
+                                print(error)
+                                break
+                            }
+                            
                             if let result = response.result.value {
                                 let dictionary = result as! NSDictionary
                                 let jsonData: NSData = try! JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
