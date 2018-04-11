@@ -53,11 +53,16 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = true
         setupUI()
         controller = NumerosTipController.sharedInstance
         self.languageData = Helper.getArrayFromEnumCases(enumType: LanguagesDisponibility.self)
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     private func setupTableView() {
@@ -91,6 +96,9 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
         controller?.llamadaServicioWeb(viewController: self){
             response in
             print("acabado")
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController") {
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
         }
     }
 
