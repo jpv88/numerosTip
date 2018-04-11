@@ -142,14 +142,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" translatesAutoresizingMaskIntoConstraints="NO" id="A0e-e7-Ngi">
-                                <rect key="frame" x="0.0" y="-1" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="A0e-e7-Ngi" firstAttribute="leading" secondItem="gmT-8o-NcH" secondAttribute="leading" id="9as-oI-A1w"/>
                             <constraint firstItem="bOV-ET-tUZ" firstAttribute="top" secondItem="A0e-e7-Ngi" secondAttribute="bottom" id="MOK-dc-TUJ"/>
-                            <constraint firstItem="A0e-e7-Ngi" firstAttribute="top" secondItem="gmT-8o-NcH" secondAttribute="top" constant="-1" id="NZ3-Lm-0Bf"/>
+                            <constraint firstItem="A0e-e7-Ngi" firstAttribute="top" secondItem="gmT-8o-NcH" secondAttribute="top" id="NZ3-Lm-0Bf"/>
                             <constraint firstAttribute="trailing" secondItem="A0e-e7-Ngi" secondAttribute="trailing" id="sM3-ja-JIf"/>
                         </constraints>
                     </view>
