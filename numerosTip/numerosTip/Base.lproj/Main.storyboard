@@ -119,10 +119,13 @@
                             <constraint firstItem="rNA-G1-gaL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y5G-Vh-1cL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WyM-Ls-DQA"/>
+                    <navigationItem key="navigationItem" id="WyM-Ls-DQA">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Xgf-dd-0UI"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="languageTableView" destination="Ka4-0j-YEf" id="wLB-So-XLl"/>
                         <outlet property="searchBar" destination="ERA-Gd-gpQ" id="ZZ0-QS-MTE"/>
+                        <segue destination="Ta3-Y4-WEH" kind="show" id="d5y-8g-EiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -145,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="otZ-Ey-GZm">
-                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <rect key="frame" x="16" y="64" width="343" height="583"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="dAX-n4-XeZ">
                                     <size key="itemSize" width="120" height="80"/>
@@ -183,6 +186,9 @@
                         <outlet property="collectionView" destination="otZ-Ey-GZm" id="x27-go-1PX"/>
                     </connections>
                 </viewController>
+                <navigationItem id="WWd-t7-Od7">
+                    <barButtonItem key="backBarButtonItem" title=" " id="j8G-WT-K1F"/>
+                </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAq-gT-TM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1312.8" y="132.68365817091455"/>
@@ -195,6 +201,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yZM-pH-fPT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="Xs0-I4-u8q" id="1WP-yp-nkH"/>
+                        </connections>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

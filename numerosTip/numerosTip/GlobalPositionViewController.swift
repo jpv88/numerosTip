@@ -52,7 +52,7 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupUI()
         controller = NumerosTipController.sharedInstance
         self.languageData = Helper.getArrayFromEnumCases(enumType: LanguagesDisponibility.self)

@@ -35,12 +35,18 @@ class SearchFeaturesViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
+        // Design
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
+        // Title
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : Any]
+        navigationController?.navigationBar.topItem?.title = "Resultados"
+//        navigationController?.navigationBar.topItem?.hidesBackButton = true
     }
     
 }
