@@ -13,9 +13,6 @@ class SearchFeaturesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate var data = ["Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan", "Antonio"]
-    
-    fileprivate var kCellWidth = 120
-    fileprivate var kCellHeight = 80
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +26,12 @@ class SearchFeaturesViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UINib.init(nibName: "SearchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SearchCollectionViewCell")
         collectionView.bounces = false
-        
-        let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-
-        let width = UIScreen.main.bounds.size.width - 5 * CGFloat(2 - 1)
-        flow?.itemSize = CGSize(width: floor(width/2), height: width/2)
-        flow?.minimumInteritemSpacing = 3
-        flow?.minimumLineSpacing = 3
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: collectionView.frame.width/4, height: 80)
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        collectionView.collectionViewLayout = layout
     }
     
     private func setupNavigationBar() {
@@ -50,23 +46,6 @@ class SearchFeaturesViewController: UIViewController {
 }
 
 extension SearchFeaturesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//
-//        var insets = UIEdgeInsets()
-//
-//        if case UIDevice.current.screenType.rawValue  = UIDevice.ScreenType.iPhones_5_5s_5c_SE.rawValue {
-//            insets = UIEdgeInsets(top: 10, left: 15, bottom: 5, right: 15)
-//        } else {
-//            insets = UIEdgeInsets(top: 10, left: 15, bottom: 5, right: 15)
-//        }
-//
-//        return insets
-//    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: kCellWidth, height: kCellHeight)
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
