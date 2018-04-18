@@ -13,20 +13,21 @@ import Alamofire
 
 class Network: NSObject {
 
-    static var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    static var spinnerContainer: UIView = UIView()
+    static private let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/"
+    static private let method = "Convertir"
+    static private let token = "9P384RUPIQW7RY5234"
+    static private let absolutPath = url + method
+    static private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    static private var spinnerContainer: UIView = UIView()
     
     class func requestWebService(reference: UIViewController, completionHandler: @escaping (NumerosTipDataModel) -> Void) {
         
         showIndicatorInCaller(parent: reference)
         
-        let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/"
-        let method = "Convertir"
-        let absolutPath = url + method
         let inputJson: [String : Any] = ["numeroText":"13",
                                          "lang":"es",
                                          "langInterface":"es",
-                                         "token":"9P384RUPIQW7RY5234"
+                                         "token":token
                                          ]
         Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
