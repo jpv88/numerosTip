@@ -91,11 +91,12 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
     // MARK: - TableView Delegate
     
     func doAction() {
-        print("accion...!")
         controller?.llamadaServicioWeb(viewController: self){
             response in
-            print("acabado")
-            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController") {
+//            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController") {
+//                self.navigationController?.pushViewController(viewController, animated: true)
+//            }
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultsViewController") {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }

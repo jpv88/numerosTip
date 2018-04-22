@@ -126,11 +126,42 @@
                         <outlet property="languageTableView" destination="Ka4-0j-YEf" id="wLB-So-XLl"/>
                         <outlet property="searchBar" destination="ERA-Gd-gpQ" id="ZZ0-QS-MTE"/>
                         <segue destination="Ta3-Y4-WEH" kind="show" id="d5y-8g-EiR"/>
+                        <segue destination="bmh-tP-FIB" kind="show" id="Haz-5Y-hEr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--Search Results-->
+        <scene sceneID="s9Y-Bf-VIr">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultsViewController" id="bmh-tP-FIB" userLabel="Search Results" customClass="SearchResultsViewController" customModule="numerosTip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2X3-gg-VsV"/>
+                        <viewControllerLayoutGuide type="bottom" id="h9Q-qT-htb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yqZ-qf-3u9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body extension" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-lF-gHl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sHy-lF-gHl" firstAttribute="top" secondItem="yqZ-qf-3u9" secondAttribute="top" id="NKW-hH-JIp"/>
+                            <constraint firstItem="sHy-lF-gHl" firstAttribute="leading" secondItem="yqZ-qf-3u9" secondAttribute="leading" id="ZW0-an-ZKc"/>
+                            <constraint firstAttribute="bottom" secondItem="sHy-lF-gHl" secondAttribute="bottom" id="efm-F3-kto"/>
+                            <constraint firstAttribute="trailing" secondItem="sHy-lF-gHl" secondAttribute="trailing" id="gbh-Jk-8En"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fPA-Zh-rir"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJB-4g-6r1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="573"/>
         </scene>
         <!--Search Features VC-->
         <scene sceneID="zIz-QP-inA">
@@ -191,7 +222,7 @@
                 </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAq-gT-TM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312.8" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1338" y="-152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="isd-BL-FWY">
