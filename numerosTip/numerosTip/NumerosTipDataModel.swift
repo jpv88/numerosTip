@@ -11,10 +11,11 @@ import SwiftyJSON
 
 class NumerosTipDataModel: NSObject {
     
+    private static var titleKeysAllOptions = ["#","&&", "&"]
+    private static var titleKeys = ["&&", "&"]
+    private static var flagTitlesInSection = false
     var totalElements : Int = 0
-    
     var initialView: InitialView?
-    
     var tabsArray: [TabsModel] = []
     
     
@@ -49,47 +50,82 @@ class NumerosTipDataModel: NSObject {
     
     struct InitialView {
         var number: String?
-        var identifierText: String?
+        var descriptionText: String?
         init(initialArray: NSMutableArray) {
             number = initialArray[0] as? String
-            identifierText = initialArray[1] as? String
+            descriptionText = initialArray[1] as? String
         }
     }
     
     struct TabsModel {
         var title: String?
-        var descriptiveTitleText: String?
-        var subtitle: String?
-        var descriptiveSubitleText: String?
-        var allOptions: [String] = []
+        var description: String?
+        var sections = [SectionModel]()
         
         init(array: NSMutableArray){
+            
+            var section: SectionModel?
+            
             for (index, element) in array.enumerated() {
+                guard let element = element as? String else { return }
                 switch index {
                 case 0:
-                    title = element as? String
+                    title = element
                     break
                 case 1:
-                    descriptiveTitleText = element as? String
-                    break
-                case 2:
-                    subtitle = element as? String
-                    break
-                case 3:
-                    descriptiveSubitleText = element as? String
+                    description = element
                     break
                 default:
-                    allOptions.append(element as! String)
+                    if isTitle(str: element) {
+                        if let section = section {
+                            sections.append(section)
+                        }
+                        section = SectionModel()
+                        section?.title = element
+                    } else {
+                        section?.data.append(element)
+                    }
+                    let lastObject = array.lastObject as? String
+                    if (lastObject == element) {
+                        if let section = section {
+                            sections.append(section)
+                            flagTitlesInSection = false
+                        }
+                    }
                     break
                 }
             }
         }
         
-        func getSize() -> Int {
-            return allOptions.count + 3
+        private func isTitle(str: String) -> Bool {
+            var dictionary: [String]
+            if !flagTitlesInSection {
+                dictionary = titleKeysAllOptions
+            } else {
+                dictionary = titleKeys
+            }
+            if str.contains("&&") {
+                 flagTitlesInSection = true
+            }
+            for key in dictionary {
+                if str.contains(key) {
+                    return true
+                }
+            }
+            return false
+        }
+        
+        func getSectionNumber() -> Int {
+            return 1
         }
         
     }
     
+    struct SectionModel {
+        var title: String?
+        var data = [String]()
+    }
+    
+
     
 }

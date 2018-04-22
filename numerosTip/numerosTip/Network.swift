@@ -20,12 +20,12 @@ class Network: NSObject {
     static private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     static private var spinnerContainer: UIView = UIView()
     
-    class func requestWebService(reference: UIViewController, completionHandler: @escaping (NumerosTipDataModel) -> Void) {
+    class func requestWebService(reference: UIViewController, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
         
         showIndicatorInCaller(parent: reference)
         
         let inputJson: [String : Any] = ["numeroText":"13",
-                                         "lang":"it",
+                                         "lang":"es",
                                          "langInterface":"es",
                                          "token":token
                                          ]
@@ -35,54 +35,54 @@ class Network: NSObject {
                             hideIndicatorInCaller()
                             
                             switch response.result {
-                            case .success(let value):
-//                                print(value)
+                            case .success( _):
+                                guard let data = response.data else { return }
+                                let json = JSON(data: data)
+                                let response = NumerosTipDataModel(data: json)
+                                completionHandler(response)
                                 break
                             case .failure(let error):
-//                                print(error)
-                                break
+                                serviceError(error)
+                                print(error)
+                                return
                             }
-
-                            if let result = response.result.value {
-                                let dictionary = result as! NSDictionary
-                                let jsonData: NSData = try! JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
-                                let prettyStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
-                                print(prettyStr)
-                                do {
-                                    let numbersTipModel = try NumbersTipModel.init(prettyStr)
-                                    print(numbersTipModel as Any)
-                                } catch _ as NSError {
-
-                                }
-
-
-                            }
-
                             
+                            
+
+//                            guard let result = response.result.value as? [String: Any] else { return }
+//                            if let result = response.result.value {
+//                                let dictionary = result as! NSDictionary
+//                                let jsonData: NSData = try! JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
+//                                let prettyStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
+//                                print(prettyStr)
+                            
+//                                do {
+//                                    let json = try JSONSerialization.data(withJSONObject: result, options: JSONSerialization.WritingOptions.prettyPrinted)
+//                                        print(json)
+////                                    let numbersTipModel = try NumbersTipModel.init(prettyStr)
+////                                    print(numbersTipModel as Any)
+//                                } catch _ as NSError {
+//
+//                                }
+
+
+//                            }
+
                             
                             
                             // VIEJO ///////////////////
                             
-                            guard response.result.error == nil else {
-//                                print("error calling POST on /todos/1")
-//                                print(response.result.error!)
-                                return
-                            }
-                            // make sure we got some JSON since that's what we expect
-                            guard let json = response.result.value as? [String: Any] else {
-//                                print("didn't get todo object as JSON from API")
-//                                print("Error: \(String(describing: response.result.error))")
-                                return
-                            }
+//                            guard let json = response.result.value as? [String: Any] else {
+//                                return
+//                            }
 
-                            let jsonCopy = JSON(data: response.data!)
-                            
-//                            print("finalizado")
-                            
-                            let response = NumerosTipDataModel(data: jsonCopy)
-                            
-//                             Do actions
-                            completionHandler(response)
+//                            guard let data = response.data else { return }
+//                            let json = JSON(data: data)
+//
+//
+//                            let response = NumerosTipDataModel(data: json)
+//                            print("ey compadre")
+//                            completionHandler(response)
         }
     }
     
