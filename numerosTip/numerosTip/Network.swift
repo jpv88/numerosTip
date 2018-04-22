@@ -25,70 +25,59 @@ class Network: NSObject {
         showIndicatorInCaller(parent: reference)
         
         let inputJson: [String : Any] = ["numeroText":"13",
-                                         "lang":"es",
+                                         "lang":"it",
                                          "langInterface":"es",
                                          "token":token
                                          ]
         Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
-//                            if let status = response.response?.statusCode {
-//                                switch(status){
-//                                case 201:
-//                                    print("example success")
-//                                default:
-//                                    print("error with response status: \(status)")
-//                                }
-//                            }
-//
-//                            switch response.result {
-//                            case .success(let value):
-//                                print(value)
-//                                break
-//                            case .failure(let error):
-//                                print(error)
-//                                break
-//                            }
-//
-//                            if let result = response.result.value {
-//                                let dictionary = result as! NSDictionary
-//                                let jsonData: NSData = try! JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
-//                                let prettyStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
-//                                print(prettyStr)
-//                                do {
-//                                    let numbersTipModel = try NumbersTipModel.init(prettyStr)
-////                                    print(numbersTipModel as Any)
-//                                } catch _ as NSError {
-//
-//                                }
-//
-//
-//                            }
-//
                             hideIndicatorInCaller()
                             
+                            switch response.result {
+                            case .success(let value):
+//                                print(value)
+                                break
+                            case .failure(let error):
+//                                print(error)
+                                break
+                            }
+
+                            if let result = response.result.value {
+                                let dictionary = result as! NSDictionary
+                                let jsonData: NSData = try! JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
+                                let prettyStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
+                                print(prettyStr)
+                                do {
+                                    let numbersTipModel = try NumbersTipModel.init(prettyStr)
+                                    print(numbersTipModel as Any)
+                                } catch _ as NSError {
+
+                                }
+
+
+                            }
+
                             
                             
+                            
+                            // VIEJO ///////////////////
                             
                             guard response.result.error == nil else {
-                                // got an error in getting the data, need to handle it
-                                print("error calling POST on /todos/1")
-                                print(response.result.error!)
-                                hideIndicatorInCaller()
+//                                print("error calling POST on /todos/1")
+//                                print(response.result.error!)
                                 return
                             }
                             // make sure we got some JSON since that's what we expect
                             guard let json = response.result.value as? [String: Any] else {
-                                print("didn't get todo object as JSON from API")
-                                print("Error: \(String(describing: response.result.error))")
-                                hideIndicatorInCaller()
+//                                print("didn't get todo object as JSON from API")
+//                                print("Error: \(String(describing: response.result.error))")
                                 return
                             }
 
                             let jsonCopy = JSON(data: response.data!)
                             
-                            print("finalizado")
-                            hideIndicatorInCaller()
+//                            print("finalizado")
                             
                             let response = NumerosTipDataModel(data: jsonCopy)
                             
