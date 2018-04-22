@@ -126,7 +126,6 @@
                         <outlet property="languageTableView" destination="Ka4-0j-YEf" id="wLB-So-XLl"/>
                         <outlet property="searchBar" destination="ERA-Gd-gpQ" id="ZZ0-QS-MTE"/>
                         <segue destination="Ta3-Y4-WEH" kind="show" id="d5y-8g-EiR"/>
-                        <segue destination="bmh-tP-FIB" kind="show" id="Haz-5Y-hEr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -172,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJB-4g-6r1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336.8" y="572.56371814092961"/>
+            <point key="canvasLocation" x="2090" y="133"/>
         </scene>
         <!--Search Features VC-->
         <scene sceneID="zIz-QP-inA">
@@ -240,6 +239,7 @@
                     <connections>
                         <outlet property="collectionView" destination="otZ-Ey-GZm" id="x27-go-1PX"/>
                         <outlet property="titleLabel" destination="SCR-g2-aFH" id="PFf-u3-fLO"/>
+                        <segue destination="bmh-tP-FIB" kind="show" id="10d-hg-YlY"/>
                     </connections>
                 </viewController>
                 <navigationItem id="WWd-t7-Od7">
@@ -247,7 +247,7 @@
                 </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAq-gT-TM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336.8" y="-152.47376311844079"/>
+            <point key="canvasLocation" x="1255" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="isd-BL-FWY">

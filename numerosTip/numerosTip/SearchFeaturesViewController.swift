@@ -13,9 +13,7 @@ class SearchFeaturesViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    fileprivate var data = ["Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan","Pepe", "Juan", "Antonio"]
-    
-    var dataNew: NumerosTipDataModel!
+    var data: NumerosTipDataModel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +40,7 @@ class SearchFeaturesViewController: UIViewController {
     
     private func setupTitleLabel() {
         titleLabel.backgroundColor = UIColor(rgb: 0x1A7A9F)
-        titleLabel.text = dataNew.initialView?.descriptionText
+        titleLabel.text = data.initialView?.descriptionText
         titleLabel.textColor = UIColor.white
     }
     
@@ -63,14 +61,14 @@ class SearchFeaturesViewController: UIViewController {
 extension SearchFeaturesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataNew.tabsArray.count
+        return data.tabsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
-        if let title = dataNew.tabsArray[indexPath.row].title {
+        if let title = data.tabsArray[indexPath.row].title {
             cell.displayContent(input: title)
         }        
         
@@ -82,8 +80,10 @@ extension SearchFeaturesViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let title = dataNew.tabsArray[indexPath.row].title {
-            print(title)
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultsViewController"), let vc = viewController as? SearchResultsViewController {
+            print(data.tabsArray[indexPath.row].title!)
+            vc.data = data.tabsArray[indexPath.row]
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
 

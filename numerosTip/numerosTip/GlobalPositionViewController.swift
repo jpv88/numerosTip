@@ -93,12 +93,9 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
     func doAction() {
         controller?.getDataFromWebService(viewController: self, completionHandler: { response in
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
-                vc.dataNew = response
+                vc.data = response
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
-            //            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultsViewController") {
-            //                self.navigationController?.pushViewController(viewController, animated: true)
-            //            }
         }, serviceError: { error in
             
         })
