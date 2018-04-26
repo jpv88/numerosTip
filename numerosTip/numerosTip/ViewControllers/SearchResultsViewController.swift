@@ -74,7 +74,7 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = data.sections[indexPath.section].data[indexPath.row]
+        cell.textLabel?.attributedText = data.sections[indexPath.section].data[indexPath.row].html2AttributedString
         return cell
     }
     
