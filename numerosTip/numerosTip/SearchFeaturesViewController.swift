@@ -69,7 +69,11 @@ extension SearchFeaturesViewController: UICollectionViewDelegate, UICollectionVi
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
         if let title = data.tabsArray[indexPath.row].title {
-            cell.displayContent(input: title)
+            var titleCleaned = title
+            if titleCleaned.contains("#") {
+                titleCleaned = titleCleaned.replacingOccurrences(of: "#", with: "")
+            }
+            cell.displayContent(input: titleCleaned)
         }        
         
         return cell

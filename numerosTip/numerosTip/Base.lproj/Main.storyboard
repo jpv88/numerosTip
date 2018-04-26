@@ -148,15 +148,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dic-RX-gn4">
-                                <rect key="frame" x="16" y="72" width="343" height="575"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sHy-lF-gHl" firstAttribute="top" secondItem="yqZ-qf-3u9" secondAttribute="top" id="NKW-hH-JIp"/>
-                            <constraint firstItem="dic-RX-gn4" firstAttribute="trailing" secondItem="yqZ-qf-3u9" secondAttribute="trailingMargin" id="S86-J0-5Av"/>
-                            <constraint firstItem="dic-RX-gn4" firstAttribute="leading" secondItem="yqZ-qf-3u9" secondAttribute="leadingMargin" id="YEX-EJ-2Iw"/>
+                            <constraint firstItem="dic-RX-gn4" firstAttribute="trailing" secondItem="yqZ-qf-3u9" secondAttribute="trailingMargin" constant="16" id="S86-J0-5Av"/>
+                            <constraint firstItem="dic-RX-gn4" firstAttribute="leading" secondItem="yqZ-qf-3u9" secondAttribute="leadingMargin" constant="-16" id="YEX-EJ-2Iw"/>
                             <constraint firstItem="sHy-lF-gHl" firstAttribute="leading" secondItem="yqZ-qf-3u9" secondAttribute="leading" id="ZW0-an-ZKc"/>
                             <constraint firstAttribute="bottom" secondItem="sHy-lF-gHl" secondAttribute="bottom" id="efm-F3-kto"/>
                             <constraint firstAttribute="trailing" secondItem="sHy-lF-gHl" secondAttribute="trailing" id="gbh-Jk-8En"/>
@@ -171,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJB-4g-6r1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090" y="133"/>
+            <point key="canvasLocation" x="2088.8000000000002" y="132.68365817091455"/>
         </scene>
         <!--Search Features VC-->
         <scene sceneID="zIz-QP-inA">

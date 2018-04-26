@@ -45,11 +45,22 @@ class SearchResultsViewController: UIViewController {
 
 extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    private func cleanString(str: String) -> String {
+        var cleanedString = str
+        
+        cleanedString = cleanedString.replacingOccurrences(of: "&", with: "")
+        cleanedString = cleanedString.replacingOccurrences(of: "&&", with: "")
+        cleanedString = cleanedString.replacingOccurrences(of: "#", with: "")
+        
+        return cleanedString
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = .yellow
-        label.text = data.sections[section].title
+        if let title = data.sections[section].title {
+            label.text = cleanString(str: title)
+        }
         return label
     }
 
