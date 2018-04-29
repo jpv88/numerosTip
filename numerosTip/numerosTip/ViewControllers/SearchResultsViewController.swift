@@ -39,6 +39,10 @@ class SearchResultsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.bounces = false
+        let nib = UINib(nibName: "TableViewDynamicCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "TableViewDynamicCell")
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
 }
@@ -73,8 +77,8 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.attributedText = data.sections[indexPath.section].data[indexPath.row].html2AttributedString
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewDynamicCell") as? TableViewDynamicCell else { return UITableViewCell() }
+        cell.information.attributedText = data.sections[indexPath.section].data[indexPath.row].html2AttributedString
         return cell
     }
     
