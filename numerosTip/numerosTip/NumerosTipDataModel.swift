@@ -123,6 +123,7 @@ class NumerosTipDataModel: NSObject {
     
     struct SectionModel {
         var title: String?
+        var expanded = false
         var data = [String]()
     }
     

@@ -61,16 +61,19 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = SectionCollapsible(section: section)
+//        label.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
         label.delegate = self
-        label.view.backgroundColor = .yellow
+        label.view.backgroundColor = UIColor.lightGray
+        var image: UIImage!
+        if data.sections[section].expanded {
+            image = UIImage(named: "chevron-down")            
+        } else {
+            image = UIImage(named: "chevron-right")
+        }
+        label.sectionImage.image = image
         if let title = data.sections[section].title {
             label.sectionTitle.text = cleanString(str: title)
         }
-//        let label = UILabel()
-//        label.backgroundColor = .yellow
-//        if let title = data.sections[section].title {
-//            label.text = cleanString(str: title)
-//        }
         return label
     }
 
@@ -79,7 +82,11 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.sections[section].data.count
+        if data.sections[section].expanded {
+            return data.sections[section].data.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,6 +103,10 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
 extension SearchResultsViewController: SectionCollapsibleProtocol {
     func headerTapped(section: Int) {
         print("Tapped Header Sectionat at:\(section)")
+        data.sections[section].expanded = !data.sections[section].expanded
+        tableView.reloadData()
+//        let index = IndexSet(integer: section)
+//        tableView.reloadSections(index, with: UITableViewRowAnimation.none)
     }
     
     
