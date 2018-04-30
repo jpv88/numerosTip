@@ -60,11 +60,17 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.backgroundColor = .yellow
+        let label = SectionCollapsible(section: section)
+        label.delegate = self
+        label.view.backgroundColor = .yellow
         if let title = data.sections[section].title {
-            label.text = cleanString(str: title)
+            label.sectionTitle.text = cleanString(str: title)
         }
+//        let label = UILabel()
+//        label.backgroundColor = .yellow
+//        if let title = data.sections[section].title {
+//            label.text = cleanString(str: title)
+//        }
         return label
     }
 
@@ -85,4 +91,12 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("click..")
     }
+}
+
+extension SearchResultsViewController: SectionCollapsibleProtocol {
+    func headerTapped(section: Int) {
+        print("Tapped Header Sectionat at:\(section)")
+    }
+    
+    
 }
