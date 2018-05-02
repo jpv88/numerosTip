@@ -103,7 +103,7 @@ extension SearchResultsViewController: SectionCollapsibleProtocol {
         data.sections[section].expanded = !data.sections[section].expanded
 //        tableView.reloadData()
         UIView.transition(with: tableView,
-                          duration: 0.15,
+                          duration: 0.01,
                           options: .transitionCrossDissolve,
                           animations: { self.tableView.reloadData() })
 //        let index = IndexSet(integer: section)
