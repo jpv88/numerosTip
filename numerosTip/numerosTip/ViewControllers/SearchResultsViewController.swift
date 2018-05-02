@@ -64,13 +64,10 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
 //        label.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
         label.delegate = self
         label.view.backgroundColor = UIColor.lightGray
-        var image: UIImage!
+        label.sectionImage.image = UIImage(named: "chevron-right")
         if data.sections[section].expanded {
-            image = UIImage(named: "chevron-down")            
-        } else {
-            image = UIImage(named: "chevron-right")
-        }
-        label.sectionImage.image = image
+            label.sectionImage.transform = label.sectionImage.transform.rotated(by: CGFloat.pi/2)
+        }        
         if let title = data.sections[section].title {
             label.sectionTitle.text = cleanString(str: title)
         }
