@@ -101,7 +101,11 @@ extension SearchResultsViewController: SectionCollapsibleProtocol {
     func headerTapped(section: Int) {
         print("Tapped Header Sectionat at:\(section)")
         data.sections[section].expanded = !data.sections[section].expanded
-        tableView.reloadData()
+//        tableView.reloadData()
+        UIView.transition(with: tableView,
+                          duration: 0.15,
+                          options: .transitionCrossDissolve,
+                          animations: { self.tableView.reloadData() })
 //        let index = IndexSet(integer: section)
 //        tableView.reloadSections(index, with: UITableViewRowAnimation.none)
     }
