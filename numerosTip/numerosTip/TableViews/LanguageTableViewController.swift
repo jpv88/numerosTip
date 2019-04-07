@@ -15,13 +15,22 @@ protocol LanguageActionsProtocol {
 class LanguageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var delegate: LanguageActionsProtocol?
-    var data: [LanguagesDisponibility]!
+    var data: [LanguagesDisponibility]! = [
+        LanguagesDisponibility(rawValue: 0)!,
+        LanguagesDisponibility(rawValue: 1)!,
+        LanguagesDisponibility(rawValue: 2)!,
+        LanguagesDisponibility(rawValue: 3)!
+    ]
     
-    convenience init(data: [LanguagesDisponibility]) {
-        self.init()
-        
-        self.data = data
-    }
+//    convenience override init() {
+////        self.init()
+//        self.init()
+//        self.data = [LanguagesDisponibility(rawValue: 0),
+//                     LanguagesDisponibility(rawValue: 1),
+//                     LanguagesDisponibility(rawValue: 2),
+//                     LanguagesDisponibility(rawValue: 3)
+//            ] as! [LanguagesDisponibility]
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }

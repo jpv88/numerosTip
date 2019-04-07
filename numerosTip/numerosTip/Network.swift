@@ -37,7 +37,7 @@ class Network: NSObject {
                             switch response.result {
                             case .success( _):
                                 guard let data = response.data else { return }
-                                let json = JSON(data: data)
+                                let json = try! JSON(data: data)
                                 let response = NumerosTipDataModel(data: json)
                                 completionHandler(response)
                                 break

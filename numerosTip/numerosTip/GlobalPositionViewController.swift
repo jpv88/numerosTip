@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum LanguagesDisponibility {
+enum LanguagesDisponibility: Int {
     case Español
     case Inglés
     case Alemán
@@ -66,7 +66,7 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
     }
     
     private func setupTableView() {
-        languageTableViewController = LanguageTableViewController(data: languageData)
+        languageTableViewController = LanguageTableViewController()
         languageTableViewController?.delegate = self
         languageTableView.delegate = languageTableViewController
         languageTableView.dataSource = languageTableViewController
@@ -97,7 +97,7 @@ class GlobalPositionViewController: UIViewController, LanguageActionsProtocol {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }, serviceError: { error in
-            
+            print("error")
         })
     }
 
