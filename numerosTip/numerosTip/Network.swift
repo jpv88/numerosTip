@@ -12,8 +12,8 @@ import Alamofire
 
 
 class Network: NSObject {
-
-    static private let url = "http://tip.dis.ulpgc.es/ServicioNumeros/Numeros.asmx/"
+    
+    static private let url = "http://tulengua.es/ServicioNumeros/Numeros.asmx/"
     static private let method = "Convertir"
     static private let token = "9P384RUPIQW7RY5234"
     static private let absolutPath = url + method
@@ -27,8 +27,9 @@ class Network: NSObject {
         let inputJson: [String : Any] = ["numeroText":"13",
                                          "lang":"es",
                                          "langInterface":"es",
-                                         "token":token
-                                         ]
+                                         "token":token,
+                                         "userId": "iOSJared"
+        ]
         Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
