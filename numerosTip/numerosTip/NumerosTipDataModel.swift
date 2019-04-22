@@ -20,14 +20,10 @@ class NumerosTipDataModel: NSObject {
     
     
     init(data: JSON) {
-        
         let arrayData = data["d"].arrayValue
-
         self.totalElements = arrayData.count - 1
-        
         for (index,element) in arrayData.enumerated() {
-            let array: NSMutableArray = []
-            
+            let array: NSMutableArray = []            
             for (x, _) in element.enumerated(){
                 print("iteracion: \(x)")
                 print(element[x].rawValue)
@@ -40,13 +36,8 @@ class NumerosTipDataModel: NSObject {
                 let object = TabsModel(array: array)
                 self.tabsArray.append(object)
             }
-            
         }
-        
-        
-        
     }
-    
     
     struct InitialView {
         var number: String?
@@ -61,11 +52,8 @@ class NumerosTipDataModel: NSObject {
         var title: String?
         var description: String?
         var sections = [SectionModel]()
-        
         init(array: NSMutableArray){
-            
             var section: SectionModel?
-            
             for (index, element) in array.enumerated() {
                 guard let element = element as? String else { return }
                 switch index {
@@ -125,7 +113,5 @@ class NumerosTipDataModel: NSObject {
         var title: String?
         var data = [String]()
     }
-    
-
     
 }

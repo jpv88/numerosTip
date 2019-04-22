@@ -8,11 +8,6 @@
 
 import UIKit
     
-//    return UIColor(rgb: 0x95CBEE)
-//    return UIColor(rgb: 0x74B5DD)
-//    return UIColor(rgb: 0x3B98C6)
-//    return UIColor(rgb: 0x1A7A9F)
-    
 class GlobalPositionViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -70,7 +65,7 @@ class GlobalPositionViewController: UIViewController {
     // MARK: - TableView Delegate
     
     func doAction() {
-        controller?.getDataFromWebService(viewController: self, completionHandler: { response in
+        controller?.getDataFromWebService(viewController: self, completionHandler: { response in            
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
                 vc.data = response
                 self.navigationController?.pushViewController(viewController, animated: true)
