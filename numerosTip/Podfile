@@ -7,5 +7,5 @@ target 'numerosTip' do
 
   # Pods for numerosTip
 pod 'SwiftyJSON'
-pod 'Alamofire', '~> 4.4'
+pod 'Alamofire'
 end

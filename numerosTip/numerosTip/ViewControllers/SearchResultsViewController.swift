@@ -29,8 +29,8 @@ class SearchResultsViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
         // Title
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : Any]
+        let titleDict: NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white] 
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [NSAttributedStringKey : Any]
         navigationController?.navigationBar.topItem?.title = "Resultados"
         //        navigationController?.navigationBar.topItem?.hidesBackButton = true
     }
