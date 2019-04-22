@@ -14,7 +14,7 @@ class TableViewDynamicCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
     
 }

@@ -16,6 +16,7 @@ class Network: NSObject {
     static private let url = "http://tulengua.es/ServicioNumeros/Numeros.asmx/"
     static private let method = "Convertir"
     static private let token = "9P384RUPIQW7RY5234"
+    static private let userID = "iOSJared"
     static private let absolutPath = url + method
     static private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     static private var spinnerContainer: UIView = UIView()
@@ -24,11 +25,11 @@ class Network: NSObject {
         
         showIndicatorInCaller(parent: reference)
         
-        let inputJson: [String : Any] = ["numeroText":"13",
+        let inputJson: [String : Any] = ["numeroText":"xiii",
                                          "lang":"es",
                                          "langInterface":"es",
                                          "token":token,
-                                         "userId": "iOSJared"
+                                         "userId": userID
         ]
         Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
@@ -38,13 +39,12 @@ class Network: NSObject {
                             switch response.result {
                             case .success( _):
                                 guard let data = response.data else { return }
-                                let json = try! JSON(data: data)
+                                guard let json = try? JSON(data: data) else {return}
                                 let response = NumerosTipDataModel(data: json)
                                 completionHandler(response)
                                 break
                             case .failure(let error):
                                 serviceError(error)
-                                print(error)
                                 return
                             }
                             

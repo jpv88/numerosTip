@@ -37,8 +37,7 @@ class SearchResultsViewController: UIViewController {
     
     private func setupTableView() {
         tableView.delegate = self
-        tableView.dataSource = self
-        tableView.bounces = false
+        tableView.dataSource = self        
         let nib = UINib(nibName: "TableViewDynamicCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewDynamicCell")
         tableView.estimatedRowHeight = 50
