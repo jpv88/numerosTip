@@ -33,6 +33,10 @@ class GlobalPositionViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     private func setupTableView() {
 //        languageTableViewController = LanguageTableViewController()
 //        languageTableViewController?.delegate = self
@@ -47,7 +51,7 @@ class GlobalPositionViewController: UIViewController {
             let textColor = UIColor.white
             let textFieldBackgroundColor = UIColor(rgb: 0xCACFD2)
             searchBar.change(textFont: font, textColor: textColor, textFieldBackgroundColor: textFieldBackgroundColor)
-        }        
+        }
         setGradientBackground()
     }
     
