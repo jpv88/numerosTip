@@ -19,6 +19,7 @@ class GlobalPositionViewController: UIViewController {
 
         setupUI()
         controller = NumerosTipController.sharedInstance
+        searchBar.delegate = self
         setupTableView()
     }
     
@@ -64,15 +65,40 @@ class GlobalPositionViewController: UIViewController {
     
     // MARK: - TableView Delegate
     
-    func doAction() {
-        controller?.getDataFromWebService(viewController: self, completionHandler: { response in            
+    func doAction(number: String) {
+        controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
                 vc.data = response
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }, serviceError: { error in
+            // TODO
             print("error")
         })
     }
 
+}
+
+
+extension GlobalPositionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else {return}
+        let number = Int(text)
+        if number != nil || isRomanNumber(text: text) == true {
+            doAction(number: text)
+        } else {
+            // TODO
+            print("Lanzar error: asegúrate estás introduciendo el número correctamente")
+        }
+    }
+    
+    private func isRomanNumber(text: String) -> Bool {
+        let patttern = "^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$"
+        let regex = try? NSRegularExpression(pattern: patttern, options: [.caseInsensitive])
+        guard let matches = regex?.matches(in: text, options: [], range: NSRange(location: 0, length: text.count)) else {return false}
+        if matches.isEmpty {
+            return false
+        }
+        return true
+    }
 }

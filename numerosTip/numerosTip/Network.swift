@@ -21,11 +21,11 @@ class Network: NSObject {
     static private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     static private var spinnerContainer: UIView = UIView()
     
-    class func requestWebService(reference: UIViewController, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
+    class func requestWebService(reference: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
         
         showIndicatorInCaller(parent: reference)
         
-        let inputJson: [String : Any] = ["numeroText":"xiii",
+        let inputJson: [String : Any] = ["numeroText":number,
                                          "lang":"es",
                                          "langInterface":"es",
                                          "token":token,
