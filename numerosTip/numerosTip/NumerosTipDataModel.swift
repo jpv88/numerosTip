@@ -103,10 +103,6 @@ class NumerosTipDataModel: NSObject {
             return false
         }
         
-        func getSectionNumber() -> Int {
-            return 1
-        }
-        
     }
     
     struct SectionModel {
