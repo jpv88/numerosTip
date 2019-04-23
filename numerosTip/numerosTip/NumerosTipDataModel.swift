@@ -96,7 +96,7 @@ class NumerosTipDataModel: NSObject {
                  flagTitlesInSection = true
             }
             for key in dictionary {
-                if str.contains(key) {
+                if str.prefix(2).contains(key) {                
                     return true
                 }
             }
