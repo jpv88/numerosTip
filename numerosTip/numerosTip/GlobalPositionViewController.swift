@@ -85,6 +85,9 @@ extension GlobalPositionViewController: UISearchBarDelegate {
         guard let text = searchBar.text else {return}
         let number = Int(text)
         if number != nil || isRomanNumber(text: text) == true {
+            // TODO
+            // Save search history
+//            history.save(text)
             doAction(number: text)
         } else {
             // TODO
