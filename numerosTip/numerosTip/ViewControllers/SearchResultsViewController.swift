@@ -37,11 +37,14 @@ class SearchResultsViewController: UIViewController {
     
     private func setupTableView() {
         tableView.delegate = self
-        tableView.dataSource = self        
+        tableView.dataSource = self
         let nib = UINib(nibName: "TableViewDynamicCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewDynamicCell")
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+        tableView.estimatedSectionHeaderHeight = 25;
+        tableView.tableFooterView = UIView()
     }
 
 }
@@ -60,6 +63,7 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
+        label.numberOfLines = 0
         label.backgroundColor = .yellow
         if let title = data.sections[section].title {
             label.text = cleanString(str: title)
