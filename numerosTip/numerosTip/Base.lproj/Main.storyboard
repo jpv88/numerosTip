@@ -284,7 +284,7 @@
         <!--Split View Controller-->
         <scene sceneID="hdO-ft-Ihy">
             <objects>
-                <splitViewController id="aX3-4M-WhQ" sceneMemberID="viewController">
+                <splitViewController id="aX3-4M-WhQ" customClass="SplitViewController" customModule="numerosTip" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="c01-dD-GiF" kind="relationship" relationship="masterViewController" id="NB1-2P-RcP"/>
                         <segue destination="aP9-MH-0cS" kind="relationship" relationship="detailViewController" id="4XN-TD-aB6"/>
