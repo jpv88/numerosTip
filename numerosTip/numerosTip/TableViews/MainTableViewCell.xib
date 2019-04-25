@@ -72,6 +72,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="searchBar" destination="LvK-TA-gff" id="cee-eX-fAM"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

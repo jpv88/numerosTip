@@ -9,12 +9,15 @@
 import UIKit
 
 class GlobalPositionTableViewController: UITableViewController {
+    
+    private var controller: NumerosTipController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
+        controller = NumerosTipController.sharedInstance
         setGradientBackground()
         setupTable()
     }
@@ -24,11 +27,18 @@ class GlobalPositionTableViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        view.endEditing(true)
+//    }
+    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
     private func setupTable(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tapGesture.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(tapGesture)
         tableView.delegate = self
         tableView.dataSource = self
         let nib = UINib(nibName: "MainTableViewCell", bundle: nil)
@@ -57,6 +67,16 @@ class GlobalPositionTableViewController: UITableViewController {
         self.tableView.backgroundView = backgroundView
     }
     
+    private func isRomanNumber(text: String) -> Bool {
+        let patttern = "^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$"
+        let regex = try? NSRegularExpression(pattern: patttern, options: [.caseInsensitive])
+        guard let matches = regex?.matches(in: text, options: [], range: NSRange(location: 0, length: text.count)) else {return false}
+        if matches.isEmpty {
+            return false
+        }
+        return true
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,18 +92,37 @@ class GlobalPositionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
+        cell.delegate = self
         return cell
     }
- 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - API
+    
+    func doAction(number: String) {
+        controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
+                vc.data = response
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }, serviceError: { error in
+            // TODO
+            print("error")
+        })
     }
-    */
+}
 
+extension GlobalPositionTableViewController: SearcherTextProtocol {
+    func searchFieldDidReturn(_ text: String) {
+        let number = Int(text)
+        if number != nil || isRomanNumber(text: text) == true {
+            // TODO
+            // Save search history
+            //            history.save(text)
+            doAction(number: text)
+        } else {
+            // TODO
+            print("Lanzar error: asegúrate estás introduciendo el número correctamente")
+        }
+    }
 }
