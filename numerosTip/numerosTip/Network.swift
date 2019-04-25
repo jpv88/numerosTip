@@ -23,7 +23,9 @@ class Network: NSObject {
     
     class func requestWebService(reference: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
         
-        showIndicatorInCaller(parent: reference)
+        let vc = UIApplication.topViewController()
+        vc?.showLoader()
+//        showIndicatorInCaller(parent: reference)
         
         let inputJson: [String : Any] = ["numeroText":number,
                                          "lang":"es",
@@ -34,7 +36,8 @@ class Network: NSObject {
         Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
-                            hideIndicatorInCaller()
+//                            hideIndicatorInCaller()
+                            vc?.hideLoader()
                             
                             switch response.result {
                             case .success( _):
