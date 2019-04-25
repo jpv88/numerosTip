@@ -11,6 +11,8 @@ import UIKit
 class GlobalPositionTableViewController: UITableViewController {
     
     private var controller: NumerosTipController?
+    
+    private var data: NumerosTipDataModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +42,7 @@ class GlobalPositionTableViewController: UITableViewController {
         let mainNib = UINib(nibName: "MainTableViewCell", bundle: nil)
         let tabsNib = UINib(nibName: "TabsTableViewCell", bundle: nil)
         tableView.register(mainNib, forCellReuseIdentifier: "MainTableViewCell")
-        tableView.register(tabsNib, forCellReuseIdentifier: "TabsTableViewCell")        
-//        tableView.estimatedRowHeight = 50
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-//        tableView.estimatedSectionHeaderHeight = 25;
+        tableView.register(tabsNib, forCellReuseIdentifier: "TabsTableViewCell")
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
     }
@@ -86,11 +84,10 @@ class GlobalPositionTableViewController: UITableViewController {
         }
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let elements = data?.tabsArray {
+            return elements.count + 1
+        }
         return 1
     }
     
@@ -102,7 +99,13 @@ class GlobalPositionTableViewController: UITableViewController {
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TabsTableViewCell", for: indexPath) as? TabsTableViewCell else { return UITableViewCell() }
-            cell.displayContent(input: "Multiplicativo")
+            if let title = data?.tabsArray[indexPath.row - 1].title {
+                var titleCleaned = title
+                if titleCleaned.contains("#") {
+                    titleCleaned = titleCleaned.replacingOccurrences(of: "#", with: "")
+                }
+                cell.displayContent(input: titleCleaned)
+            }
             return cell
         }
     }
@@ -111,10 +114,12 @@ class GlobalPositionTableViewController: UITableViewController {
     
     func getNumberTIP(number: String) {
         controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
-            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
-                vc.data = response
-                self.navigationController?.pushViewController(viewController, animated: true)
-            }
+            self.data = response
+            self.tableView.reloadData()
+//            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
+//                vc.data = response
+//                self.navigationController?.pushViewController(viewController, animated: true)
+//            }
         }, serviceError: { error in
             // TODO
             print("error")
