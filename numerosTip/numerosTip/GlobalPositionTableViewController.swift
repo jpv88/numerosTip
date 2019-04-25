@@ -27,10 +27,6 @@ class GlobalPositionTableViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        view.endEditing(true)
-//    }
-    
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
@@ -99,7 +95,7 @@ class GlobalPositionTableViewController: UITableViewController {
     
     // MARK: - API
     
-    func doAction(number: String) {
+    func getNumberTIP(number: String) {
         controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
                 vc.data = response
@@ -119,7 +115,7 @@ extension GlobalPositionTableViewController: SearcherTextProtocol {
             // TODO
             // Save search history
             //            history.save(text)
-            doAction(number: text)
+            getNumberTIP(number: text)
         } else {
             // TODO
             print("Lanzar error: asegúrate estás introduciendo el número correctamente")
