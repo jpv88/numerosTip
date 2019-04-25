@@ -110,6 +110,15 @@ class GlobalPositionTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            break
+        default:
+            splitViewController?.showDetailViewController(<#T##vc: UIViewController##UIViewController#>, sender: <#T##Any?#>)
+        }
+    }
+    
     // MARK: - API
     
     func getNumberTIP(number: String) {
