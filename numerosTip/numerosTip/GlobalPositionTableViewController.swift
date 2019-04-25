@@ -37,8 +37,10 @@ class GlobalPositionTableViewController: UITableViewController {
         tableView.addGestureRecognizer(tapGesture)
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "MainTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "MainTableViewCell")
+        let mainNib = UINib(nibName: "MainTableViewCell", bundle: nil)
+        let tabsNib = UINib(nibName: "TabsTableViewCell", bundle: nil)
+        tableView.register(mainNib, forCellReuseIdentifier: "MainTableViewCell")
+        tableView.register(tabsNib, forCellReuseIdentifier: "TabsTableViewCell")        
 //        tableView.estimatedRowHeight = 50
 //        tableView.rowHeight = UITableViewAutomaticDimension
 //        tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
@@ -76,7 +78,12 @@ class GlobalPositionTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 420
+        switch indexPath.row {
+        case 0:
+            return 420
+        default:
+            return 60
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,9 +95,16 @@ class GlobalPositionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
-        cell.delegate = self
-        return cell
+        switch indexPath.row {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
+            cell.delegate = self
+            return cell
+        default:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TabsTableViewCell", for: indexPath) as? TabsTableViewCell else { return UITableViewCell() }
+            cell.displayContent(input: "Multiplicativo")
+            return cell
+        }
     }
     
     // MARK: - API

@@ -31,6 +31,8 @@
 		7F2C25E41F7FE8B2009C3671 /* NumerosTipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2C25E31F7FE8B2009C3671 /* NumerosTipController.swift */; };
 		7F4731FF2271C61D0078852C /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4731FE2271C61D0078852C /* UIViewController+ActivityIndicator.swift */; };
 		7F4732012271C6680078852C /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4732002271C6680078852C /* UIApplication+TopViewController.swift */; };
+		7F4732042271CDD30078852C /* TabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4732022271CDD30078852C /* TabsTableViewCell.swift */; };
+		7F4732052271CDD30078852C /* TabsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4732032271CDD30078852C /* TabsTableViewCell.xib */; };
 		7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */; };
 		7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72E0F21F4C8D3F001B0DDA /* Network.swift */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
@@ -64,6 +66,8 @@
 		7F2C25E31F7FE8B2009C3671 /* NumerosTipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerosTipController.swift; sourceTree = "<group>"; };
 		7F4731FE2271C61D0078852C /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		7F4732002271C6680078852C /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
+		7F4732022271CDD30078852C /* TabsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTableViewCell.swift; sourceTree = "<group>"; };
+		7F4732032271CDD30078852C /* TabsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsTableViewCell.xib; sourceTree = "<group>"; };
 		7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumerosTipDataModel.swift; sourceTree = "<group>"; };
 		7F72E0F21F4C8D3F001B0DDA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				6713574120961E750041967B /* TableViewDynamicCell.xib */,
 				7F0C989C22707F4000FBADEE /* MainTableViewCell.swift */,
 				7F0C989D22707F4000FBADEE /* MainTableViewCell.xib */,
+				7F4732022271CDD30078852C /* TabsTableViewCell.swift */,
+				7F4732032271CDD30078852C /* TabsTableViewCell.xib */,
 			);
 			path = TableViews;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				6713574320961E750041967B /* TableViewDynamicCell.xib in Resources */,
 				676B66B1207E55FB00A240E0 /* SearchCollectionViewCell.xib in Resources */,
 				7F00985E1F4B3CE600F9B7C4 /* Main.storyboard in Resources */,
+				7F4732052271CDD30078852C /* TabsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +342,7 @@
 				67ADA6B120779A5F000E54E7 /* Helper.swift in Sources */,
 				67661E22207522C5006FF2BB /* UISearchBar+Extension.swift in Sources */,
 				7F4732012271C6680078852C /* UIApplication+TopViewController.swift in Sources */,
+				7F4732042271CDD30078852C /* TabsTableViewCell.swift in Sources */,
 				6713574220961E750041967B /* TableViewDynamicCell.swift in Sources */,
 				67CDA4BB20920D66008F9BB5 /* String+Extension.swift in Sources */,
 				67661E24207524CF006FF2BB /* UIColor+Extension.swift in Sources */,
