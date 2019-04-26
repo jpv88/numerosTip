@@ -16,6 +16,7 @@ class StaticDetailViewController: UIViewController {
         if let splitView = self.navigationController?.splitViewController, !splitView.isCollapsed {
             self.navigationItem.leftBarButtonItem = splitView.displayModeButtonItem
         }
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
 

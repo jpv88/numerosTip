@@ -20,7 +20,6 @@
 		67F6A53E207E05C900773BDC /* SearchFeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6A53D207E05C900773BDC /* SearchFeaturesViewController.swift */; };
 		7F0098591F4B3CE600F9B7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0098581F4B3CE600F9B7C4 /* AppDelegate.swift */; };
 		7F00985B1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F00985A1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift */; };
-		7F00985E1F4B3CE600F9B7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F00985C1F4B3CE600F9B7C4 /* Main.storyboard */; };
 		7F0098601F4B3CE600F9B7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */; };
 		7F0098631F4B3CE600F9B7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */; };
 		7F0C989B2270737F00FBADEE /* GlobalPositionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C989A2270737F00FBADEE /* GlobalPositionTableViewController.swift */; };
@@ -36,6 +35,7 @@
 		7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */; };
 		7F6576C22273247000E89729 /* StaticDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6576C12273246F00E89729 /* StaticDetailViewController.swift */; };
 		7F6576C42273248D00E89729 /* ResultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6576C32273248D00E89729 /* ResultDetailViewController.swift */; };
+		7F6576C72273264500E89729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F6576C52273264400E89729 /* Main.storyboard */; };
 		7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72E0F21F4C8D3F001B0DDA /* Network.swift */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,6 @@
 		7F0098551F4B3CE600F9B7C4 /* numerosTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = numerosTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0098581F4B3CE600F9B7C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F00985A1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPositionViewController.swift; sourceTree = "<group>"; };
-		7F00985D1F4B3CE600F9B7C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0098621F4B3CE600F9B7C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0098641F4B3CE600F9B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumerosTipDataModel.swift; sourceTree = "<group>"; };
 		7F6576C12273246F00E89729 /* StaticDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDetailViewController.swift; sourceTree = "<group>"; };
 		7F6576C32273248D00E89729 /* ResultDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailViewController.swift; sourceTree = "<group>"; };
+		7F6576C62273264400E89729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F72E0F21F4C8D3F001B0DDA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
 		FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_numerosTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +147,7 @@
 				7F2C25E21F7FE897009C3671 /* Controller */,
 				7F72E0F51F4C8F6D001B0DDA /* Models */,
 				7F72E0F41F4C8F64001B0DDA /* Network */,
-				7F00985C1F4B3CE600F9B7C4 /* Main.storyboard */,
+				7F6576C52273264400E89729 /* Main.storyboard */,
 				7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */,
 				7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */,
 				7F0098581F4B3CE600F9B7C4 /* AppDelegate.swift */,
@@ -274,12 +274,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6576C72273264500E89729 /* Main.storyboard in Resources */,
 				7F0C989F22707F4000FBADEE /* MainTableViewCell.xib in Resources */,
 				7F0098631F4B3CE600F9B7C4 /* LaunchScreen.storyboard in Resources */,
 				7F0098601F4B3CE600F9B7C4 /* Assets.xcassets in Resources */,
 				6713574320961E750041967B /* TableViewDynamicCell.xib in Resources */,
 				676B66B1207E55FB00A240E0 /* SearchCollectionViewCell.xib in Resources */,
-				7F00985E1F4B3CE600F9B7C4 /* Main.storyboard in Resources */,
 				7F4732052271CDD30078852C /* TabsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,20 +361,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7F00985C1F4B3CE600F9B7C4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7F00985D1F4B3CE600F9B7C4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7F0098621F4B3CE600F9B7C4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7F6576C52273264400E89729 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F6576C62273264400E89729 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

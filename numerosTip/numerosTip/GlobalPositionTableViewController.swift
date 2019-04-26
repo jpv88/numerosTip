@@ -20,12 +20,12 @@ class GlobalPositionTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         controller = NumerosTipController.sharedInstance
-        setGradientBackground()
         setupTable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setGradientBackground()
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -57,7 +57,7 @@ class GlobalPositionTableViewController: UITableViewController {
         gradientLayer.locations = gradientLocations as [NSNumber]
         gradientLayer.startPoint = CGPoint(x: 0, y: 1)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        gradientLayer.frame = self.tableView.bounds
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height)
         let backgroundView = UIView(frame: self.tableView.bounds)
         backgroundView.layer.insertSublayer(gradientLayer, at: 0)
         self.tableView.backgroundView = backgroundView
@@ -115,7 +115,7 @@ class GlobalPositionTableViewController: UITableViewController {
         case 0:
             break
         default:                        
-            break
+            self.performSegue(withIdentifier: "segueDetail2", sender: nil)
         }
     }
     
