@@ -34,6 +34,8 @@
 		7F4732042271CDD30078852C /* TabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4732022271CDD30078852C /* TabsTableViewCell.swift */; };
 		7F4732052271CDD30078852C /* TabsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4732032271CDD30078852C /* TabsTableViewCell.xib */; };
 		7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */; };
+		7F6576C22273247000E89729 /* StaticDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6576C12273246F00E89729 /* StaticDetailViewController.swift */; };
+		7F6576C42273248D00E89729 /* ResultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6576C32273248D00E89729 /* ResultDetailViewController.swift */; };
 		7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72E0F21F4C8D3F001B0DDA /* Network.swift */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		7F4732022271CDD30078852C /* TabsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTableViewCell.swift; sourceTree = "<group>"; };
 		7F4732032271CDD30078852C /* TabsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsTableViewCell.xib; sourceTree = "<group>"; };
 		7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumerosTipDataModel.swift; sourceTree = "<group>"; };
+		7F6576C12273246F00E89729 /* StaticDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDetailViewController.swift; sourceTree = "<group>"; };
+		7F6576C32273248D00E89729 /* ResultDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailViewController.swift; sourceTree = "<group>"; };
 		7F72E0F21F4C8D3F001B0DDA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
 		FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_numerosTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +172,8 @@
 				676A6C1C208CB31900666164 /* SearchResultsViewController.swift */,
 				7F0C989A2270737F00FBADEE /* GlobalPositionTableViewController.swift */,
 				7F1672522270C48000343D43 /* SplitViewController.swift */,
+				7F6576C12273246F00E89729 /* StaticDetailViewController.swift */,
+				7F6576C32273248D00E89729 /* ResultDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -334,7 +340,9 @@
 				7F1672532270C48000343D43 /* SplitViewController.swift in Sources */,
 				7F0C989B2270737F00FBADEE /* GlobalPositionTableViewController.swift in Sources */,
 				7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */,
+				7F6576C22273247000E89729 /* StaticDetailViewController.swift in Sources */,
 				67ADA6AF207781BF000E54E7 /* UIDevice+Extension.swift in Sources */,
+				7F6576C42273248D00E89729 /* ResultDetailViewController.swift in Sources */,
 				7F2C25E41F7FE8B2009C3671 /* NumerosTipController.swift in Sources */,
 				676B66B0207E55FB00A240E0 /* SearchCollectionViewCell.swift in Sources */,
 				7F0C989E22707F4000FBADEE /* MainTableViewCell.swift in Sources */,
