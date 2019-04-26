@@ -36,10 +36,25 @@
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actualmente no hay búsquedas. Realize en el menú de la izquierda." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeQ-sv-jtT">
+                                <rect key="frame" x="120" y="356.5" width="463.5" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KeQ-sv-jtT" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="5xW-kW-97q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KeQ-sv-jtT" secondAttribute="trailing" constant="100" id="N1Q-qF-Ifc"/>
+                            <constraint firstItem="KeQ-sv-jtT" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="ekz-Av-Uvd"/>
+                            <constraint firstItem="KeQ-sv-jtT" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="100" id="zFn-TM-X62"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail 1" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="No hay búsquedas" id="mOI-FS-AaM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>

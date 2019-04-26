@@ -17,17 +17,19 @@ class StaticDetailViewController: UIViewController {
             self.navigationItem.leftBarButtonItem = splitView.displayModeButtonItem
         }
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        setGradientBackground()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setGradientBackground() {
+        let leftColor = UIColor(rgb: 0x0C77B8).cgColor
+        let rightColor = UIColor(rgb: 0x0C3B5D).cgColor
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [leftColor, rightColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 1)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = self.view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
-    */
-
+    
 }
