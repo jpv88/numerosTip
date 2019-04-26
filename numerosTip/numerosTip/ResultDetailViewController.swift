@@ -9,6 +9,8 @@
 import UIKit
 
 class ResultDetailViewController: UIViewController {
+    
+    var data: NumerosTipDataModel.TabsModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

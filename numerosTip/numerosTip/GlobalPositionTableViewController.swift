@@ -13,6 +13,8 @@ class GlobalPositionTableViewController: UITableViewController {
     private var controller: NumerosTipController?
     
     private var data: NumerosTipDataModel?
+    
+    private var selectedPosition: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,8 @@ class GlobalPositionTableViewController: UITableViewController {
         tableView.separatorStyle = .none
     }
     
+    // MARK: - UI
+    
     private func setGradientBackground() {
         let leftColor = UIColor(rgb: 0x0C77B8)
         let rightColor = UIColor(rgb: 0x0C3B5D)
@@ -63,6 +67,8 @@ class GlobalPositionTableViewController: UITableViewController {
         self.tableView.backgroundView = backgroundView
     }
     
+    // MARK: - Helpers
+    
     private func isRomanNumber(text: String) -> Bool {
         let patttern = "^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$"
         let regex = try? NSRegularExpression(pattern: patttern, options: [.caseInsensitive])
@@ -73,7 +79,20 @@ class GlobalPositionTableViewController: UITableViewController {
         return true
     }
     
-    // MARK: - Table view data source
+     // MARK: - Navigation
+
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let navigation = segue.destination as? UINavigationController {
+            if let vc = navigation.viewControllers[0] as? ResultDetailViewController {
+                if let element = data?.tabsArray[selectedPosition] {
+                    vc.data = element
+                }                
+            }
+        }
+     }
+    
+    
+    // MARK: - Table view
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
@@ -114,7 +133,8 @@ class GlobalPositionTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             break
-        default:                        
+        default:
+            selectedPosition = indexPath.row - 1
             self.performSegue(withIdentifier: "segueDetail2", sender: nil)
         }
     }
@@ -125,10 +145,6 @@ class GlobalPositionTableViewController: UITableViewController {
         controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
             self.data = response
             self.tableView.reloadData()
-//            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
-//                vc.data = response
-//                self.navigationController?.pushViewController(viewController, animated: true)
-//            }
         }, serviceError: { error in
             // TODO
             print("error")
