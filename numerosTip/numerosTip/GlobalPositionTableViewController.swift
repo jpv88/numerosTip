@@ -114,8 +114,8 @@ class GlobalPositionTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             break
-        default:
-            splitViewController?.showDetailViewController(<#T##vc: UIViewController##UIViewController#>, sender: <#T##Any?#>)
+        default:                        
+            break
         }
     }
     

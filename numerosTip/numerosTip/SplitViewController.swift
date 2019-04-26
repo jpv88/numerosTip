@@ -20,6 +20,10 @@ class SplitViewController: UISplitViewController {
 
 extension SplitViewController: UISplitViewControllerDelegate {
     
+    override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
+        print("showing DETAIL")
+    }
+    
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }
