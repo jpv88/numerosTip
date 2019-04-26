@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--Detail 2-->
+        <!--Resultados-->
         <scene sceneID="nzf-yh-RRX">
             <objects>
                 <viewController id="c4M-T3-vy7" customClass="ResultDetailViewController" customModule="numerosTip" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,9 +109,24 @@
                     <view key="view" contentMode="scaleToFill" id="kDd-vP-Aht">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJ6-3S-oiZ">
+                                <rect key="frame" x="20" y="90" width="663.5" height="658"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dJ6-3S-oiZ" firstAttribute="top" secondItem="ilN-43-yd9" secondAttribute="bottom" constant="20" id="8fT-L8-uFZ"/>
+                            <constraint firstItem="HMz-hb-8RU" firstAttribute="top" secondItem="dJ6-3S-oiZ" secondAttribute="bottom" constant="20" id="JuU-pU-6k9"/>
+                            <constraint firstAttribute="trailing" secondItem="dJ6-3S-oiZ" secondAttribute="trailing" constant="20" id="btm-hg-12g"/>
+                            <constraint firstItem="dJ6-3S-oiZ" firstAttribute="leading" secondItem="kDd-vP-Aht" secondAttribute="leading" constant="20" id="xM4-K1-iVd"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail 2" id="XMh-Jh-eDU"/>
+                    <navigationItem key="navigationItem" title="Resultados" id="XMh-Jh-eDU"/>
+                    <connections>
+                        <outlet property="tableView" destination="dJ6-3S-oiZ" id="Wmu-7E-329"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4c-q1-7o0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
