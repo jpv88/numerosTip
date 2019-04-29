@@ -146,8 +146,7 @@ class GlobalPositionTableViewController: UITableViewController {
             self.data = response
             self.tableView.reloadData()
         }, serviceError: { error in
-            // TODO
-            print("error")
+            ErrorHandler.showError(error: error)
         })
     }
 }
@@ -155,7 +154,7 @@ class GlobalPositionTableViewController: UITableViewController {
 extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     
     func settingsIconTapped() {
-        print("icon tapped")
+        ErrorHandler.showAlert(title: "Settings Icon", msg: "tapped")
     }
     
     func searchFieldDidReturn(_ text: String) {
@@ -165,9 +164,8 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
             // Save search history
             //            history.save(text)
             getNumberTIP(number: text)
-        } else {
-            // TODO
-            print("Lanzar error: asegúrate estás introduciendo el número correctamente")
+        } else {            
+            ErrorHandler.showAlert(title: "Incorrecto", msg: "Asegúrate que estás introduciendo el número correctamente")
         }
     }
 }
