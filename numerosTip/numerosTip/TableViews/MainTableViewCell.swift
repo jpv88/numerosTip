@@ -8,22 +8,35 @@
 
 import UIKit
 
-protocol SearcherTextProtocol {
+protocol MainTableViewCellProtocol {
     func searchFieldDidReturn(_ text: String)
+    func settingsIconTapped()
 }
 
 class MainTableViewCell: UITableViewCell {
 
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet private var settingsIcon: UIImageView!
+    @IBOutlet private var searchBar: UISearchBar!
     
-    var delegate: SearcherTextProtocol?
+    var delegate: MainTableViewCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         selectionStyle = .none
         searchBar.delegate = self
-    }  
+        settingsIcon.image = settingsIcon.image?.withRenderingMode(.alwaysTemplate)
+        settingsIcon.tintColor = .white
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        settingsIcon.isUserInteractionEnabled = true
+        settingsIcon.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        delegate?.settingsIconTapped()
+    }
     
 }
 

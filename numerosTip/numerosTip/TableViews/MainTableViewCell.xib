@@ -53,6 +53,14 @@
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardAppearance="light"/>
                     </searchBar>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-settings-50" translatesAutoresizingMaskIntoConstraints="NO" id="Tk0-5n-G9O" userLabel="Settings Icon">
+                        <rect key="frame" x="275" y="20" width="25" height="25"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="ccZ-Al-7Tz"/>
+                            <constraint firstAttribute="height" constant="25" id="y6t-hV-XM4"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -62,9 +70,11 @@
                     <constraint firstItem="g8T-r5-Jfo" firstAttribute="leading" secondItem="bDM-Ww-6K2" secondAttribute="leading" constant="15" id="Dw1-Nj-RMN"/>
                     <constraint firstAttribute="bottom" secondItem="LvK-TA-gff" secondAttribute="bottom" constant="0.5" id="G4F-fU-IqL"/>
                     <constraint firstItem="bDM-Ww-6K2" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-15" id="Hvk-Fb-UcK"/>
+                    <constraint firstItem="Tk0-5n-G9O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="QLj-5Q-m2O"/>
                     <constraint firstItem="bDM-Ww-6K2" firstAttribute="bottom" secondItem="g8T-r5-Jfo" secondAttribute="top" constant="-5" id="SRJ-L9-eDm"/>
                     <constraint firstItem="bDM-Ww-6K2" firstAttribute="top" secondItem="Jdd-2o-5Kr" secondAttribute="bottom" constant="50" id="UyG-dn-fgw"/>
                     <constraint firstAttribute="trailing" secondItem="LvK-TA-gff" secondAttribute="trailing" id="WGA-Uf-JR1"/>
+                    <constraint firstAttribute="trailing" secondItem="Tk0-5n-G9O" secondAttribute="trailing" constant="20" id="cWj-WH-4Zo"/>
                     <constraint firstItem="Jdd-2o-5Kr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oPn-kc-sYb"/>
                     <constraint firstItem="Jx1-hh-v1J" firstAttribute="width" secondItem="g8T-r5-Jfo" secondAttribute="width" id="rz1-Oh-qEu"/>
                     <constraint firstItem="Jdd-2o-5Kr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="z7Y-8T-kor"/>
@@ -74,10 +84,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="searchBar" destination="LvK-TA-gff" id="cee-eX-fAM"/>
+                <outlet property="settingsIcon" destination="Tk0-5n-G9O" id="iKf-WH-P4P"/>
             </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="icon-settings-50" width="50" height="50"/>
         <image name="transparent-tip" width="69.5" height="74"/>
         <image name="transparent-ulpgc" width="391" height="343"/>
     </resources>

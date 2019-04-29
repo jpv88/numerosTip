@@ -152,7 +152,12 @@ class GlobalPositionTableViewController: UITableViewController {
     }
 }
 
-extension GlobalPositionTableViewController: SearcherTextProtocol {
+extension GlobalPositionTableViewController: MainTableViewCellProtocol {
+    
+    func settingsIconTapped() {
+        print("icon tapped")
+    }
+    
     func searchFieldDidReturn(_ text: String) {
         let number = Int(text)
         if number != nil || isRomanNumber(text: text) == true {
