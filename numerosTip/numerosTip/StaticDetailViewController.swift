@@ -9,6 +9,8 @@
 import UIKit
 
 class StaticDetailViewController: UIViewController {
+    
+    private var gradientLayer = CAGradientLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +22,15 @@ class StaticDetailViewController: UIViewController {
         setGradientBackground()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+       gradientLayer.frame = self.view.bounds
+    }
+    
     func setGradientBackground() {
         let leftColor = UIColor(rgb: 0x0C77B8).cgColor
         let rightColor = UIColor(rgb: 0x0C3B5D).cgColor
-        let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [leftColor, rightColor]
         gradientLayer.locations = [0.0, 1.0]
         gradientLayer.startPoint = CGPoint(x: 0, y: 1)
