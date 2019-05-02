@@ -13,8 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let userDefault = UserDefaults.standard
+        if (userDefault.object(forKey: Constans.languageKEY) as? String) == nil {
+            userDefault.set("es", forKey: Constans.languageKEY)
+        }
         if let splitViewController = self.window?.rootViewController as? UISplitViewController {
             splitViewController.delegate = self
         }

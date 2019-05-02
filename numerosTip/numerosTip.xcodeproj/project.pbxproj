@@ -39,6 +39,7 @@
 		7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72E0F21F4C8D3F001B0DDA /* Network.swift */; };
 		7FA8818E227AF555008266E4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA8818D227AF555008266E4 /* Settings.storyboard */; };
 		7FA88190227AF5CD008266E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8818F227AF5CD008266E4 /* SettingsViewController.swift */; };
+		7FA88192227B05F7008266E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA88191227B05F7008266E4 /* Constants.swift */; };
 		7FDFE68522774BBE0092EA89 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		7F72E0F21F4C8D3F001B0DDA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7FA8818D227AF555008266E4 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		7FA8818F227AF5CD008266E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7FA88191227B05F7008266E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
 		FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_numerosTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				7F4731FE2271C61D0078852C /* UIViewController+ActivityIndicator.swift */,
 				7F4732002271C6680078852C /* UIApplication+TopViewController.swift */,
 				7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */,
+				7FA88191227B05F7008266E4 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				676A6C1D208CB31900666164 /* SearchResultsViewController.swift in Sources */,
 				7F1672532270C48000343D43 /* SplitViewController.swift in Sources */,
 				7F0C989B2270737F00FBADEE /* GlobalPositionTableViewController.swift in Sources */,
+				7FA88192227B05F7008266E4 /* Constants.swift in Sources */,
 				7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */,
 				7FA88190227AF5CD008266E4 /* SettingsViewController.swift in Sources */,
 				7F6576C22273247000E89729 /* StaticDetailViewController.swift in Sources */,
