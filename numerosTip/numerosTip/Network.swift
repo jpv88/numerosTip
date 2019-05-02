@@ -22,7 +22,7 @@ class Network: NSObject {
     static private var spinnerContainer: UIView = UIView()
     
     class func requestWebService(reference: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
-        
+        let interface = Locale.preferredLanguages[0].prefix(2).lowercased()
         let vc = UIApplication.topViewController()
         vc?.showLoader()
 //        showIndicatorInCaller(parent: reference)
@@ -30,7 +30,7 @@ class Network: NSObject {
         guard let language = userDefault.object(forKey: Constans.languageKEY) as? String else {return}        
         let inputJson: [String : Any] = ["numeroText":number,
                                          "lang":language.lowercased(),
-                                         "langInterface":"es",
+                                         "langInterface":interface,
                                          "token":token,
                                          "userId": userID
         ]
