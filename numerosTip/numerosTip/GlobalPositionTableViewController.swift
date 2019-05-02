@@ -154,7 +154,9 @@ class GlobalPositionTableViewController: UITableViewController {
 extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     
     func settingsIconTapped() {
-        ErrorHandler.showAlert(title: "Settings Icon", msg: "tapped")
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
+        present(controller, animated: true, completion: nil)
     }
     
     func searchFieldDidReturn(_ text: String) {
