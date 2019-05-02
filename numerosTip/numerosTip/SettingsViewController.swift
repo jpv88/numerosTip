@@ -49,11 +49,13 @@ class SettingsViewController: UIViewController {
     
     // 0 -> ES, 1 -> EN, 2 -> IT, 3 -> AL
     @IBOutlet var languageCollectionView: Array<UIView>!
+    @IBOutlet var historyTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLanguage()
+        setupTable()
     }
     
     private func setupLanguage() {
@@ -78,6 +80,10 @@ class SettingsViewController: UIViewController {
         let userDefault = UserDefaults.standard
         userDefault.set(language.rawValue, forKey: Constans.languageKEY)
         setupLanguage()
+    }
+    
+    private func setupTable() {
+        
     }
     
     @IBAction func closeSettings(_ sender: UIBarButtonItem) {

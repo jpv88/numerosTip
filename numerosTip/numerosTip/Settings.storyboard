@@ -100,6 +100,19 @@
                                     <constraint firstAttribute="height" constant="55" id="48z-Uj-bkw"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-bQ-YHI" userLabel="HistoryLabel">
+                                <rect key="frame" x="20" y="257" width="83" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ikJ-jv-4SF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fQI-SZ-rA0" userLabel="History Table View">
+                                <rect key="frame" x="20" y="306" width="374" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.52549019610000003" green="0.79607843140000001" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -107,8 +120,14 @@
                             <constraint firstItem="Rzv-Ey-MbR" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="2dv-mm-H0Y"/>
                             <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="Rzv-Ey-MbR" secondAttribute="trailing" constant="20" id="2jd-1U-row"/>
                             <constraint firstItem="Rzv-Ey-MbR" firstAttribute="top" secondItem="OL5-Bb-7li" secondAttribute="top" constant="15" id="DEA-M4-qPC"/>
+                            <constraint firstItem="Po4-bQ-YHI" firstAttribute="top" secondItem="zPm-Fm-bXP" secondAttribute="bottom" constant="50" id="GsK-VV-1Zg"/>
                             <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="zPm-Fm-bXP" secondAttribute="trailing" constant="20" id="NtE-O7-07L"/>
+                            <constraint firstItem="fQI-SZ-rA0" firstAttribute="bottom" secondItem="OL5-Bb-7li" secondAttribute="bottom" id="Oty-41-7w3"/>
+                            <constraint firstItem="fQI-SZ-rA0" firstAttribute="top" secondItem="Po4-bQ-YHI" secondAttribute="bottom" constant="5" id="bBU-I2-Cyh"/>
+                            <constraint firstItem="Po4-bQ-YHI" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="ewi-1C-Xyd"/>
                             <constraint firstItem="zPm-Fm-bXP" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="hGu-u9-wo9"/>
+                            <constraint firstItem="fQI-SZ-rA0" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="hdu-rJ-yWC"/>
+                            <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="fQI-SZ-rA0" secondAttribute="trailing" constant="20" id="sfx-iQ-Kev"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OL5-Bb-7li"/>
                     </view>
@@ -121,6 +140,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="historyTableView" destination="fQI-SZ-rA0" id="R7p-Ex-cS9"/>
                         <outletCollection property="languageCollectionView" destination="IB2-GM-2Rs" collectionClass="NSMutableArray" id="cHd-8K-ixF"/>
                         <outletCollection property="languageCollectionView" destination="teh-Ry-eB2" collectionClass="NSMutableArray" id="Hba-Sb-mLN"/>
                         <outletCollection property="languageCollectionView" destination="DE2-7Z-ivK" collectionClass="NSMutableArray" id="aas-lg-DY5"/>

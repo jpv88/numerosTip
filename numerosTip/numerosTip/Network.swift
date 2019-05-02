@@ -26,9 +26,10 @@ class Network: NSObject {
         let vc = UIApplication.topViewController()
         vc?.showLoader()
 //        showIndicatorInCaller(parent: reference)
-        
+        let userDefault = UserDefaults.standard
+        guard let language = userDefault.object(forKey: Constans.languageKEY) as? String else {return}        
         let inputJson: [String : Any] = ["numeroText":number,
-                                         "lang":"es",
+                                         "lang":language.lowercased(),
                                          "langInterface":"es",
                                          "token":token,
                                          "userId": userID
