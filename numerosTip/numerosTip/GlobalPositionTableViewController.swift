@@ -155,8 +155,8 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     
     func settingsIconTapped() {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
-        present(controller, animated: true, completion: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
+        self.splitViewController?.present(viewController, animated: true, completion: nil)
     }
     
     func searchFieldDidReturn(_ text: String) {
