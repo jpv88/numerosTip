@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if (userDefault.object(forKey: Constans.languageKEY) as? String) == nil {
             userDefault.set("es", forKey: Constans.languageKEY)
         }
+        if (userDefault.object(forKey: Constans.historyKEY) as? Int) == nil {
+            userDefault.set(5, forKey: Constans.historyKEY)
+        }
         if let splitViewController = self.window?.rootViewController as? UISplitViewController {
             splitViewController.delegate = self
         }
