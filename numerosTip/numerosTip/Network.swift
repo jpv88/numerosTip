@@ -25,7 +25,6 @@ class Network: NSObject {
         let interface = Locale.preferredLanguages[0].prefix(2).lowercased()
         let vc = UIApplication.topViewController()
         vc?.showLoader()
-//        showIndicatorInCaller(parent: reference)
         let userDefault = UserDefaults.standard
         guard let language = userDefault.object(forKey: Constans.languageKEY) as? String else {return}        
         let inputJson: [String : Any] = ["numeroText":number,
@@ -37,7 +36,6 @@ class Network: NSObject {
         Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
-//                            hideIndicatorInCaller()
                             vc?.hideLoader()
                             
                             switch response.result {
@@ -52,82 +50,7 @@ class Network: NSObject {
                                 return
                             }
                             
-                            
-
-//                            guard let result = response.result.value as? [String: Any] else { return }
-//                            if let result = response.result.value {
-//                                let dictionary = result as! NSDictionary
-//                                let jsonData: NSData = try! JSONSerialization.data(withJSONObject: dictionary, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
-//                                let prettyStr = NSString(data: jsonData as Data, encoding: String.Encoding.utf8.rawValue)! as String
-//                                print(prettyStr)
-                            
-//                                do {
-//                                    let json = try JSONSerialization.data(withJSONObject: result, options: JSONSerialization.WritingOptions.prettyPrinted)
-//                                        print(json)
-////                                    let numbersTipModel = try NumbersTipModel.init(prettyStr)
-////                                    print(numbersTipModel as Any)
-//                                } catch _ as NSError {
-//
-//                                }
-
-
-//                            }
-
-                            
-                            
-                            // VIEJO ///////////////////
-                            
-//                            guard let json = response.result.value as? [String: Any] else {
-//                                return
-//                            }
-
-//                            guard let data = response.data else { return }
-//                            let json = JSON(data: data)
-//
-//
-//                            let response = NumerosTipDataModel(data: json)
-//                            print("ey compadre")
-//                            completionHandler(response)
         }
-    }
-    
-    // MARK: - Loading Spinner
-    
-    static func showIndicatorInCaller(parent: UIViewController) {
-        
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        
-        self.spinnerContainer.frame = parent.view.frame
-        self.spinnerContainer.center = parent.view.center
-        self.spinnerContainer.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        
-        let loadingView: UIView = UIView()
-        loadingView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        loadingView.center = parent.view.center
-        loadingView.backgroundColor = UIColor.darkGray.withAlphaComponent(0.7)
-        loadingView.clipsToBounds = true
-        loadingView.layer.cornerRadius = 10
-        
-        self.activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        self.activityIndicator.activityIndicatorViewStyle =
-            UIActivityIndicatorViewStyle.whiteLarge
-        self.activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
-        self.activityIndicator.hidesWhenStopped = true
-        
-        loadingView.addSubview(self.activityIndicator)
-        
-        self.spinnerContainer.addSubview(loadingView)
-        
-        parent.view.addSubview(self.spinnerContainer)
-        
-        self.activityIndicator.startAnimating()
-        
-    }
-
-    static func hideIndicatorInCaller() {
-        self.activityIndicator.stopAnimating()
-        self.spinnerContainer.removeFromSuperview()
-        UIApplication.shared.endIgnoringInteractionEvents()
-    }
+    }    
     
 }
