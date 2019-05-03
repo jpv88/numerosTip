@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GlobalPositionTableViewController: UITableViewController {
     
@@ -141,13 +142,65 @@ class GlobalPositionTableViewController: UITableViewController {
     
     // MARK: - API
     
-    func getNumberTIP(number: String) {
+    private func getNumberTIP(number: String) {
         controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
+            self.saveHistory(number: number.uppercased())            
             self.data = response
             self.tableView.reloadData()
         }, serviceError: { error in
             ErrorHandler.showError(error: error)
         })
+    }
+    
+    // MARK: - CoreData
+    
+    private func saveHistory(number: String){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistenContainer.viewContext
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+
+        guard let entity = NSEntityDescription.entity(forEntityName: "History", in: context) else {return}
+        let history = NSManagedObject(entity: entity, insertInto: context)
+        history.setValue(number, forKey: "number")
+        do {
+            try context.save()
+        } catch let error {
+            ErrorHandler.showError(error: error)
+        }
+        retrieveHistory()
+    }
+    
+    private func retrieveHistory() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistenContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
+        do {
+            guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
+            for data in result {
+                print("Elementos en CoreData.....: \(String(describing: data.value(forKey: "number")))")
+            }
+        } catch let error {
+            ErrorHandler.showError(error: error)
+        }
+    }
+    
+    private func eraseData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistenContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
+        do {
+            guard let elements = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
+            for element in elements {
+                context.delete(element)
+            }
+            do {
+                try context.save()
+            } catch let error {
+                ErrorHandler.showError(error: error)
+            }
+        } catch let error {
+            ErrorHandler.showError(error: error)
+        }
     }
 }
 
@@ -162,9 +215,6 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     func searchFieldDidReturn(_ text: String) {
         let number = Int(text)
         if number != nil || isRomanNumber(text: text) == true {
-            // TODO
-            // Save search history
-            //            history.save(text)
             getNumberTIP(number: text)
         } else {            
             ErrorHandler.showAlert(title: "Incorrecto", msg: "Asegúrate que estás introduciendo el número correctamente")
