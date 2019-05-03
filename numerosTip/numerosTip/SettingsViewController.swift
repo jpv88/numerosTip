@@ -12,7 +12,7 @@ enum Language: String {
     case es
     case en
     case it
-    case al
+    case de
 }
 
 extension Language {
@@ -26,7 +26,7 @@ extension Language {
         case 2:
             self = Language.it
         case 3:
-            self = Language.al
+            self = Language.de
         default:
             self = Language.es
         }
@@ -39,7 +39,7 @@ extension Language {
             return 1
         case .it:
             return 2
-        case .al:
+        case .de:
             return 3
         }
     }
