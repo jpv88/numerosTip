@@ -21,7 +21,10 @@ class TabsTableViewCell: UITableViewCell {
         informationLabel.layer.cornerRadius = 20
     }
     
-    func displayContent(input: String) {
+    func displayContent(input: String, with color: UIColor? = nil) {
         informationLabel.text = input
+        if let color = color {
+            informationLabel.backgroundColor = color
+        }
     }
 }

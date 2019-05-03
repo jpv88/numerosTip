@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 enum Language: String {
     case es
@@ -51,12 +52,17 @@ class SettingsViewController: UIViewController {
     @IBOutlet var languageCollectionView: Array<UIView>!
     @IBOutlet var historyTableView: UITableView!
     
+    private var data: [String]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLanguage()
+        retrieveHistory()
         setupTable()
     }
+    
+    // MARK: - Setup
     
     private func setupLanguage() {
         let userDefault = UserDefaults.standard
@@ -74,6 +80,24 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    private func setupTable() {
+        historyTableView.delegate = self
+        historyTableView.dataSource = self
+        let tabsNib = UINib(nibName: "TabsTableViewCell", bundle: nil)
+        historyTableView.register(tabsNib, forCellReuseIdentifier: "TabsTableViewCell")
+        historyTableView.tableFooterView = UIView()
+        historyTableView.allowsSelection = false
+        historyTableView.separatorStyle = .none
+    }
+    
+    // MARK: - Dismiss
+    
+    @IBAction func closeSettings(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Helpers
+    
     @objc private func handleLanguageViewTap(sender: UITapGestureRecognizer) {
         guard let viewTag = sender.view?.tag else {return}
         let language = Language(position: viewTag)
@@ -82,12 +106,72 @@ class SettingsViewController: UIViewController {
         setupLanguage()
     }
     
-    private func setupTable() {
-        
+    @IBAction func deleteHistory(_ sender: UIButton) {
+        eraseData()
+        data = nil
+        historyTableView.reloadData()
     }
     
-    @IBAction func closeSettings(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }    
+    // MARK: - CoreData
+    
+    private func retrieveHistory() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistenContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
+        do {
+            guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
+            var elements = [String]()
+            for data in result {
+                if let number = data.value(forKey: "number") as? String {
+                    elements.append(number)
+                }
+            }
+            data = elements
+            historyTableView.reloadData()
+        } catch let error {
+            ErrorHandler.showError(error: error)
+        }
+    }
+    
+    private func eraseData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let context = appDelegate.persistenContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
+        do {
+            guard let elements = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
+            for element in elements {
+                context.delete(element)
+            }
+            do {
+                try context.save()
+            } catch let error {
+                ErrorHandler.showError(error: error)
+            }
+        } catch let error {
+            ErrorHandler.showError(error: error)
+        }
+    }
+    
+}
 
+extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // MARK: - TableView
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let elements = data?.count {
+            return elements
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TabsTableViewCell") as? TabsTableViewCell else {return UITableViewCell()}
+        if let data = data {            
+            cell.displayContent(input: data[indexPath.row], with: .lightGray)
+        }
+        return cell
+    }
+    
+    
 }
