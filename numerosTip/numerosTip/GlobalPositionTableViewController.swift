@@ -144,7 +144,7 @@ class GlobalPositionTableViewController: UITableViewController {
     
     private func getNumberTIP(number: String) {
         controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
-            self.saveHistory(number: number.uppercased())            
+            self.saveHistory(number: number.uppercased())
             self.data = response
             self.tableView.reloadData()
         }, serviceError: { error in
@@ -155,53 +155,46 @@ class GlobalPositionTableViewController: UITableViewController {
     // MARK: - CoreData
     
     private func saveHistory(number: String){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let context = appDelegate.persistenContainer.viewContext
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-
-        guard let entity = NSEntityDescription.entity(forEntityName: "History", in: context) else {return}
-        let history = NSManagedObject(entity: entity, insertInto: context)
-        history.setValue(number, forKey: "number")
-        do {
-            try context.save()
-        } catch let error {
-            ErrorHandler.showError(error: error)
-        }
-        retrieveHistory()
-    }
-    
-    private func retrieveHistory() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let context = appDelegate.persistenContainer.viewContext
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
-        do {
-            guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
-            for data in result {
-                print("Elementos en CoreData.....: \(String(describing: data.value(forKey: "number")))")
-            }
-        } catch let error {
-            ErrorHandler.showError(error: error)
-        }
-    }
-    
-    private func eraseData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let context = appDelegate.persistenContainer.viewContext
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
-        do {
-            guard let elements = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
-            for element in elements {
-                context.delete(element)
-            }
+        if retrieveHistory() {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+            let context = appDelegate.persistenContainer.viewContext
+            context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+            
+            guard let entity = NSEntityDescription.entity(forEntityName: "History", in: context) else {return}
+            let history = NSManagedObject(entity: entity, insertInto: context)
+            history.setValue(number, forKey: "number")
             do {
                 try context.save()
             } catch let error {
                 ErrorHandler.showError(error: error)
             }
+        }
+    }
+    
+    private func retrieveHistory() -> Bool {
+        let userDefault = UserDefaults.standard
+        guard let historyMaxElements = userDefault.object(forKey: Constans.historyKEY) as? Int else {return false}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
+        let context = appDelegate.persistenContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
+        do {
+            guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else {return false}
+            var elements = [String]()
+            for data in result {
+                if let number = data.value(forKey: "number") as? String {
+                    elements.append(number)
+                }
+            }
+            if elements.count < historyMaxElements {
+                return true
+            }
+            return false
         } catch let error {
             ErrorHandler.showError(error: error)
         }
+        return false
     }
+    
 }
 
 extension GlobalPositionTableViewController: MainTableViewCellProtocol {
