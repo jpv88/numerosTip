@@ -10,6 +10,9 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
+enum ServiceError: Error {
+    case wrongParse
+}
 
 class Network: NSObject {
     
@@ -18,8 +21,6 @@ class Network: NSObject {
     static private let token = "9P384RUPIQW7RY5234"
     static private let userID = "iOSJared"
     static private let absolutPath = url + method
-    static private var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    static private var spinnerContainer: UIView = UIView()
     
     class func requestWebService(reference: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
         let interface = Locale.preferredLanguages[0].prefix(2).lowercased()
@@ -35,13 +36,14 @@ class Network: NSObject {
         ]
         Alamofire.request(absolutPath, method: .post, parameters: inputJson,
                           encoding: JSONEncoding.default).responseJSON { response in
-                            
                             vc?.hideLoader()
-                            
                             switch response.result {
                             case .success( _):
                                 guard let data = response.data else { return }
-                                guard let json = try? JSON(data: data) else {return}
+                                guard let json = try? JSON(data: data) else {
+                                    serviceError(ServiceError.wrongParse)
+                                    return
+                                }
                                 let response = NumerosTipDataModel(data: json)
                                 completionHandler(response)
                                 break
@@ -49,7 +51,6 @@ class Network: NSObject {
                                 serviceError(error)
                                 return
                             }
-                            
         }
     }    
     
