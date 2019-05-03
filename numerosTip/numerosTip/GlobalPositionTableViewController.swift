@@ -9,13 +9,17 @@
 import UIKit
 import CoreData
 
+protocol SearchResultsSearchBarProtocol {
+    func setterSearchBar(number: String)
+}
+
 class GlobalPositionTableViewController: UITableViewController {
     
     private var controller: NumerosTipController?
-    
     private var data: NumerosTipDataModel?
-    
+    private var numberFromHistory: String?
     private var selectedPosition: Int = 1
+    var delegate: SearchResultsSearchBarProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,16 @@ class GlobalPositionTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         setGradientBackground()
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        if let number = numberFromHistory {
+            getNumberTIP(number: number)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        numberFromHistory = nil
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
@@ -116,6 +130,7 @@ class GlobalPositionTableViewController: UITableViewController {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
             cell.delegate = self
+            self.delegate = cell
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TabsTableViewCell", for: indexPath) as? TabsTableViewCell else { return UITableViewCell() }
@@ -136,6 +151,13 @@ class GlobalPositionTableViewController: UITableViewController {
             break
         default:
             selectedPosition = indexPath.row - 1
+            self.performSegue(withIdentifier: "segueDetail2", sender: nil)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0, let _ = numberFromHistory, UIDevice().iPad {
+            selectedPosition = 0
             self.performSegue(withIdentifier: "segueDetail2", sender: nil)
         }
     }
@@ -201,7 +223,10 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     
     func settingsIconTapped() {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsViewController") as? UINavigationController else {return}
+        if let vc = viewController.viewControllers[0] as? SettingsViewController {
+            vc.delegate = self
+        }
         self.splitViewController?.present(viewController, animated: true, completion: nil)
     }
     
@@ -213,4 +238,13 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
             ErrorHandler.showAlert(title: "Incorrecto", msg: "Asegúrate que estás introduciendo el número correctamente")
         }
     }
+}
+
+extension GlobalPositionTableViewController: SettingsHistoryProtocol {
+    
+    func didSelectHistory(number: String) {
+        delegate?.setterSearchBar(number: number)
+        numberFromHistory = number
+    }
+    
 }

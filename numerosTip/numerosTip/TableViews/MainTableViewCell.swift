@@ -10,7 +10,7 @@ import UIKit
 
 protocol MainTableViewCellProtocol {
     func searchFieldDidReturn(_ text: String)
-    func settingsIconTapped()
+    func settingsIconTapped()    
 }
 
 class MainTableViewCell: UITableViewCell {
@@ -45,5 +45,11 @@ extension MainTableViewCell: UISearchBarDelegate {
         searchBar.endEditing(true)        
         guard let text = searchBar.text, !text.isEmpty else {return}
         delegate?.searchFieldDidReturn(text)
+    }
+}
+
+extension MainTableViewCell: SearchResultsSearchBarProtocol {
+    func setterSearchBar(number: String) {
+        searchBar.text = number        
     }
 }

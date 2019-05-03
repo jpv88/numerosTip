@@ -17,9 +17,9 @@ class ResultDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let splitView = self.navigationController?.splitViewController, !splitView.isCollapsed {
-            self.navigationItem.leftBarButtonItem = splitView.displayModeButtonItem
-        }
+//        if let splitView = self.navigationController?.splitViewController, !splitView.isCollapsed {
+//            self.navigationItem.leftBarButtonItem = splitView.displayModeButtonItem
+//        }
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         setupTableView()
     }

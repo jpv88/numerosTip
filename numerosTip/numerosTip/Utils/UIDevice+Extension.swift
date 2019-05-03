@@ -15,6 +15,9 @@ extension UIDevice {
     var iPhone: Bool {
         return UIDevice.current.userInterfaceIdiom == .phone
     }
+    var iPad: Bool {
+        return UIDevice.current.userInterfaceIdiom == .pad
+    }
     enum ScreenType: String {
         case iPhone4_4S = "iPhone 4 or iPhone 4S"
         case iPhones_5_5s_5c_SE = "iPhone 5, iPhone 5s, iPhone 5c or iPhone SE"

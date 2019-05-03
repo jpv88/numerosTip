@@ -46,6 +46,10 @@ extension Language {
     }
 }
 
+protocol SettingsHistoryProtocol {
+    func didSelectHistory(number: String)
+}
+
 class SettingsViewController: UIViewController {
     
     // 0 -> ES, 1 -> EN, 2 -> IT, 3 -> AL
@@ -53,6 +57,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet var historyTableView: UITableView!
     
     private var data: [String]?
+    
+    var delegate: SettingsHistoryProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +92,6 @@ class SettingsViewController: UIViewController {
         let tabsNib = UINib(nibName: "TabsTableViewCell", bundle: nil)
         historyTableView.register(tabsNib, forCellReuseIdentifier: "TabsTableViewCell")
         historyTableView.tableFooterView = UIView()
-        historyTableView.allowsSelection = false
         historyTableView.separatorStyle = .none
     }
     
@@ -173,5 +178,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let data = data {
+            delegate?.didSelectHistory(number: data[indexPath.row])
+            dismiss(animated: true, completion: nil)
+        }
+    }
 }

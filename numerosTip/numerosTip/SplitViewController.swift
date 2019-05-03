@@ -9,23 +9,23 @@
 import UIKit
 
 class SplitViewController: UISplitViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.delegate = self
+        preferredDisplayMode = .allVisible
     }
 
 }
 
-extension SplitViewController: UISplitViewControllerDelegate {
-    
-    override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
-        print("showing DETAIL")
-    }
-    
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
-    }
-    
-}
+//extension SplitViewController: UISplitViewControllerDelegate {
+//    
+//    override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
+//        print("showing DETAIL")
+//    }
+//    
+//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+//        return true
+//    }
+//    
+//}
