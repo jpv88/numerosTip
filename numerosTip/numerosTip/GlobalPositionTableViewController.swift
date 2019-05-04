@@ -19,6 +19,7 @@ class GlobalPositionTableViewController: UITableViewController {
     private var data: NumerosTipDataModel?
     private var numberFromHistory: String?
     private var selectedPosition: Int = 1
+    private var gradientLayer = CAGradientLayer()
     var delegate: SearchResultsSearchBarProtocol?
 
     override func viewDidLoad() {
@@ -28,6 +29,12 @@ class GlobalPositionTableViewController: UITableViewController {
         
         controller = NumerosTipController.sharedInstance
         setupTable()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: self.tableView.bounds.height + 20)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +74,6 @@ class GlobalPositionTableViewController: UITableViewController {
         let rightColor = UIColor(rgb: 0x0C3B5D)
         let gradientBackgroundColors = [leftColor.cgColor, rightColor.cgColor]
         let gradientLocations = [0.0, 1.0]
-        let gradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientBackgroundColors
         gradientLayer.locations = gradientLocations as [NSNumber]
         gradientLayer.startPoint = CGPoint(x: 0, y: 1)
