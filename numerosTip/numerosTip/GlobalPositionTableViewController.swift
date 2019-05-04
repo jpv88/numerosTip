@@ -46,9 +46,7 @@ class GlobalPositionTableViewController: UITableViewController {
         numberFromHistory = nil
     }
     
-    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
-    }
+    // MARK: - SetUp
     
     private func setupTable(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -63,8 +61,6 @@ class GlobalPositionTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
     }
-    
-    // MARK: - UI
     
     private func setGradientBackground() {
         let leftColor = UIColor(rgb: 0x0C77B8)
@@ -94,14 +90,29 @@ class GlobalPositionTableViewController: UITableViewController {
         return true
     }
     
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    private func resetScreen() {
+        data = nil
+        if UIDevice().iPad {
+            selectedPosition = 1
+            self.performSegue(withIdentifier: "segueDetail1", sender: nil)
+        }
+        tableView.reloadData()
+    }
+    
      // MARK: - Navigation
 
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let navigation = segue.destination as? UINavigationController {
-            if let vc = navigation.viewControllers[0] as? ResultDetailViewController {
-                if let element = data?.tabsArray[selectedPosition] {
-                    vc.data = element
-                }                
+        if segue.identifier == "segueDetail2" {
+            if let navigation = segue.destination as? UINavigationController {
+                if let vc = navigation.viewControllers[0] as? ResultDetailViewController {
+                    if let element = data?.tabsArray[selectedPosition] {
+                        vc.data = element
+                    }
+                }
             }
         }
      }
@@ -156,7 +167,7 @@ class GlobalPositionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 0, let _ = numberFromHistory, UIDevice().iPad {
+        if indexPath.row == 1, let _ = numberFromHistory, UIDevice().iPad {
             selectedPosition = 0
             self.performSegue(withIdentifier: "segueDetail2", sender: nil)
         }
@@ -220,6 +231,9 @@ class GlobalPositionTableViewController: UITableViewController {
 }
 
 extension GlobalPositionTableViewController: MainTableViewCellProtocol {
+    func clearResults() {
+        resetScreen()
+    }
     
     func settingsIconTapped() {
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -240,6 +254,7 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     }
 }
 
+// MARK: - SettingsHistoryProtocol
 extension GlobalPositionTableViewController: SettingsHistoryProtocol {
     
     func didSelectHistory(number: String) {
