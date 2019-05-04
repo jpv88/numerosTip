@@ -18,8 +18,15 @@ class MainTableViewCell: UITableViewCell {
 
     @IBOutlet private var settingsIcon: UIImageView!
     @IBOutlet private var searchBar: UISearchBar!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var subtitleLabel: UILabel!
     
     var delegate: MainTableViewCellProtocol?
+    
+    private enum Localized {
+        static let title = "global_position_title"
+        static let subtitle = ""
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,10 +35,11 @@ class MainTableViewCell: UITableViewCell {
         searchBar.delegate = self
         settingsIcon.image = settingsIcon.image?.withRenderingMode(.alwaysTemplate)
         settingsIcon.tintColor = .white
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         settingsIcon.isUserInteractionEnabled = true
         settingsIcon.addGestureRecognizer(tapGestureRecognizer)
+        
+        titleLabel.text = NSLocalizedString(Localized.title, comment: "")
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)

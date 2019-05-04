@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  numerosTip
+
+  Created by Jared Perez Vega on 04/05/2019.
+  Copyright © 2019 Jared Perez Vega. All rights reserved.
+*/
+
+// GlobalPosition
+"global_position_title" = "*Wandeln Sie eine Zahl in Zahlen in Buchstaben um";
