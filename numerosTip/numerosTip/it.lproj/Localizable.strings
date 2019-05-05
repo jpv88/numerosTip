@@ -6,5 +6,25 @@
   Copyright © 2019 Jared Perez Vega. All rights reserved.
 */
 
+// General
+"general_language_spanish" = "Spagnolo";
+"general_language_english" = "Inglese";
+"general_language_italian" = "Italiano";
+"general_language_german" = "Tedesco";
+
 // GlobalPosition
 "global_position_title" = "*Converti un numero in numeri in lettere";
+"global_position_subtitle" = "*Ad esempio, inserisci '13' o l'acronimo romano 'XIII'";
+"global_position_searchBar" = "Scrivi un numero intero o romano";
+
+// Settings
+"settings_language_title" = "Lingua dei risultati di ricerca";
+"settings_history_title" = "Storia";
+"settings_history_delete" = "Cancellare";
+
+// Results DetailView
+"results_navBar_title" = "Risultati";
+
+// No results DetailView
+"no_results_navBar_title" = "Nessuna ricerca";
+"no_results_title" = "Attualmente non ci sono ricerche. Ne fai uno nel menu a sinistra.";

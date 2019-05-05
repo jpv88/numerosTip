@@ -10,9 +10,14 @@ import UIKit
 
 class ResultDetailViewController: UIViewController {
     
+    @IBOutlet private var navBarDetail: UINavigationItem!
     @IBOutlet private var tableView: UITableView!
     
     var data: NumerosTipDataModel.TabsModel!
+    
+    private enum Localizables {
+        static let navBarTitle = "results_navBar_title".localized()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,7 @@ class ResultDetailViewController: UIViewController {
 //        if let splitView = self.navigationController?.splitViewController, !splitView.isCollapsed {
 //            self.navigationItem.leftBarButtonItem = splitView.displayModeButtonItem
 //        }
+        navBarDetail.title = Localizables.navBarTitle
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         setupTableView()
     }

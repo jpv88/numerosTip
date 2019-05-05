@@ -55,6 +55,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="No hay búsquedas" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="navigationItemStaticView" destination="mOI-FS-AaM" id="9oK-yZ-2BJ"/>
+                        <outlet property="titleLabel" destination="KeQ-sv-jtT" id="Omz-ID-Qvi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,6 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Resultados" id="XMh-Jh-eDU"/>
                     <connections>
+                        <outlet property="navBarDetail" destination="XMh-Jh-eDU" id="DYY-vb-Hwb"/>
                         <outlet property="tableView" destination="dJ6-3S-oiZ" id="Wmu-7E-329"/>
                     </connections>
                 </viewController>

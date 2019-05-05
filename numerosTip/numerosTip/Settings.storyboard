@@ -152,7 +152,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteHistoryButton" destination="7Uz-aR-2g3" id="ceS-t0-Nwv"/>
                         <outlet property="historyTableView" destination="fQI-SZ-rA0" id="R7p-Ex-cS9"/>
+                        <outlet property="historyTitleLabel" destination="Po4-bQ-YHI" id="cBt-Vm-RXd"/>
+                        <outlet property="languageTitleLabel" destination="Rzv-Ey-MbR" id="hOb-YB-tAh"/>
                         <outletCollection property="languageCollectionView" destination="IB2-GM-2Rs" collectionClass="NSMutableArray" id="cHd-8K-ixF"/>
                         <outletCollection property="languageCollectionView" destination="teh-Ry-eB2" collectionClass="NSMutableArray" id="Hba-Sb-mLN"/>
                         <outletCollection property="languageCollectionView" destination="DE2-7Z-ivK" collectionClass="NSMutableArray" id="aas-lg-DY5"/>

@@ -53,16 +53,30 @@ protocol SettingsHistoryProtocol {
 class SettingsViewController: UIViewController {
     
     // 0 -> ES, 1 -> EN, 2 -> IT, 3 -> AL
-    @IBOutlet var languageCollectionView: Array<UIView>!
-    @IBOutlet var historyTableView: UITableView!
+    @IBOutlet private var languageCollectionView: Array<UIView>!
+    @IBOutlet private var historyTableView: UITableView!
+    @IBOutlet private var languageTitleLabel: UILabel!
+    @IBOutlet private var historyTitleLabel: UILabel!
+    @IBOutlet private var deleteHistoryButton: UIButton!
     
     private var data: [String]?
     
     var delegate: SettingsHistoryProtocol?
     
+    private enum Localized {
+        static let languageTitle = "settings_language_title".localized()
+        static let historyTitle = "settings_history_title".localized()
+        static let historyDelete = "settings_history_delete".localized()
+        static let es = "general_language_spanish".localized()
+        static let en = "general_language_english".localized()
+        static let it = "general_language_italian".localized()
+        static let de = "general_language_german".localized()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
         setupLanguage()
         retrieveHistory()
         setupTable()
@@ -70,11 +84,17 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Setup
     
+    private func setup() {
+        languageTitleLabel.text = Localized.languageTitle
+        historyTitleLabel.text = Localized.historyTitle
+        deleteHistoryButton.setTitle(Localized.historyDelete, for: .normal)
+    }
+    
     private func setupLanguage() {
         let userDefault = UserDefaults.standard
         guard let language = userDefault.object(forKey: Constans.languageKEY) as? String else {return}
         guard let object = Language(rawValue: language.lowercased()) else {return}
-        for (index, _) in languageCollectionView.enumerated() {
+        for (index, element) in languageCollectionView.enumerated() {
             let tap = UITapGestureRecognizer(target: self, action: #selector(handleLanguageViewTap(sender:)))
             languageCollectionView[index].addGestureRecognizer(tap)
             languageCollectionView[index].isUserInteractionEnabled = true
@@ -82,6 +102,21 @@ class SettingsViewController: UIViewController {
                 languageCollectionView[index].backgroundColor = .lightGray
             } else {
                 languageCollectionView[index].backgroundColor = .white
+            }
+            // Label's Text
+            if let label = element.subviews[0] as? UILabel {
+                switch index {
+                case 0:
+                    label.text = Localized.es
+                case 1:
+                    label.text = Localized.en
+                case 2:
+                    label.text = Localized.it
+                case 3:
+                    label.text = Localized.de
+                default:
+                    break
+                }
             }
         }
     }

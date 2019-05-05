@@ -25,7 +25,8 @@ class MainTableViewCell: UITableViewCell {
     
     private enum Localized {
         static let title = "global_position_title".localized()
-        static let subtitle = ""
+        static let subtitle = "global_position_subtitle".localized()
+        static let searchBar = "global_position_searchBar".localized()
     }
     
     override func awakeFromNib() {
@@ -40,6 +41,8 @@ class MainTableViewCell: UITableViewCell {
         settingsIcon.addGestureRecognizer(tapGestureRecognizer)
         
         titleLabel.text = Localized.title
+        subtitleLabel.text = Localized.subtitle
+        searchBar.placeholder = Localized.searchBar
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
