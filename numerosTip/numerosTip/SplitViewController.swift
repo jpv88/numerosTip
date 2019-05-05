@@ -10,6 +10,10 @@ import UIKit
 
 class SplitViewController: UISplitViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
