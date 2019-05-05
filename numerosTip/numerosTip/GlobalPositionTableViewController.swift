@@ -170,7 +170,7 @@ class GlobalPositionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 1, let _ = numberFromHistory, UIDevice().iPad {
+        if indexPath.row == 1, UIDevice().iPad {
             selectedPosition = 0
             self.performSegue(withIdentifier: "segueDetail2", sender: nil)
         }
