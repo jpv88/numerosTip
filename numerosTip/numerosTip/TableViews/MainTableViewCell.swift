@@ -24,7 +24,7 @@ class MainTableViewCell: UITableViewCell {
     var delegate: MainTableViewCellProtocol?
     
     private enum Localized {
-        static let title = "global_position_title"
+        static let title = "global_position_title".localized()
         static let subtitle = ""
     }
     
@@ -39,7 +39,7 @@ class MainTableViewCell: UITableViewCell {
         settingsIcon.isUserInteractionEnabled = true
         settingsIcon.addGestureRecognizer(tapGestureRecognizer)
         
-        titleLabel.text = NSLocalizedString(Localized.title, comment: "")
+        titleLabel.text = Localized.title
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
