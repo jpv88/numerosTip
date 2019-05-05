@@ -18,6 +18,7 @@
 "global_position_searchBar" = "Scrivi un numero intero o romano";
 
 // Settings
+"settings_navBar_title" = "Impostazioni";
 "settings_language_title" = "Lingua dei risultati di ricerca";
 "settings_history_title" = "Storia";
 "settings_history_delete" = "Cancellare";

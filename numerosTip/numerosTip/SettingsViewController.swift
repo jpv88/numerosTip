@@ -58,12 +58,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet private var languageTitleLabel: UILabel!
     @IBOutlet private var historyTitleLabel: UILabel!
     @IBOutlet private var deleteHistoryButton: UIButton!
+    @IBOutlet private var settingsNavigationItem: UINavigationItem!
     
     private var data: [String]?
     
     var delegate: SettingsHistoryProtocol?
     
     private enum Localized {
+        static let navBarTitle = "settings_navBar_title".localized()
         static let languageTitle = "settings_language_title".localized()
         static let historyTitle = "settings_history_title".localized()
         static let historyDelete = "settings_history_delete".localized()
@@ -85,6 +87,7 @@ class SettingsViewController: UIViewController {
     // MARK: - Setup
     
     private func setup() {
+        settingsNavigationItem.title = Localized.navBarTitle
         languageTitleLabel.text = Localized.languageTitle
         historyTitleLabel.text = Localized.historyTitle
         deleteHistoryButton.setTitle(Localized.historyDelete, for: .normal)

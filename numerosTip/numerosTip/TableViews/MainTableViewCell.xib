@@ -29,11 +29,10 @@
                             <constraint firstAttribute="height" constant="150" id="fV6-T3-zl0"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Convierta un numéro en cifras a letras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-r5-Jfo" userLabel="introduction text">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Convierta un numéro en cifras a letras" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-r5-Jfo" userLabel="introduction text">
                         <rect key="frame" x="40" y="299" width="261" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="261" id="dWA-Us-hPy"/>
-                            <constraint firstAttribute="height" constant="16" id="eCP-7r-fM7"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="14"/>
                         <color key="textColor" red="0.52549019610000003" green="0.79607843140000001" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

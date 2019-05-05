@@ -18,6 +18,7 @@
 "global_position_searchBar" = "Schreiben Sie eine Ganzzahl oder einen Roman";
 
 // Settings
+"settings_navBar_title" = "Einstellungen";
 "settings_language_title" = "Sprache der Suchergebnisse";
 "settings_history_title" = "Geschichte";
 "settings_history_delete" = "Löschen";

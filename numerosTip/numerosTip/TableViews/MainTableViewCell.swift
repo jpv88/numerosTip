@@ -39,9 +39,12 @@ class MainTableViewCell: UITableViewCell {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         settingsIcon.isUserInteractionEnabled = true
         settingsIcon.addGestureRecognizer(tapGestureRecognizer)
-        
         titleLabel.text = Localized.title
         subtitleLabel.text = Localized.subtitle
+        let textFieldInsideUISearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        let placeholderLabel = textFieldInsideUISearchBar?.value(forKey: "placeholderLabel") as? UILabel
+        placeholderLabel?.adjustsFontSizeToFitWidth = true
+        placeholderLabel?.minimumScaleFactor = 0.6
         searchBar.placeholder = Localized.searchBar
     }
     

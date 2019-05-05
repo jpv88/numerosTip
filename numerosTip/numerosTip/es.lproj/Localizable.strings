@@ -18,6 +18,7 @@
 "global_position_searchBar" = "Escriba un entero o romano";
 
 // Settings
+"settings_navBar_title" = "Ajustes";
 "settings_language_title" = "Idioma de los resultados de la búsqueda";
 "settings_history_title" = "Historial";
 "settings_history_delete" = "Borrar";

@@ -18,6 +18,7 @@
 "global_position_searchBar" = "Write an integer or Roman";
 
 // Settings
+"settings_navBar_title" = "Settings";
 "settings_language_title" = "Language of search results";
 "settings_history_title" = "History";
 "settings_history_delete" = "Delete";
