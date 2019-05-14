@@ -19,6 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent-ulpgc" translatesAutoresizingMaskIntoConstraints="NO" id="bDM-Ww-6K2" userLabel="cabecera left image">
+                        <rect key="frame" x="15" y="15" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="YAS-hQ-Ua0"/>
+                            <constraint firstAttribute="height" constant="25" id="fV6-T3-zl0"/>
+                        </constraints>
+                    </imageView>
                     <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Escriba un entero o romano" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvK-TA-gff">
                         <rect key="frame" x="0.0" y="149" width="320" height="50"/>
                         <constraints>
@@ -35,23 +42,21 @@
                             <constraint firstAttribute="height" constant="25" id="y6t-hV-XM4"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent-ulpgc" translatesAutoresizingMaskIntoConstraints="NO" id="bDM-Ww-6K2" userLabel="cabecera left image">
-                        <rect key="frame" x="20" y="15" width="120" height="120"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="YAS-hQ-Ua0"/>
-                            <constraint firstAttribute="height" constant="120" id="fV6-T3-zl0"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent-tip" translatesAutoresizingMaskIntoConstraints="NO" id="3cL-72-wpg">
+                        <rect key="frame" x="125.5" y="63" width="69.5" height="74"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="bDM-Ww-6K2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5Qj-bf-K70"/>
+                    <constraint firstItem="3cL-72-wpg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6o3-2Y-NW5"/>
                     <constraint firstItem="LvK-TA-gff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CQX-T2-y3Q"/>
+                    <constraint firstItem="3cL-72-wpg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="E1z-lT-kC0"/>
                     <constraint firstAttribute="bottom" secondItem="LvK-TA-gff" secondAttribute="bottom" constant="0.5" id="GJS-5z-hrk"/>
-                    <constraint firstItem="bDM-Ww-6K2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="N0t-bK-5qh"/>
                     <constraint firstItem="Tk0-5n-G9O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="QLj-5Q-m2O"/>
                     <constraint firstAttribute="trailing" secondItem="LvK-TA-gff" secondAttribute="trailing" id="WGA-Uf-JR1"/>
                     <constraint firstAttribute="trailing" secondItem="Tk0-5n-G9O" secondAttribute="trailing" constant="20" id="cWj-WH-4Zo"/>
+                    <constraint firstItem="bDM-Ww-6K2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="s9W-ff-bvh"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,6 +70,7 @@
     </objects>
     <resources>
         <image name="icon-settings-50" width="50" height="50"/>
+        <image name="transparent-tip" width="69.5" height="74"/>
         <image name="transparent-ulpgc" width="391" height="343"/>
     </resources>
 </document>
