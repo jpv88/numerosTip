@@ -126,7 +126,7 @@ class GlobalPositionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 420
+            return 200
         default:
             return 60
         }
