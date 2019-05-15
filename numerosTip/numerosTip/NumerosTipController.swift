@@ -14,9 +14,9 @@ class NumerosTipController {
     
     private init() {}
     
-    func getDataFromWebService(viewController: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
-        Network.requestWebService(reference: viewController, number: number, completionHandler: { response in
-            completionHandler(response)
+    func getDataFromWebService(viewController: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel, ErrorDataModel?) -> Void, serviceError: @escaping (Error) -> Void) {
+        Network.requestWebService(reference: viewController, number: number, completionHandler: { response, errorResponse  in
+            completionHandler(response, errorResponse)
         }) { error in
             serviceError(error)
         }

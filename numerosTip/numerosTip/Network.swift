@@ -22,7 +22,7 @@ class Network: NSObject {
     static private let userID = "iOSJared"
     static private let absolutPath = url + method
     
-    class func requestWebService(reference: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel) -> Void, serviceError: @escaping (Error) -> Void) {
+    class func requestWebService(reference: UIViewController, number: String, completionHandler: @escaping (NumerosTipDataModel, ErrorDataModel?) -> Void, serviceError: @escaping (Error) -> Void) {
         let interface = Locale.preferredLanguages[0].prefix(2).lowercased()
         let vc = UIApplication.topViewController()
         vc?.showLoader()
@@ -45,7 +45,12 @@ class Network: NSObject {
                                     return
                                 }
                                 let response = NumerosTipDataModel(data: json)
-                                completionHandler(response)
+                                if response.tabsArray.count == 0 {
+                                    let errorResponse = ErrorDataModel(data: json)
+                                    completionHandler(response, errorResponse)
+                                } else {
+                                    completionHandler(response, nil)
+                                }
                                 break
                             case .failure(let error):
                                 serviceError(error)

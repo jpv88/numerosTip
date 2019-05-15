@@ -184,11 +184,16 @@ class GlobalPositionTableViewController: UITableViewController {
     // MARK: - API
     
     private func getNumberTIP(number: String) {
-        controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
-            self.lastSearch = number
-            self.saveHistory(number: number.uppercased())
-            self.data = response
-            self.tableView.reloadData()
+        controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response, errorResponse  in
+            if let _ = errorResponse {
+                // TODO: Show Error Screen Detail
+                print("ey")
+            } else {
+                self.lastSearch = number
+                self.saveHistory(number: number.uppercased())
+                self.data = response
+                self.tableView.reloadData()
+            }
         }, serviceError: { error in
             ErrorHandler.showError(error: error)
         })

@@ -42,6 +42,7 @@
 		7FA88190227AF5CD008266E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8818F227AF5CD008266E4 /* SettingsViewController.swift */; };
 		7FA88192227B05F7008266E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA88191227B05F7008266E4 /* Constants.swift */; };
 		7FAAF48D227DC817006B79AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FAAF48F227DC817006B79AF /* Localizable.strings */; };
+		7FD96528228C597C00816FB6 /* ErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD96527228C597C00816FB6 /* ErrorDataModel.swift */; };
 		7FDFE68522774BBE0092EA89 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */; };
 		7FF6CD33227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6CD31227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
@@ -92,6 +93,7 @@
 		7FAAF490227DC81C006B79AF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FAAF491227DC81E006B79AF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FAAF492227DC81F006B79AF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7FD96527228C597C00816FB6 /* ErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDataModel.swift; sourceTree = "<group>"; };
 		7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		7FF6CD32227C50F5002B1A56 /* HistoryDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HistoryDataBase.xcdatamodel; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */,
+				7FD96527228C597C00816FB6 /* ErrorDataModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */,
 				7FF6CD33227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld in Sources */,
 				7FA88190227AF5CD008266E4 /* SettingsViewController.swift in Sources */,
+				7FD96528228C597C00816FB6 /* ErrorDataModel.swift in Sources */,
 				7F6576C22273247000E89729 /* StaticDetailViewController.swift in Sources */,
 				67ADA6AF207781BF000E54E7 /* UIDevice+Extension.swift in Sources */,
 				7F6576C42273248D00E89729 /* ResultDetailViewController.swift in Sources */,

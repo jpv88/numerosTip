@@ -66,7 +66,7 @@ class GlobalPositionViewController: UIViewController {
     // MARK: - TableView Delegate
     
     func doAction(number: String) {
-        controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
+        controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response,arg  in
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchFeaturesViewController"), let vc = viewController as? SearchFeaturesViewController {
                 vc.data = response
                 self.navigationController?.pushViewController(viewController, animated: true)
