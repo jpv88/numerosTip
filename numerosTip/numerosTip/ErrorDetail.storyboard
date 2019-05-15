@@ -14,11 +14,11 @@
         <scene sceneID="fk5-sw-5Ky">
             <objects>
                 <viewController id="3v0-MQ-WA9" userLabel="ErrorDetailView Controller" customClass="ErrorDetailViewController" customModule="numerosTip" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.29999999999999999" contentMode="scaleToFill" id="EVa-uU-Cbu">
+                    <view key="view" contentMode="scaleToFill" id="EVa-uU-Cbu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nh-YS-cbg" userLabel="DetailView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nh-YS-cbg" userLabel="DetailView">
                                 <rect key="frame" x="40" y="188" width="334" height="574"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBL-Lg-08A">
@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ziO-vi-x9T" firstAttribute="trailing" secondItem="3Nh-YS-cbg" secondAttribute="trailing" constant="40" id="Hxd-Q0-3nb"/>
                             <constraint firstItem="3Nh-YS-cbg" firstAttribute="top" secondItem="ziO-vi-x9T" secondAttribute="top" constant="100" id="cRM-ci-pto"/>
@@ -63,6 +63,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1GP-FR-os8"/>
                     <connections>
+                        <outlet property="detailView" destination="3Nh-YS-cbg" id="7fa-qp-yNl"/>
                         <outlet property="tableView" destination="NIo-cE-KNT" id="a6A-u6-ChU"/>
                     </connections>
                 </viewController>

@@ -10,6 +10,7 @@ import UIKit
 
 class ErrorDetailViewController: UIViewController {
 
+    @IBOutlet private var detailView: UIView!
     @IBOutlet private var tableView: UITableView!
     var data: ErrorDataModel?
     
@@ -17,11 +18,16 @@ class ErrorDetailViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         setupTableView()
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(tapGestureRecognizer:)))
-//        view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        detailView.layer.cornerRadius = 15
     }
     
     @IBAction func acceptButton(_ sender: UIButton) {
@@ -67,7 +73,7 @@ extension ErrorDetailViewController: UITableViewDelegate, UITableViewDataSource 
         label.numberOfLines = 0
         label.backgroundColor = .yellow
         if let title = data?.sections[section].title {
-            label.text = cleanString(str: title)
+            label.text = "  " + cleanString(str: title)
         }
         return label
     }
