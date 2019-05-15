@@ -254,8 +254,9 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     }
     
     func searchFieldDidReturn(_ text: String) {
-        let number = Int(text)
-        if number != nil || isRomanNumber(text: text) == true {
+//        let number = Int(text)
+//        if number != nil || isRomanNumber(text: text) == true {
+        if !text.isEmpty {
             getNumberTIP(number: text)
         } else {            
             ErrorHandler.showAlert(title: "Incorrecto", msg: "Asegúrate que estás introduciendo el número correctamente")
