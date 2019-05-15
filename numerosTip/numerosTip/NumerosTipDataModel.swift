@@ -24,9 +24,7 @@ class NumerosTipDataModel: NSObject {
         self.totalElements = arrayData.count - 1
         for (index,element) in arrayData.enumerated() {
             let array: NSMutableArray = []            
-            for (x, _) in element.enumerated(){
-                print("iteracion: \(x)")
-                print(element[x].rawValue)
+            for (x, _) in element.enumerated(){                
                 array.add(element[x].rawValue as! String)
             }
             // Index arrayData Case

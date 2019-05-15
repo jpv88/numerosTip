@@ -177,6 +177,7 @@
 				7F72E0F51F4C8F6D001B0DDA /* Models */,
 				7F72E0F41F4C8F64001B0DDA /* Network */,
 				7F6576C52273264400E89729 /* Main.storyboard */,
+				7FD96529228C7C6500816FB6 /* ErrorDetail.storyboard */,
 				7FA8818D227AF555008266E4 /* Settings.storyboard */,
 				7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */,
 				7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */,
@@ -184,7 +185,6 @@
 				7F0098641F4B3CE600F9B7C4 /* Info.plist */,
 				7FF6CD31227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld */,
 				7FAAF48F227DC817006B79AF /* Localizable.strings */,
-				7FD96529228C7C6500816FB6 /* ErrorDetail.storyboard */,
 			);
 			path = numerosTip;
 			sourceTree = "<group>";

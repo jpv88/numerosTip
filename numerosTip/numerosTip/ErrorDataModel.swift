@@ -23,8 +23,7 @@ class ErrorDataModel: NSObject {
         var customSections: [Section] = []
         var section: Section?
         for (_,element) in arrayData.enumerated() {
-//            print(index)
-//            print(element.rawString())
+
             let element = element.rawString() ?? ""
             
             if isTitle(str: element) {

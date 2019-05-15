@@ -125,6 +125,15 @@ class GlobalPositionTableViewController: UITableViewController {
         }
      }
     
+    private func navigateToErrorDetail(model: ErrorDataModel) {
+        let storyboard = UIStoryboard(name: "ErrorDetail", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "ErrorDetailViewController") as? UINavigationController else {return}
+        if let vc = viewController.viewControllers[0] as? ErrorDetailViewController {
+            vc.data = model
+        }
+        self.splitViewController?.present(viewController, animated: true, completion: nil)
+    }
+    
     
     // MARK: - Table view
     
@@ -185,9 +194,8 @@ class GlobalPositionTableViewController: UITableViewController {
     
     private func getNumberTIP(number: String) {
         controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response, errorResponse  in
-            if let _ = errorResponse {
-                // TODO: Show Error Screen Detail
-                print("ey")
+            if let errorResponse = errorResponse {                
+                self.navigateToErrorDetail(model: errorResponse)
             } else {
                 self.lastSearch = number
                 self.saveHistory(number: number.uppercased())

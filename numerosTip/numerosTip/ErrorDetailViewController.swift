@@ -10,9 +10,14 @@ import UIKit
 
 class ErrorDetailViewController: UIViewController {
 
+    var data: ErrorDataModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+//        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        // TODO:
     }
     
 }
