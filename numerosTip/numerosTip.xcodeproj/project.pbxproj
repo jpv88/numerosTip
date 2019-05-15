@@ -43,6 +43,8 @@
 		7FA88192227B05F7008266E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA88191227B05F7008266E4 /* Constants.swift */; };
 		7FAAF48D227DC817006B79AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FAAF48F227DC817006B79AF /* Localizable.strings */; };
 		7FD96528228C597C00816FB6 /* ErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD96527228C597C00816FB6 /* ErrorDataModel.swift */; };
+		7FD9652A228C7C6500816FB6 /* ErrorDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD96529228C7C6500816FB6 /* ErrorDetail.storyboard */; };
+		7FD9652C228C7C8A00816FB6 /* ErrorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9652B228C7C8A00816FB6 /* ErrorDetailViewController.swift */; };
 		7FDFE68522774BBE0092EA89 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */; };
 		7FF6CD33227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6CD31227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld */; };
 		A4E1E738AE280A844C7E7657 /* Pods_numerosTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE280881CB0CA8918A458E33 /* Pods_numerosTip.framework */; };
@@ -94,6 +96,8 @@
 		7FAAF491227DC81E006B79AF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FAAF492227DC81F006B79AF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FD96527228C597C00816FB6 /* ErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDataModel.swift; sourceTree = "<group>"; };
+		7FD96529228C7C6500816FB6 /* ErrorDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ErrorDetail.storyboard; sourceTree = "<group>"; };
+		7FD9652B228C7C8A00816FB6 /* ErrorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetailViewController.swift; sourceTree = "<group>"; };
 		7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		7FF6CD32227C50F5002B1A56 /* HistoryDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HistoryDataBase.xcdatamodel; sourceTree = "<group>"; };
 		BC867CA19DB7908F91E7BA50 /* Pods-numerosTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-numerosTip.release.xcconfig"; path = "Pods/Target Support Files/Pods-numerosTip/Pods-numerosTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				7F0098641F4B3CE600F9B7C4 /* Info.plist */,
 				7FF6CD31227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld */,
 				7FAAF48F227DC817006B79AF /* Localizable.strings */,
+				7FD96529228C7C6500816FB6 /* ErrorDetail.storyboard */,
 			);
 			path = numerosTip;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				7F6576C12273246F00E89729 /* StaticDetailViewController.swift */,
 				7F6576C32273248D00E89729 /* ResultDetailViewController.swift */,
 				7FA8818F227AF5CD008266E4 /* SettingsViewController.swift */,
+				7FD9652B228C7C8A00816FB6 /* ErrorDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 			files = (
 				7F6576C72273264500E89729 /* Main.storyboard in Resources */,
 				7F0C989F22707F4000FBADEE /* MainTableViewCell.xib in Resources */,
+				7FD9652A228C7C6500816FB6 /* ErrorDetail.storyboard in Resources */,
 				7F0098631F4B3CE600F9B7C4 /* LaunchScreen.storyboard in Resources */,
 				7FA8818E227AF555008266E4 /* Settings.storyboard in Resources */,
 				7FAAF48D227DC817006B79AF /* Localizable.strings in Resources */,
@@ -383,6 +390,7 @@
 				67ADA6AF207781BF000E54E7 /* UIDevice+Extension.swift in Sources */,
 				7F6576C42273248D00E89729 /* ResultDetailViewController.swift in Sources */,
 				7F2C25E41F7FE8B2009C3671 /* NumerosTipController.swift in Sources */,
+				7FD9652C228C7C8A00816FB6 /* ErrorDetailViewController.swift in Sources */,
 				676B66B0207E55FB00A240E0 /* SearchCollectionViewCell.swift in Sources */,
 				7F0C989E22707F4000FBADEE /* MainTableViewCell.swift in Sources */,
 				7F0C98A1227090AE00FBADEE /* UIView+Gradient.swift in Sources */,
