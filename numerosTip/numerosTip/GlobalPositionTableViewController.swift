@@ -20,6 +20,7 @@ class GlobalPositionTableViewController: UITableViewController {
     private var numberFromHistory: String?
     private var selectedPosition: Int = 1
     private var gradientLayer = CAGradientLayer()
+    private var lastSearch: String?
     var delegate: SearchResultsSearchBarProtocol?
 
     override func viewDidLoad() {
@@ -94,11 +95,15 @@ class GlobalPositionTableViewController: UITableViewController {
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        if let search = lastSearch {
+            delegate?.setterSearchBar(number: search)
+        }
         view.endEditing(true)
     }
     
     private func resetScreen() {
         data = nil
+        lastSearch = nil
         if UIDevice().iPad {
             selectedPosition = 1
             self.performSegue(withIdentifier: "segueDetail1", sender: nil)
@@ -180,6 +185,7 @@ class GlobalPositionTableViewController: UITableViewController {
     
     private func getNumberTIP(number: String) {
         controller?.getDataFromWebService(viewController: self, number: number, completionHandler: { response in
+            self.lastSearch = number
             self.saveHistory(number: number.uppercased())
             self.data = response
             self.tableView.reloadData()
