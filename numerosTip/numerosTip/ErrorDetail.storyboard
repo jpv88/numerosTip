@@ -14,13 +14,57 @@
         <scene sceneID="fk5-sw-5Ky">
             <objects>
                 <viewController id="3v0-MQ-WA9" userLabel="ErrorDetailView Controller" customClass="ErrorDetailViewController" customModule="numerosTip" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EVa-uU-Cbu">
+                    <view key="view" alpha="0.29999999999999999" contentMode="scaleToFill" id="EVa-uU-Cbu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nh-YS-cbg" userLabel="DetailView">
+                                <rect key="frame" x="40" y="188" width="334" height="574"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBL-Lg-08A">
+                                        <rect key="frame" x="0.0" y="544" width="334" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="USK-Wh-vz3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Aceptar">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="acceptButton:" destination="3v0-MQ-WA9" eventType="touchUpInside" id="CvB-uO-xc5"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NIo-cE-KNT">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="544"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NIo-cE-KNT" secondAttribute="trailing" id="20G-zA-w2j"/>
+                                    <constraint firstItem="YBL-Lg-08A" firstAttribute="leading" secondItem="3Nh-YS-cbg" secondAttribute="leading" id="7cV-yc-pfs"/>
+                                    <constraint firstAttribute="bottom" secondItem="YBL-Lg-08A" secondAttribute="bottom" id="9hh-CO-Se8"/>
+                                    <constraint firstItem="NIo-cE-KNT" firstAttribute="top" secondItem="3Nh-YS-cbg" secondAttribute="top" id="RWM-Ev-S4U"/>
+                                    <constraint firstAttribute="trailing" secondItem="YBL-Lg-08A" secondAttribute="trailing" id="ZT4-7a-7hb"/>
+                                    <constraint firstItem="YBL-Lg-08A" firstAttribute="top" secondItem="NIo-cE-KNT" secondAttribute="bottom" id="mTx-Ya-MQN"/>
+                                    <constraint firstItem="NIo-cE-KNT" firstAttribute="leading" secondItem="3Nh-YS-cbg" secondAttribute="leading" id="xGF-dm-5H4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ziO-vi-x9T" firstAttribute="trailing" secondItem="3Nh-YS-cbg" secondAttribute="trailing" constant="40" id="Hxd-Q0-3nb"/>
+                            <constraint firstItem="3Nh-YS-cbg" firstAttribute="top" secondItem="ziO-vi-x9T" secondAttribute="top" constant="100" id="cRM-ci-pto"/>
+                            <constraint firstItem="ziO-vi-x9T" firstAttribute="bottom" secondItem="3Nh-YS-cbg" secondAttribute="bottom" constant="100" id="wDc-S3-RMe"/>
+                            <constraint firstItem="3Nh-YS-cbg" firstAttribute="leading" secondItem="ziO-vi-x9T" secondAttribute="leading" constant="40" id="x10-Jr-2iV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ziO-vi-x9T"/>
                     </view>
                     <navigationItem key="navigationItem" id="1GP-FR-os8"/>
+                    <connections>
+                        <outlet property="tableView" destination="NIo-cE-KNT" id="a6A-u6-ChU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nai-Uz-tGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
