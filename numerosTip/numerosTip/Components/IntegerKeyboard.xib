@@ -175,11 +175,11 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fsp-5r-e1a">
                             <rect key="frame" x="344.5" y="0.0" width="235.5" height="302"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrO-cR-TEY">
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrO-cR-TEY">
                                     <rect key="frame" x="0.0" y="0.0" width="235.5" height="68"/>
                                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="X"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="backspace-arrow"/>
                                     <connections>
                                         <action selector="deleteKey:" destination="iN0-l3-epB" eventType="touchUpInside" id="4Hn-Jc-u8l"/>
                                     </connections>
@@ -202,11 +202,11 @@
                                         <action selector="spaceKey:" destination="iN0-l3-epB" eventType="touchUpInside" id="Wwt-RO-isM"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2o-RN-ZkS" userLabel="Ok">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2o-RN-ZkS" userLabel="Ok">
                                     <rect key="frame" x="0.0" y="234" width="235.5" height="68"/>
                                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="Ok"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="loupe-icon"/>
                                     <connections>
                                         <action selector="search:" destination="iN0-l3-epB" eventType="touchUpInside" id="y18-OR-qsm"/>
                                     </connections>
@@ -250,4 +250,8 @@
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="backspace-arrow" width="24" height="24"/>
+        <image name="loupe-icon" width="24" height="24"/>
+    </resources>
 </document>

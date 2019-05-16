@@ -90,7 +90,7 @@ extension MainTableViewCell: CustomKeyboardProtocol {
         
     }
     
-    func search(input: String) {
+    func search() {
         searchBar.endEditing(true)
         guard let text = searchBar.text, !text.isEmpty else {return}
         delegate?.searchFieldDidReturn(text)

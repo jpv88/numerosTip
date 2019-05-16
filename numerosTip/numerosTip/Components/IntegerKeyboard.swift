@@ -10,7 +10,7 @@ import UIKit
 
 protocol CustomKeyboardProtocol {
     func changeToRomanKeyboard()
-    func search(input: String)
+    func search()
     func changeToIntegerKeyboard()
 }
 
@@ -52,9 +52,8 @@ class IntegerKeyboard: UIView, UIInputViewAudioFeedback {
         delegate?.changeToRomanKeyboard()
     }
     
-    @IBAction func search(_ sender: UIButton) {
-        guard let text = sender.titleLabel?.text else {return}
-        delegate?.search(input: text)
+    @IBAction func search(_ sender: UIButton) {        
+        delegate?.search()
     }
     
     private func enableInputClicksWhenVisible() -> Bool {
