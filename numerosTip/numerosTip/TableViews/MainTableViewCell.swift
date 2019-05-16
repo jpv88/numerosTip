@@ -21,6 +21,8 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var subtitleLabel: UILabel!
     
+    private let integerKeyboard = Bundle.main.loadNibNamed("IntegerKeyboard", owner: self, options: nil)?.last as! IntegerKeyboard
+    
     var delegate: MainTableViewCellProtocol?
     
     private enum Localized {
@@ -44,6 +46,8 @@ class MainTableViewCell: UITableViewCell {
         placeholderLabel?.adjustsFontSizeToFitWidth = true
         placeholderLabel?.minimumScaleFactor = 0.6
         searchBar.placeholder = Localized.searchBar
+        let searchTextField = searchBar.value(forKey: "_searchField") as? UITextField
+        searchTextField?.inputView = integerKeyboard
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
