@@ -20,6 +20,20 @@ class IntegerKeyboard: UIView, UIInputViewAudioFeedback {
     
     var delegate: CustomKeyboardProtocol?
     
+    @IBOutlet private var keyboardButtons: [UIButton]!    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        keyboardButtons.forEach { button in
+            button.backgroundColor = UIColor(rgb: 0x0C77B8)
+            button.layer.cornerRadius = 5
+            button.layer.borderWidth = 1
+            button.setTitleColor(UIColor.white, for: .normal)
+            button.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    
     @IBAction func spaceKey(_ sender: UIButton) {
         self.target?.insertText(" ")
     }
