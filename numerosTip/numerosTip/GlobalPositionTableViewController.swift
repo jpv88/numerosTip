@@ -94,6 +94,19 @@ class GlobalPositionTableViewController: UITableViewController {
         return true
     }
     
+    private func deviceCanRotate() -> Bool {
+        return isBigDevice() && isLandscape()
+    }
+    
+    private func isLandscape() -> Bool {
+        let orientation = UIApplication.shared.statusBarOrientation
+        return orientation == .landscapeLeft || orientation == .landscapeRight
+    }
+    
+    private func isBigDevice() -> Bool {
+        return UIScreen.main.nativeBounds.height >= 1920
+    }
+    
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
         if let search = lastSearch {
             delegate?.setterSearchBar(number: search)
@@ -104,7 +117,7 @@ class GlobalPositionTableViewController: UITableViewController {
     private func resetScreen() {
         data = nil
         lastSearch = nil
-        if UIDevice().iPad {
+        if deviceCanRotate() {
             selectedPosition = 1
             self.performSegue(withIdentifier: "segueDetail1", sender: nil)
         }
@@ -184,7 +197,7 @@ class GlobalPositionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 1, UIDevice().iPad {
+        if indexPath.row == 1, deviceCanRotate() {
             selectedPosition = 0
             self.performSegue(withIdentifier: "segueDetail2", sender: nil)
         }
