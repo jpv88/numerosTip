@@ -48,6 +48,7 @@ class MainTableViewCell: UITableViewCell {
         searchBar.placeholder = Localized.searchBar
         let searchTextField = searchBar.value(forKey: "_searchField") as? UITextField
         searchTextField?.inputView = integerKeyboard
+        integerKeyboard.delegate = self
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -58,12 +59,19 @@ class MainTableViewCell: UITableViewCell {
 }
 
 extension MainTableViewCell: UISearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        let searchTextField = searchBar.value(forKey: "_searchField") as? UITextField
+        (searchTextField?.inputView as? IntegerKeyboard)?.target = searchTextField
+        return true
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.endEditing(true)        
+        searchBar.endEditing(true)
         guard let text = searchBar.text, !text.isEmpty else {return}
         delegate?.searchFieldDidReturn(text)
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             delegate?.clearResults()
@@ -75,4 +83,21 @@ extension MainTableViewCell: SearchResultsSearchBarProtocol {
     func setterSearchBar(number: String) {
         searchBar.text = number        
     }
+}
+
+extension MainTableViewCell: CustomKeyboardProtocol {
+    func changeToRomanKeyboard() {
+        
+    }
+    
+    func search(input: String) {
+        searchBar.endEditing(true)
+        guard let text = searchBar.text, !text.isEmpty else {return}
+        delegate?.searchFieldDidReturn(text)
+    }
+    
+    func changeToIntegerKeyboard() {
+        
+    }
+    
 }

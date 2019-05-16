@@ -95,7 +95,7 @@ class GlobalPositionTableViewController: UITableViewController {
     }
     
     private func deviceCanRotate() -> Bool {
-        return isBigDevice() && isLandscape()
+        return isBigDevice() && isLandscape() || UIDevice().iPad
     }
     
     private func isLandscape() -> Bool {
