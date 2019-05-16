@@ -23,6 +23,8 @@ class MainTableViewCell: UITableViewCell {
     
     private let integerKeyboard = Bundle.main.loadNibNamed("IntegerKeyboard", owner: self, options: nil)?.last as! IntegerKeyboard
     
+    private let romanKeyboard = Bundle.main.loadNibNamed("RomanKeyboard", owner: self, options: nil)?.last as! RomanKeyboard
+    
     var delegate: MainTableViewCellProtocol?
     
     private enum Localized {
@@ -87,7 +89,9 @@ extension MainTableViewCell: SearchResultsSearchBarProtocol {
 
 extension MainTableViewCell: CustomKeyboardProtocol {
     func changeToRomanKeyboard() {
-        
+        let searchTextField = searchBar.value(forKey: "_searchField") as? UITextField
+        searchTextField?.inputView = romanKeyboard
+        searchTextField?.reloadInputViews()
     }
     
     func search() {
@@ -97,7 +101,9 @@ extension MainTableViewCell: CustomKeyboardProtocol {
     }
     
     func changeToIntegerKeyboard() {
-        
+        let searchTextField = searchBar.value(forKey: "_searchField") as? UITextField
+        searchTextField?.inputView = integerKeyboard
+        searchTextField?.reloadInputViews()
     }
     
 }
