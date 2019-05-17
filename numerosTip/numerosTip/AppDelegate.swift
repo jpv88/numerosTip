@@ -32,6 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if (userDefault.object(forKey: Constans.historyKEY) as? Int) == nil {
             userDefault.set(5, forKey: Constans.historyKEY)
         }
+        if (userDefault.object(forKey: Constans.collapsedExamples) as? Bool) == nil {
+            userDefault.set(true, forKey: Constans.collapsedExamples)
+        }
+        if (userDefault.object(forKey: Constans.collapsedNotes) as? Bool) == nil {
+            userDefault.set(true, forKey: Constans.collapsedNotes)
+        }
+        if (userDefault.object(forKey: Constans.collapsedReferences) as? Bool) == nil {
+            userDefault.set(true, forKey: Constans.collapsedReferences)
+        }
         if let splitViewController = self.window?.rootViewController as? UISplitViewController {
             splitViewController.delegate = self
         }
