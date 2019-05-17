@@ -48,15 +48,15 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="bDM-Ww-6K2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5Qj-bf-K70"/>
-                    <constraint firstItem="3cL-72-wpg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6o3-2Y-NW5"/>
-                    <constraint firstItem="LvK-TA-gff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CQX-T2-y3Q"/>
-                    <constraint firstItem="3cL-72-wpg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="E1z-lT-kC0"/>
-                    <constraint firstAttribute="bottom" secondItem="LvK-TA-gff" secondAttribute="bottom" constant="0.5" id="GJS-5z-hrk"/>
-                    <constraint firstItem="Tk0-5n-G9O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="QLj-5Q-m2O"/>
-                    <constraint firstAttribute="trailing" secondItem="LvK-TA-gff" secondAttribute="trailing" id="WGA-Uf-JR1"/>
-                    <constraint firstAttribute="trailing" secondItem="Tk0-5n-G9O" secondAttribute="trailing" constant="20" id="cWj-WH-4Zo"/>
-                    <constraint firstItem="bDM-Ww-6K2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="s9W-ff-bvh"/>
+                    <constraint firstItem="bDM-Ww-6K2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="999" constant="15" id="5Qj-bf-K70"/>
+                    <constraint firstItem="3cL-72-wpg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" priority="999" id="6o3-2Y-NW5"/>
+                    <constraint firstItem="LvK-TA-gff" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="999" id="CQX-T2-y3Q"/>
+                    <constraint firstItem="3cL-72-wpg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" priority="999" id="E1z-lT-kC0"/>
+                    <constraint firstAttribute="bottom" secondItem="LvK-TA-gff" secondAttribute="bottom" priority="999" constant="0.5" id="GJS-5z-hrk"/>
+                    <constraint firstItem="Tk0-5n-G9O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="999" constant="20" id="QLj-5Q-m2O"/>
+                    <constraint firstAttribute="trailing" secondItem="LvK-TA-gff" secondAttribute="trailing" priority="999" id="WGA-Uf-JR1"/>
+                    <constraint firstAttribute="trailing" secondItem="Tk0-5n-G9O" secondAttribute="trailing" priority="999" constant="20" id="cWj-WH-4Zo"/>
+                    <constraint firstItem="bDM-Ww-6K2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="999" constant="15" id="s9W-ff-bvh"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

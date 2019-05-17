@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,10 +27,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="EgC-nG-x5S" secondAttribute="bottom" id="0iM-ZS-KgO"/>
-                    <constraint firstItem="EgC-nG-x5S" firstAttribute="leading" secondItem="GiF-pf-Vcd" secondAttribute="leadingMargin" id="TKk-r6-uzh"/>
-                    <constraint firstItem="EgC-nG-x5S" firstAttribute="trailing" secondItem="GiF-pf-Vcd" secondAttribute="trailingMargin" id="TpL-xG-qCK"/>
-                    <constraint firstItem="EgC-nG-x5S" firstAttribute="top" secondItem="GiF-pf-Vcd" secondAttribute="topMargin" id="qQe-CX-2cd"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="EgC-nG-x5S" secondAttribute="bottom" priority="999" id="0iM-ZS-KgO"/>
+                    <constraint firstItem="EgC-nG-x5S" firstAttribute="leading" secondItem="GiF-pf-Vcd" secondAttribute="leadingMargin" priority="999" id="TKk-r6-uzh"/>
+                    <constraint firstItem="EgC-nG-x5S" firstAttribute="trailing" secondItem="GiF-pf-Vcd" secondAttribute="trailingMargin" priority="999" id="TpL-xG-qCK"/>
+                    <constraint firstItem="EgC-nG-x5S" firstAttribute="top" secondItem="GiF-pf-Vcd" secondAttribute="topMargin" priority="999" id="qQe-CX-2cd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aCY-us-4pr"/>
