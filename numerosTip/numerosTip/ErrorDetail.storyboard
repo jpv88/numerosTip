@@ -22,10 +22,10 @@
                                 <rect key="frame" x="40" y="188" width="334" height="574"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBL-Lg-08A">
-                                        <rect key="frame" x="0.0" y="544" width="334" height="30"/>
+                                        <rect key="frame" x="0.0" y="529" width="334" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="USK-Wh-vz3"/>
+                                            <constraint firstAttribute="height" constant="45" id="USK-Wh-vz3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Aceptar">
@@ -36,7 +36,7 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NIo-cE-KNT">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="544"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="529"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>

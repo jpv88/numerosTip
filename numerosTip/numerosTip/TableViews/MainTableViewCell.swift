@@ -51,6 +51,7 @@ class MainTableViewCell: UITableViewCell {
         let searchTextField = searchBar.value(forKey: "_searchField") as? UITextField
         searchTextField?.inputView = integerKeyboard
         integerKeyboard.delegate = self
+        romanKeyboard.delegate = self
     }
     
     @objc private func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -64,7 +65,8 @@ extension MainTableViewCell: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         let searchTextField = searchBar.value(forKey: "_searchField") as? UITextField
-        (searchTextField?.inputView as? IntegerKeyboard)?.target = searchTextField
+        integerKeyboard.target = searchTextField
+        romanKeyboard.target = searchTextField
         return true
     }
     
