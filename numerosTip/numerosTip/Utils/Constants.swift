@@ -11,7 +11,5 @@ import Foundation
 final class Constans {
     static let languageKEY = "kUserLanguageSelected"
     static let historyKEY = "kUserHistoryNumber"
-    static let collapsedExamples = "kCollapsedExamples"
-    static let collapsedNotes = "kCollapsedNotes"
-    static let collapsedReferences = "kCollapsedReferences"
+    static let collapsedElements = "kCollapsedElements"    
 }

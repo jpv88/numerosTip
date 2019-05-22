@@ -15,6 +15,9 @@ class ResultDetailViewController: UIViewController {
     
     var data: NumerosTipDataModel.TabsModel!
     
+    private var collapsedElements: Bool?
+    private var collapsibleElements: [Int] = []
+    
     private enum Localizables {
         static let navBarTitle = "results_navBar_title".localized()
     }
@@ -22,12 +25,15 @@ class ResultDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        if let splitView = self.navigationController?.splitViewController, !splitView.isCollapsed {
-//            self.navigationItem.leftBarButtonItem = splitView.displayModeButtonItem
-//        }
         navBarDetail.title = Localizables.navBarTitle
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        recoverUserSettings()
         setupTableView()
+    }
+    
+    private func recoverUserSettings() {
+        let userDefault = UserDefaults.standard
+        collapsedElements = userDefault.object(forKey: Constans.collapsedElements) as? Bool ?? false        
     }
     
     private func setupTableView() {
@@ -71,6 +77,14 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let title = data.sections[section].title {
+            if title.prefix(2).components(separatedBy: "&").count == 2, let collapsedElements = collapsedElements, collapsedElements {
+                if !collapsibleElements.contains(section) {
+                    collapsibleElements.append(section)
+                }
+                return 0
+            }
+        }
         return data.sections[section].data.count
     }
     
@@ -79,5 +93,10 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
         cell.information.attributedText = data.sections[indexPath.section].data[indexPath.row].html2AttributedString
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("Elementos del array: \(collapsibleElements)")
+//        print("select")
+//    }
     
 }
