@@ -106,6 +106,22 @@ class NumerosTipDataModel: NSObject {
     struct SectionModel {
         var title: String?
         var data = [String]()
+        private var isCollapsed: Bool?
+        var collapsed: Bool! {
+            get {
+                if let collapsed = isCollapsed {
+                    return collapsed
+                }
+                if let title = title, title.prefix(2).components(separatedBy: "&").count == 2 {
+                    let userDefault = UserDefaults.standard
+                    return userDefault.object(forKey: Constans.collapsedElements) as? Bool ?? false
+                }
+                return false
+            }
+            set {
+                isCollapsed = newValue
+            }
+        }
     }
     
 }

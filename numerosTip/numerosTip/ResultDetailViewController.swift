@@ -77,15 +77,7 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let title = data.sections[section].title {
-            if title.prefix(2).components(separatedBy: "&").count == 2, let collapsedElements = collapsedElements, collapsedElements {
-                if !collapsibleElements.contains(section) {
-                    collapsibleElements.append(section)
-                }
-                return 0
-            }
-        }
-        return data.sections[section].data.count
+        return data.sections[section].collapsed ?? false ? 0 : data.sections[section].data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
