@@ -79,6 +79,17 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
         header?.section = section
         header?.delegate = self
         
+        if let header = header {
+            let separatorLine = UIView()
+            separatorLine.backgroundColor = .black
+            header.addSubview(separatorLine)
+            separatorLine.translatesAutoresizingMaskIntoConstraints = false
+            separatorLine.leadingAnchor.constraint(equalTo: header.leadingAnchor).isActive = true
+            separatorLine.trailingAnchor.constraint(equalTo: header.trailingAnchor).isActive = true
+            separatorLine.bottomAnchor.constraint(equalTo: header.bottomAnchor).isActive = true
+            separatorLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        }
+        
         return header
     }
     
