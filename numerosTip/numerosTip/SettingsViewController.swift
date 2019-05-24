@@ -59,6 +59,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet private var historyTitleLabel: UILabel!
     @IBOutlet private var deleteHistoryButton: UIButton!
     @IBOutlet private var settingsNavigationItem: UINavigationItem!
+    @IBOutlet private var collapsibleLabel: UILabel!
+    @IBOutlet var collapsibleSwitch: UISwitch!
     
     private var data: [String]?
     
@@ -73,6 +75,7 @@ class SettingsViewController: UIViewController {
         static let en = "general_language_english".localized()
         static let it = "general_language_italian".localized()
         static let de = "general_language_german".localized()
+        static let collapsibleTitle = "Colapsar contenido de Ejemplos, Notas y Referencias"
     }
     
     override func viewDidLoad() {
@@ -80,6 +83,7 @@ class SettingsViewController: UIViewController {
         
         setup()
         setupLanguage()
+        collapsibleSwitch.isOn = retrieveCollapsibleElements()
         retrieveHistory()
         setupTable()
     }
@@ -91,6 +95,7 @@ class SettingsViewController: UIViewController {
         languageTitleLabel.text = Localized.languageTitle
         historyTitleLabel.text = Localized.historyTitle
         deleteHistoryButton.setTitle(Localized.historyDelete, for: .normal)
+        collapsibleLabel.text = Localized.collapsibleTitle
     }
     
     private func setupLanguage() {
@@ -155,6 +160,10 @@ class SettingsViewController: UIViewController {
         historyTableView.reloadData()
     }
     
+    @IBAction func switchAction(_ sender: UISwitch) {
+        saveStateCollapsibleElements(state: sender.isOn)
+    }
+    
     // MARK: - CoreData
     
     private func retrieveHistory() {
@@ -193,6 +202,18 @@ class SettingsViewController: UIViewController {
         } catch let error {
             ErrorHandler.showError(error: error)
         }
+    }
+    
+    // MARK: - UserDefault
+    
+    private func retrieveCollapsibleElements() -> Bool {
+        let userDefault = UserDefaults.standard
+        return userDefault.object(forKey: Constans.collapsedElements) as? Bool ?? false
+    }
+    
+    private func saveStateCollapsibleElements(state: Bool) {
+        let userDefault = UserDefaults.standard
+        userDefault.set(state, forKey: Constans.collapsedElements)
     }
     
 }
