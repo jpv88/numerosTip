@@ -68,8 +68,10 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
         if let title = data.sections[section].title {
             header?.titleLabel.text = cleanString(str: title)
             if title.prefix(2).components(separatedBy: "&").count == 2 {
-                header?.arrowLabel.text = ">"
+                header?.arrowImageView.isHidden = false
                 header?.setCollapsed(data.sections[section].collapsed)
+            } else {
+                header?.arrowImageView.isHidden = true
             }
         }
         header?.section = section
