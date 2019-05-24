@@ -41,10 +41,11 @@ class ResultDetailViewController: UIViewController {
         tableView.dataSource = self
         let nib = UINib(nibName: "TableViewDynamicCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewDynamicCell")
+        tableView.register(CollapsibleTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "CollapsibleTableViewHeader")
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-        tableView.estimatedSectionHeaderHeight = 25;
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 25
         tableView.tableFooterView = UIView()
     }
     
@@ -63,13 +64,22 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.backgroundColor = .yellow
+//        let label = UILabel()
+//        label.numberOfLines = 0
+//        label.backgroundColor = .yellow
+//        if let title = data.sections[section].title {
+//            label.text = cleanString(str: title)
+//        }
+//        return label
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CollapsibleTableViewHeader") as? CollapsibleTableViewHeader
         if let title = data.sections[section].title {
-            label.text = cleanString(str: title)
+            header?.titleLabel.text = cleanString(str: title)
         }
-        return label
+//        header.setCollapsed(sections[section].collapsed)
+        header?.section = section
+        header?.delegate = self
+        
+        return header
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -90,5 +100,12 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
 //        print("Elementos del array: \(collapsibleElements)")
 //        print("select")
 //    }
+    
+}
+
+extension ResultDetailViewController: CollapsibleTableViewHeaderDelegate {
+    func toggleSection(_ header: CollapsibleTableViewHeader, section: Int) {
+        print("toogle section: \(section)")
+    }
     
 }

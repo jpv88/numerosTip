@@ -23,8 +23,8 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
-        titleLabel.numberOfLines = 0
         contentView.backgroundColor = .yellow
+        titleLabel.numberOfLines = 0
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapHeader(_:))))
         
         let marginGuide = contentView.layoutMarginsGuide
@@ -37,10 +37,11 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5).isActive = true
         
         contentView.addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 5)
-        titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 5)
-        titleLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: 5)
-        titleLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 5)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 0).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: 5).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 0).isActive = true
     }
     
     @objc private func tapHeader(_ gestureRecognizer: UITapGestureRecognizer) {
