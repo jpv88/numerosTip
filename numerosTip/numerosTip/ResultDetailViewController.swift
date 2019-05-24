@@ -15,6 +15,8 @@ class ResultDetailViewController: UIViewController {
     
     var data: NumerosTipDataModel.TabsModel!
     
+    var screenTitle: String?
+    
     private var collapsedElements: Bool?
     private var collapsibleElements: [Int] = []
     
@@ -24,8 +26,8 @@ class ResultDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navBarDetail.title = Localizables.navBarTitle
+        
+        navBarDetail.title = screenTitle ?? Localizables.navBarTitle
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         recoverUserSettings()
         setupTableView()

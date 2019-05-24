@@ -132,6 +132,11 @@ class GlobalPositionTableViewController: UITableViewController {
                 if let vc = navigation.viewControllers[0] as? ResultDetailViewController {
                     if let element = data?.tabsArray[selectedPosition] {
                         vc.data = element
+                        if let title = data?.tabsArray[selectedPosition].title {                            
+                            if title.contains("#") {
+                                vc.screenTitle = title.replacingOccurrences(of: "#", with: "")
+                            }
+                        }
                     }
                 }
             }
