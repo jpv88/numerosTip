@@ -107,12 +107,16 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
 
 extension ResultDetailViewController: CollapsibleTableViewHeaderDelegate {
     func toggleSection(_ header: CollapsibleTableViewHeader, section: Int) {
-        let collapsed = !data.sections[section].collapsed
-        // Toggle collapse
-        data.sections[section].collapsed = collapsed
-        header.setCollapsed(collapsed)
-        
-        tableView.reloadSections(NSIndexSet(index: section) as IndexSet, with: .automatic)
+        if let title = data.sections[section].title {
+            if title.prefix(2).components(separatedBy: "&").count == 2 {
+                let collapsed = !data.sections[section].collapsed
+                // Toggle collapse
+                data.sections[section].collapsed = collapsed
+                header.setCollapsed(collapsed)
+                // Reload Animation
+                tableView.reloadSections(NSIndexSet(index: section) as IndexSet, with: .automatic)
+            }
+        }
     }
     
 }
