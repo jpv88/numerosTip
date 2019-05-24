@@ -64,24 +64,20 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label = UILabel()
-//        label.numberOfLines = 0
-//        label.backgroundColor = .yellow
-//        if let title = data.sections[section].title {
-//            label.text = cleanString(str: title)
-//        }
-//        return label
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CollapsibleTableViewHeader") as? CollapsibleTableViewHeader
         if let title = data.sections[section].title {
             header?.titleLabel.text = cleanString(str: title)
+            if title.prefix(2).components(separatedBy: "&").count == 2 {
+                header?.arrowLabel.text = ">"
+                header?.setCollapsed(data.sections[section].collapsed)
+            }
         }
-//        header.setCollapsed(sections[section].collapsed)
         header?.section = section
         header?.delegate = self
         
         if let header = header {
             let separatorLine = UIView()
-            separatorLine.backgroundColor = .black
+            separatorLine.backgroundColor = .lightGray
             header.addSubview(separatorLine)
             separatorLine.translatesAutoresizingMaskIntoConstraints = false
             separatorLine.leadingAnchor.constraint(equalTo: header.leadingAnchor).isActive = true
@@ -107,16 +103,16 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("Elementos del array: \(collapsibleElements)")
-//        print("select")
-//    }
-    
 }
 
 extension ResultDetailViewController: CollapsibleTableViewHeaderDelegate {
     func toggleSection(_ header: CollapsibleTableViewHeader, section: Int) {
-        print("toogle section: \(section)")
+        let collapsed = !data.sections[section].collapsed
+        // Toggle collapse
+        data.sections[section].collapsed = collapsed
+        header.setCollapsed(collapsed)
+        
+        tableView.reloadSections(NSIndexSet(index: section) as IndexSet, with: .automatic)
     }
     
 }

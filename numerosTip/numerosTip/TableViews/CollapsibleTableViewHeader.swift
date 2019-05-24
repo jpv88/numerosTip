@@ -15,7 +15,7 @@ protocol CollapsibleTableViewHeaderDelegate {
 class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
     
     let titleLabel = UILabel()
-    let arrowImageView = UIImageView()
+    let arrowLabel = UILabel()
     
     var delegate: CollapsibleTableViewHeaderDelegate?
     var section: Int = 0
@@ -29,18 +29,18 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         
         let marginGuide = contentView.layoutMarginsGuide
         
-        contentView.addSubview(arrowImageView)
-        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
-        arrowImageView.widthAnchor.constraint(equalToConstant: 12).isActive = true
-        arrowImageView.heightAnchor.constraint(equalToConstant: 12).isActive = true
-        arrowImageView.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 5).isActive = true
-        arrowImageView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5).isActive = true
+        contentView.addSubview(arrowLabel)
+        arrowLabel.translatesAutoresizingMaskIntoConstraints = false
+        arrowLabel.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        arrowLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        arrowLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 5).isActive = true
+        arrowLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5).isActive = true
         
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor, constant: 0).isActive = true
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor, constant: 0).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: 5).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: arrowLabel.leadingAnchor, constant: 5).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 0).isActive = true
     }
     
@@ -51,9 +51,8 @@ class CollapsibleTableViewHeader: UITableViewHeaderFooterView {
         delegate?.toggleSection(self, section: cell.section)
     }
     
-    private func setCollapsed(_ collapsed: Bool) {
-        // Animate the arrow rotation (see Extensions.swf)
-        //        arrowLabel.rotate(collapsed ? 0.0 : .pi / 2)
+    func setCollapsed(_ collapsed: Bool) {        
+        arrowLabel.rotate(collapsed ? 0.0 : .pi / 2)
     }
     
     required init?(coder aDecoder: NSCoder) {

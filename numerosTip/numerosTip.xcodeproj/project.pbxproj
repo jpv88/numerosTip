@@ -34,6 +34,7 @@
 		7F4732052271CDD30078852C /* TabsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4732032271CDD30078852C /* TabsTableViewCell.xib */; };
 		7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */; };
 		7F4B61D22295B02600AB09D2 /* CollapsibleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B61D12295B02600AB09D2 /* CollapsibleTableViewHeader.swift */; };
+		7F4B61D422981D5C00AB09D2 /* UIView+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B61D322981D5C00AB09D2 /* UIView+Rotate.swift */; };
 		7F6576C22273247000E89729 /* StaticDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6576C12273246F00E89729 /* StaticDetailViewController.swift */; };
 		7F6576C42273248D00E89729 /* ResultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6576C32273248D00E89729 /* ResultDetailViewController.swift */; };
 		7F6576C72273264500E89729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F6576C52273264400E89729 /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		7F4732032271CDD30078852C /* TabsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsTableViewCell.xib; sourceTree = "<group>"; };
 		7F490D731F55DBE200FFE063 /* NumerosTipDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumerosTipDataModel.swift; sourceTree = "<group>"; };
 		7F4B61D12295B02600AB09D2 /* CollapsibleTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleTableViewHeader.swift; sourceTree = "<group>"; };
+		7F4B61D322981D5C00AB09D2 /* UIView+Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rotate.swift"; sourceTree = "<group>"; };
 		7F6576C12273246F00E89729 /* StaticDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDetailViewController.swift; sourceTree = "<group>"; };
 		7F6576C32273248D00E89729 /* ResultDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailViewController.swift; sourceTree = "<group>"; };
 		7F6576C62273264400E89729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				7FDFE68422774BBE0092EA89 /* ErrorHandler.swift */,
 				7FA88191227B05F7008266E4 /* Constants.swift */,
 				7FA780B4227F14AF00010839 /* String+Localized.swift */,
+				7F4B61D322981D5C00AB09D2 /* UIView+Rotate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				67661E22207522C5006FF2BB /* UISearchBar+Extension.swift in Sources */,
 				7F4732012271C6680078852C /* UIApplication+TopViewController.swift in Sources */,
 				7F4732042271CDD30078852C /* TabsTableViewCell.swift in Sources */,
+				7F4B61D422981D5C00AB09D2 /* UIView+Rotate.swift in Sources */,
 				6713574220961E750041967B /* TableViewDynamicCell.swift in Sources */,
 				67CDA4BB20920D66008F9BB5 /* String+Extension.swift in Sources */,
 				7FEAEF7C228D8C18004D6847 /* RomanKeyboard.swift in Sources */,
