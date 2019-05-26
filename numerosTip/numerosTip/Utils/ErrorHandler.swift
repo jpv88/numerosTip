@@ -39,4 +39,23 @@ final class ErrorHandler {
         guard let currentVC = UIApplication.topViewController() else { return }
         currentVC.present(alertView, animated: true)
     }
+    
+    static func showAlert(title: String, msg: String, actionButtonTitle: String = "Aceptar", action: (()->())? = nil, dismissButtonTitle: String = "Cancelar", dismissAction: (()->())? = nil) {
+        
+        let alertView = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        
+        let actionButton = UIAlertAction(title: actionButtonTitle, style: UIAlertActionStyle.default) { _ in
+            action?()
+        }
+        
+        let dismissButton = UIAlertAction(title: dismissButtonTitle, style: .cancel) { _ in
+            dismissAction?()
+        }
+        
+        alertView.addAction(actionButton)
+        alertView.addAction(dismissButton)
+        
+        guard let currentVC = UIApplication.topViewController() else { return }
+        currentVC.present(alertView, animated: true)
+    }
 }
