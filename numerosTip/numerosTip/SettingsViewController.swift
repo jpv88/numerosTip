@@ -76,6 +76,7 @@ class SettingsViewController: UIViewController {
         static let it = "general_language_italian".localized()
         static let de = "general_language_german".localized()
         static let collapsibleTitle = "Colapsar contenido de Ejemplos, Notas y Referencias"
+        static let safeDelete = "¿Está seguro desea borrar?"
     }
     
     override func viewDidLoad() {
@@ -155,9 +156,13 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func deleteHistory(_ sender: UIButton) {
-        eraseData()
-        data = nil
-        historyTableView.reloadData()
+        if let data = data, !data.isEmpty {
+            ErrorHandler.showAlert(title: Localized.historyDelete, msg: Localized.safeDelete, dismissButtonTitle: "Aceptar", action: nil, dismissAction: {
+                self.eraseData()
+                self.data = nil
+                self.historyTableView.reloadData()
+            })       
+        }
     }
     
     @IBAction func switchAction(_ sender: UISwitch) {
