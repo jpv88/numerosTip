@@ -60,7 +60,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet private var deleteHistoryButton: UIButton!
     @IBOutlet private var settingsNavigationItem: UINavigationItem!
     @IBOutlet private var collapsibleLabel: UILabel!
-    @IBOutlet var collapsibleSwitch: UISwitch!
+    @IBOutlet private var collapsibleSwitch: UISwitch!
+    @IBOutlet private var historyLimitsPickerView: UIPickerView!
+    @IBOutlet private var historyLimitsLabel: UILabel!
     
     private var data: [String]?
     
@@ -77,6 +79,7 @@ class SettingsViewController: UIViewController {
         static let de = "general_language_german".localized()
         static let collapsibleTitle = "Colapsar contenido de Ejemplos, Notas y Referencias"
         static let safeDelete = "¿Está seguro desea borrar?"
+        static let historyLimitsTitle = "Límite máximo del historial"
     }
     
     override func viewDidLoad() {
@@ -84,6 +87,7 @@ class SettingsViewController: UIViewController {
         
         setup()
         setupLanguage()
+        setupPicker()
         collapsibleSwitch.isOn = retrieveCollapsibleElements()
         retrieveHistory()
         setupTable()
@@ -97,6 +101,7 @@ class SettingsViewController: UIViewController {
         historyTitleLabel.text = Localized.historyTitle
         deleteHistoryButton.setTitle(Localized.historyDelete, for: .normal)
         collapsibleLabel.text = Localized.collapsibleTitle
+        historyLimitsLabel.text = Localized.historyLimitsTitle
     }
     
     private func setupLanguage() {
@@ -130,6 +135,24 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    private func setupPicker() {
+        historyLimitsPickerView.delegate = self
+        historyLimitsPickerView.dataSource = self
+        let selectedRow = retrieveHistoryMaxElements()
+        var row = 0
+        switch selectedRow {
+        case 5:
+            row = 0
+        case 10:
+            row = 1
+        case 999:
+            row = 2
+        default:
+            break
+        }
+        historyLimitsPickerView.selectRow(row, inComponent: 0, animated: true)        
+    }
+    
     private func setupTable() {
         historyTableView.delegate = self
         historyTableView.dataSource = self
@@ -161,7 +184,7 @@ class SettingsViewController: UIViewController {
                 self.eraseData()
                 self.data = nil
                 self.historyTableView.reloadData()
-            })       
+            })
         }
     }
     
@@ -247,11 +270,21 @@ class SettingsViewController: UIViewController {
         userDefault.set(state, forKey: Constans.collapsedElements)
     }
     
+    private func saveHistoryMaxElements(limit: Int) {
+        let userDefault = UserDefaults.standard
+        userDefault.set(limit, forKey: Constans.historyKEY)
+    }
+    
+    private func retrieveHistoryMaxElements() -> Int {
+        let userDefault = UserDefaults.standard
+        return userDefault.object(forKey: Constans.historyKEY) as? Int ?? 5
+    }
+    
 }
 
+// MARK: - TableView
+
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    // MARK: - TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let elements = data?.count {
@@ -287,6 +320,44 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 tableView.endUpdates()
             }
+        }
+    }
+}
+
+// MARK: - UIPickerViewDelegate & UIPickerViewDataSource
+
+extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch row {
+        case 0:
+            return "5"
+        case 1:
+            return "10"
+        case 2:
+            return "∞"
+        default:
+            return ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch row {
+        case 0:
+            saveHistoryMaxElements(limit: 5)
+        case 1:
+            saveHistoryMaxElements(limit: 10)
+        case 2:
+            saveHistoryMaxElements(limit: 999)
+        default:
+            break
         }
     }
 }

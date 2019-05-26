@@ -106,7 +106,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-bQ-YHI" userLabel="HistoryLabel">
-                                <rect key="frame" x="20" y="279.5" width="83" height="44"/>
+                                <rect key="frame" x="20" y="440" width="83" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ikJ-jv-4SF"/>
                                 </constraints>
@@ -115,11 +115,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fQI-SZ-rA0" userLabel="History Table View">
-                                <rect key="frame" x="20" y="328.5" width="374" height="533.5"/>
+                                <rect key="frame" x="20" y="489" width="374" height="373"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uz-aR-2g3">
-                                <rect key="frame" x="346" y="285" width="48" height="33"/>
+                                <rect key="frame" x="346" y="445.5" width="48" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Borrar">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -144,6 +144,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8a-yS-GVf" userLabel="HistoryLimitsPickerView">
+                                <rect key="frame" x="20" y="330" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="GDG-KO-LmH"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fJ-yd-5K6" userLabel="HistoryLimitsLabel">
+                                <rect key="frame" x="20" y="284.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.52549019610000003" green="0.79607843140000001" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -152,19 +164,25 @@
                             <constraint firstItem="Rzv-Ey-MbR" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="2dv-mm-H0Y"/>
                             <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="Rzv-Ey-MbR" secondAttribute="trailing" constant="20" id="2jd-1U-row"/>
                             <constraint firstItem="s2W-Wk-BKF" firstAttribute="leading" secondItem="DcE-j5-NVb" secondAttribute="trailing" constant="25" id="3af-jD-FsK"/>
+                            <constraint firstItem="8fJ-yd-5K6" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="9Bz-1V-sU9"/>
                             <constraint firstItem="Rzv-Ey-MbR" firstAttribute="top" secondItem="OL5-Bb-7li" secondAttribute="top" constant="15" id="DEA-M4-qPC"/>
+                            <constraint firstItem="Po4-bQ-YHI" firstAttribute="top" secondItem="u8a-yS-GVf" secondAttribute="bottom" constant="10" id="GT2-KR-nm6"/>
+                            <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="u8a-yS-GVf" secondAttribute="trailing" constant="20" id="LeN-H6-nZJ"/>
                             <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="zPm-Fm-bXP" secondAttribute="trailing" constant="20" id="NtE-O7-07L"/>
                             <constraint firstItem="fQI-SZ-rA0" firstAttribute="bottom" secondItem="OL5-Bb-7li" secondAttribute="bottom" id="Oty-41-7w3"/>
                             <constraint firstItem="fQI-SZ-rA0" firstAttribute="top" secondItem="Po4-bQ-YHI" secondAttribute="bottom" constant="5" id="bBU-I2-Cyh"/>
-                            <constraint firstItem="Po4-bQ-YHI" firstAttribute="top" secondItem="DcE-j5-NVb" secondAttribute="bottom" constant="15" id="bC7-I4-glU"/>
+                            <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="8fJ-yd-5K6" secondAttribute="trailing" constant="20" id="e1N-MX-cgW"/>
                             <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="s2W-Wk-BKF" secondAttribute="trailing" constant="20" id="eK2-kh-dNY"/>
                             <constraint firstItem="DcE-j5-NVb" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="em7-XO-Euh"/>
                             <constraint firstItem="Po4-bQ-YHI" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="ewi-1C-Xyd"/>
+                            <constraint firstItem="u8a-yS-GVf" firstAttribute="top" secondItem="8fJ-yd-5K6" secondAttribute="bottom" constant="25" id="fgQ-7h-7or"/>
                             <constraint firstItem="zPm-Fm-bXP" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="hGu-u9-wo9"/>
+                            <constraint firstItem="8fJ-yd-5K6" firstAttribute="top" secondItem="DcE-j5-NVb" secondAttribute="bottom" constant="20" id="hMD-8X-qAh"/>
                             <constraint firstItem="fQI-SZ-rA0" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="hdu-rJ-yWC"/>
                             <constraint firstItem="7Uz-aR-2g3" firstAttribute="centerY" secondItem="Po4-bQ-YHI" secondAttribute="centerY" id="r5O-pL-Fye"/>
                             <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="fQI-SZ-rA0" secondAttribute="trailing" constant="20" id="sfx-iQ-Kev"/>
                             <constraint firstItem="s2W-Wk-BKF" firstAttribute="centerY" secondItem="DcE-j5-NVb" secondAttribute="centerY" id="swx-v2-4Ni"/>
+                            <constraint firstItem="u8a-yS-GVf" firstAttribute="leading" secondItem="OL5-Bb-7li" secondAttribute="leading" constant="20" id="tSC-vT-bvM"/>
                             <constraint firstItem="OL5-Bb-7li" firstAttribute="trailing" secondItem="7Uz-aR-2g3" secondAttribute="trailing" constant="20" id="yec-3D-qfv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OL5-Bb-7li"/>
@@ -181,6 +199,8 @@
                         <outlet property="collapsibleLabel" destination="s2W-Wk-BKF" id="qMe-0N-QBI"/>
                         <outlet property="collapsibleSwitch" destination="DcE-j5-NVb" id="ELb-QK-fnH"/>
                         <outlet property="deleteHistoryButton" destination="7Uz-aR-2g3" id="ceS-t0-Nwv"/>
+                        <outlet property="historyLimitsLabel" destination="8fJ-yd-5K6" id="6kq-Cd-AD5"/>
+                        <outlet property="historyLimitsPickerView" destination="u8a-yS-GVf" id="EtB-VS-NVN"/>
                         <outlet property="historyTableView" destination="fQI-SZ-rA0" id="R7p-Ex-cS9"/>
                         <outlet property="historyTitleLabel" destination="Po4-bQ-YHI" id="cBt-Vm-RXd"/>
                         <outlet property="languageTitleLabel" destination="Rzv-Ey-MbR" id="hOb-YB-tAh"/>
