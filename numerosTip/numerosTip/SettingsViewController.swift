@@ -204,6 +204,32 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    private func deleteElement(at position: Int) -> Bool {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+        let data = data else {return false}        
+        let context = appDelegate.persistenContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
+        fetchRequest.predicate = NSPredicate(format: "number == %@", data[position])
+        do {
+            guard let elements = try context.fetch(fetchRequest) as? [NSManagedObject] else {return false}
+            if elements.count != 1 {
+                return false
+            }
+            for element in elements {
+                context.delete(element)
+            }
+            do {
+                try context.save()
+                return true
+            } catch let error {
+                ErrorHandler.showError(error: error)
+            }
+        } catch let error {
+            ErrorHandler.showError(error: error)
+        }
+        return false
+    }
+    
     // MARK: - UserDefault
     
     private func retrieveCollapsibleElements() -> Bool {
@@ -241,6 +267,21 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if let data = data {
             delegate?.didSelectHistory(number: data[indexPath.row])
             dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if deleteElement(at: indexPath.row) {
+                data?.remove(at: indexPath.row)
+                tableView.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.endUpdates()
+            }
         }
     }
 }
