@@ -56,6 +56,8 @@ class ErrorDetailViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension ErrorDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     private func cleanString(str: String) -> String {

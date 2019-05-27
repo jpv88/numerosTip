@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet private var historyLimitsPickerView: UIPickerView!
     @IBOutlet private var historyLimitsLabel: UILabel!
     
-    private var data: [String]?
+    private var data: [HistoryDataModel]?
     
     var delegate: SettingsHistoryProtocol?
     
@@ -200,11 +200,16 @@ class SettingsViewController: UIViewController {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
         do {
             guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
-            var elements = [String]()
+            var elements = [HistoryDataModel]()
             for data in result {
-                if let number = data.value(forKey: "number") as? String {
-                    elements.append(number)
-                }
+//                if let number = data.value(forKey: "number") as? String {
+//                    elements.append(number)
+//                }
+                let number = data.value(forKey: "number") as? String ?? ""
+                let date = data.value(forKey: "date") as? String ?? ""
+                let language = data.value(forKey: "language") as? String ?? ""
+                let object = HistoryDataModel(number: number, date: date, language: language)
+                elements.append(object)
             }
             data = elements
             historyTableView.reloadData()
@@ -237,7 +242,7 @@ class SettingsViewController: UIViewController {
         let data = data else {return false}        
         let context = appDelegate.persistenContainer.viewContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
-        fetchRequest.predicate = NSPredicate(format: "number == %@", data[position])
+        fetchRequest.predicate = NSPredicate(format: "number == %@", data[position].number)
         do {
             guard let elements = try context.fetch(fetchRequest) as? [NSManagedObject] else {return false}
             if elements.count != 1 {
@@ -296,14 +301,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TabsTableViewCell") as? TabsTableViewCell else {return UITableViewCell()}
         if let data = data {            
-            cell.displayContent(input: data[indexPath.row], with: .lightGray)
+            cell.displayContent(input: data[indexPath.row].number, with: .lightGray)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let data = data {
-            delegate?.didSelectHistory(number: data[indexPath.row])
+            delegate?.didSelectHistory(number: data[indexPath.row].number)
             dismiss(animated: true, completion: nil)
         }
     }

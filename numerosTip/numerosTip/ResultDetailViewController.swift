@@ -33,11 +33,6 @@ class ResultDetailViewController: UIViewController {
         setupTableView()
     }
     
-    private func recoverUserSettings() {
-        let userDefault = UserDefaults.standard
-        collapsedElements = userDefault.object(forKey: Constans.collapsedElements) as? Bool ?? false        
-    }
-    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,7 +46,16 @@ class ResultDetailViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
+    // MARK: - UserDefault
+    
+    private func recoverUserSettings() {
+        let userDefault = UserDefaults.standard
+        collapsedElements = userDefault.object(forKey: Constans.collapsedElements) as? Bool ?? false
+    }
+    
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -104,6 +108,8 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
 }
+
+// MARK: - CollapsibleTableViewHeaderDelegate
 
 extension ResultDetailViewController: CollapsibleTableViewHeaderDelegate {
     func toggleSection(_ header: CollapsibleTableViewHeader, section: Int) {

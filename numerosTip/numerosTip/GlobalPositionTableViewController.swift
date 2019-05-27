@@ -124,6 +124,18 @@ class GlobalPositionTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    private func getCurrentLanguage() -> String {
+        let userDefault = UserDefaults.standard
+        return userDefault.object(forKey: Constans.languageKEY) as? String ?? ""
+    }
+    
+    private func getCurrentDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: date)
+    }
+    
      // MARK: - Navigation
 
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -235,7 +247,13 @@ class GlobalPositionTableViewController: UITableViewController {
             
             guard let entity = NSEntityDescription.entity(forEntityName: "History", in: context) else {return}
             let history = NSManagedObject(entity: entity, insertInto: context)
+            ////
             history.setValue(number, forKey: "number")
+            let date = getCurrentDate()
+            history.setValue(date, forKey: "date")
+            let language = getCurrentLanguage()
+            history.setValue(language.lowercased(), forKey: "language")
+            ////
             do {
                 try context.save()
             } catch let error {
