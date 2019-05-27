@@ -19,6 +19,8 @@
 		7F0098601F4B3CE600F9B7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */; };
 		7F0098631F4B3CE600F9B7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */; };
 		7F0AC471229C397A005DB05A /* HistoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0AC470229C397A005DB05A /* HistoryDataModel.swift */; };
+		7F0AC474229C3F90005DB05A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0AC472229C3F90005DB05A /* HistoryTableViewCell.swift */; };
+		7F0AC475229C3F90005DB05A /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0AC473229C3F90005DB05A /* HistoryTableViewCell.xib */; };
 		7F0C989B2270737F00FBADEE /* GlobalPositionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C989A2270737F00FBADEE /* GlobalPositionTableViewController.swift */; };
 		7F0C989E22707F4000FBADEE /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C989C22707F4000FBADEE /* MainTableViewCell.swift */; };
 		7F0C989F22707F4000FBADEE /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0C989D22707F4000FBADEE /* MainTableViewCell.xib */; };
@@ -69,6 +71,8 @@
 		7F0098621F4B3CE600F9B7C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0098641F4B3CE600F9B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F0AC470229C397A005DB05A /* HistoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataModel.swift; sourceTree = "<group>"; };
+		7F0AC472229C3F90005DB05A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		7F0AC473229C3F90005DB05A /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		7F0C989A2270737F00FBADEE /* GlobalPositionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPositionTableViewController.swift; sourceTree = "<group>"; };
 		7F0C989C22707F4000FBADEE /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		7F0C989D22707F4000FBADEE /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				7F4732022271CDD30078852C /* TabsTableViewCell.swift */,
 				7F4732032271CDD30078852C /* TabsTableViewCell.xib */,
 				7F4B61D12295B02600AB09D2 /* CollapsibleTableViewHeader.swift */,
+				7F0AC472229C3F90005DB05A /* HistoryTableViewCell.swift */,
+				7F0AC473229C3F90005DB05A /* HistoryTableViewCell.xib */,
 			);
 			path = TableViews;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 				7FA8818E227AF555008266E4 /* Settings.storyboard in Resources */,
 				7FAAF48D227DC817006B79AF /* Localizable.strings in Resources */,
 				7F0098601F4B3CE600F9B7C4 /* Assets.xcassets in Resources */,
+				7F0AC475229C3F90005DB05A /* HistoryTableViewCell.xib in Resources */,
 				7FEAEF80228D8D54004D6847 /* RomanKeyboard.xib in Resources */,
 				6713574320961E750041967B /* TableViewDynamicCell.xib in Resources */,
 				676B66B1207E55FB00A240E0 /* SearchCollectionViewCell.xib in Resources */,
@@ -403,6 +410,7 @@
 				7F72E0F31F4C8D3F001B0DDA /* Network.swift in Sources */,
 				7FF6CD33227C50F5002B1A56 /* HistoryDataBase.xcdatamodeld in Sources */,
 				7FA88190227AF5CD008266E4 /* SettingsViewController.swift in Sources */,
+				7F0AC474229C3F90005DB05A /* HistoryTableViewCell.swift in Sources */,
 				7FD96528228C597C00816FB6 /* ErrorDataModel.swift in Sources */,
 				7F6576C22273247000E89729 /* StaticDetailViewController.swift in Sources */,
 				67ADA6AF207781BF000E54E7 /* UIDevice+Extension.swift in Sources */,

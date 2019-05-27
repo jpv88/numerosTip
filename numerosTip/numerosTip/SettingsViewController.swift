@@ -156,8 +156,8 @@ class SettingsViewController: UIViewController {
     private func setupTable() {
         historyTableView.delegate = self
         historyTableView.dataSource = self
-        let tabsNib = UINib(nibName: "TabsTableViewCell", bundle: nil)
-        historyTableView.register(tabsNib, forCellReuseIdentifier: "TabsTableViewCell")
+        let tabsNib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
+        historyTableView.register(tabsNib, forCellReuseIdentifier: "HistoryTableViewCell")
         historyTableView.tableFooterView = UIView()
         historyTableView.separatorStyle = .none
     }
@@ -202,9 +202,6 @@ class SettingsViewController: UIViewController {
             guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else {return}
             var elements = [HistoryDataModel]()
             for data in result {
-//                if let number = data.value(forKey: "number") as? String {
-//                    elements.append(number)
-//                }
                 let number = data.value(forKey: "number") as? String ?? ""
                 let date = data.value(forKey: "date") as? String ?? ""
                 let language = data.value(forKey: "language") as? String ?? ""
@@ -299,9 +296,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TabsTableViewCell") as? TabsTableViewCell else {return UITableViewCell()}
-        if let data = data {            
-            cell.displayContent(input: data[indexPath.row].number, with: .lightGray)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as? HistoryTableViewCell else {return UITableViewCell()}
+        if let data = data {
+            let element = data[indexPath.row]
+            cell.display(number: element.number, language: element.language.uppercased(), date: element.date)            
         }
         return cell
     }
