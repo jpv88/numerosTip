@@ -270,6 +270,8 @@ class GlobalPositionTableViewController: UITableViewController {
     
 }
 
+// MARK: - MainTableViewCellProtocol
+
 extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     func clearResults() {
         resetScreen()
@@ -285,8 +287,6 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
     }
     
     func searchFieldDidReturn(_ text: String) {
-//        let number = Int(text)
-//        if number != nil || isRomanNumber(text: text) == true {
         if !text.isEmpty {
             getNumberTIP(number: text)
         } else {            

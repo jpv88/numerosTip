@@ -11,14 +11,11 @@
 		6713574320961E750041967B /* TableViewDynamicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6713574120961E750041967B /* TableViewDynamicCell.xib */; };
 		67661E22207522C5006FF2BB /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67661E21207522C5006FF2BB /* UISearchBar+Extension.swift */; };
 		67661E24207524CF006FF2BB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67661E23207524CF006FF2BB /* UIColor+Extension.swift */; };
-		676A6C1D208CB31900666164 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676A6C1C208CB31900666164 /* SearchResultsViewController.swift */; };
 		676B66B0207E55FB00A240E0 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676B66AE207E55FB00A240E0 /* SearchCollectionViewCell.swift */; };
 		676B66B1207E55FB00A240E0 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676B66AF207E55FB00A240E0 /* SearchCollectionViewCell.xib */; };
 		67ADA6AF207781BF000E54E7 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ADA6AE207781BF000E54E7 /* UIDevice+Extension.swift */; };
 		67CDA4BB20920D66008F9BB5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CDA4BA20920D66008F9BB5 /* String+Extension.swift */; };
-		67F6A53E207E05C900773BDC /* SearchFeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6A53D207E05C900773BDC /* SearchFeaturesViewController.swift */; };
 		7F0098591F4B3CE600F9B7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0098581F4B3CE600F9B7C4 /* AppDelegate.swift */; };
-		7F00985B1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F00985A1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift */; };
 		7F0098601F4B3CE600F9B7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */; };
 		7F0098631F4B3CE600F9B7C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0098611F4B3CE600F9B7C4 /* LaunchScreen.storyboard */; };
 		7F0C989B2270737F00FBADEE /* GlobalPositionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C989A2270737F00FBADEE /* GlobalPositionTableViewController.swift */; };
@@ -61,15 +58,12 @@
 		6713574120961E750041967B /* TableViewDynamicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewDynamicCell.xib; sourceTree = "<group>"; };
 		67661E21207522C5006FF2BB /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		67661E23207524CF006FF2BB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		676A6C1C208CB31900666164 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResultsViewController.swift; path = ViewControllers/SearchResultsViewController.swift; sourceTree = "<group>"; };
 		676B66AE207E55FB00A240E0 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		676B66AF207E55FB00A240E0 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		67ADA6AE207781BF000E54E7 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		67CDA4BA20920D66008F9BB5 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		67F6A53D207E05C900773BDC /* SearchFeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeaturesViewController.swift; sourceTree = "<group>"; };
 		7F0098551F4B3CE600F9B7C4 /* numerosTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = numerosTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0098581F4B3CE600F9B7C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F00985A1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPositionViewController.swift; sourceTree = "<group>"; };
 		7F00985F1F4B3CE600F9B7C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0098621F4B3CE600F9B7C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0098641F4B3CE600F9B7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,11 +206,8 @@
 		7F2C25E51F8123B8009C3671 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7F00985A1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift */,
-				67F6A53D207E05C900773BDC /* SearchFeaturesViewController.swift */,
-				676A6C1C208CB31900666164 /* SearchResultsViewController.swift */,
-				7F0C989A2270737F00FBADEE /* GlobalPositionTableViewController.swift */,
 				7F1672522270C48000343D43 /* SplitViewController.swift */,
+				7F0C989A2270737F00FBADEE /* GlobalPositionTableViewController.swift */,
 				7F6576C12273246F00E89729 /* StaticDetailViewController.swift */,
 				7F6576C32273248D00E89729 /* ResultDetailViewController.swift */,
 				7FA8818F227AF5CD008266E4 /* SettingsViewController.swift */,
@@ -399,12 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F00985B1F4B3CE600F9B7C4 /* GlobalPositionViewController.swift in Sources */,
 				7F4B61D22295B02600AB09D2 /* CollapsibleTableViewHeader.swift in Sources */,
-				67F6A53E207E05C900773BDC /* SearchFeaturesViewController.swift in Sources */,
 				7F490D741F55DBE200FFE063 /* NumerosTipDataModel.swift in Sources */,
 				7F0098591F4B3CE600F9B7C4 /* AppDelegate.swift in Sources */,
-				676A6C1D208CB31900666164 /* SearchResultsViewController.swift in Sources */,
 				7F1672532270C48000343D43 /* SplitViewController.swift in Sources */,
 				7F0C989B2270737F00FBADEE /* GlobalPositionTableViewController.swift in Sources */,
 				7FA88192227B05F7008266E4 /* Constants.swift in Sources */,

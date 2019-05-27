@@ -37,9 +37,7 @@ class ErrorDataModel: NSObject {
                     section?.title =  element
                 }
             } else {
-//                if var sec = section {
                     section?.content.append(element)
-//                }
             }
         }
         if let sec = section {

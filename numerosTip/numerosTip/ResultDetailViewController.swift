@@ -57,11 +57,9 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     private func cleanString(str: String) -> String {
         var cleanedString = str
-        
         cleanedString = cleanedString.replacingOccurrences(of: "&", with: "")
         cleanedString = cleanedString.replacingOccurrences(of: "&&", with: "")
         cleanedString = cleanedString.replacingOccurrences(of: "#", with: "")
-        
         return cleanedString
     }
     
@@ -78,7 +76,6 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
         }
         header?.section = section
         header?.delegate = self
-        
         if let header = header {
             let separatorLine = UIView()
             separatorLine.backgroundColor = .lightGray
@@ -88,8 +85,7 @@ extension ResultDetailViewController: UITableViewDelegate, UITableViewDataSource
             separatorLine.trailingAnchor.constraint(equalTo: header.trailingAnchor).isActive = true
             separatorLine.bottomAnchor.constraint(equalTo: header.bottomAnchor).isActive = true
             separatorLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        }
-        
+        }        
         return header
     }
     
