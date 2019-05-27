@@ -20,6 +20,7 @@ class HistoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         self.backgroundColor = .clear
         cardView.backgroundColor = .lightGray
         cardView.layer.masksToBounds = true

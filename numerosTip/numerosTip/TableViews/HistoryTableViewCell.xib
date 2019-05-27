@@ -53,18 +53,18 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGJ-sC-zfJ" userLabel="LanguageValueLabel">
-                        <rect key="frame" x="265.5" y="42" width="21" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGJ-sC-zfJ" userLabel="LanguageValueLabel">
+                        <rect key="frame" x="263.5" y="42" width="25" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="X7O-qq-5hz"/>
-                            <constraint firstAttribute="width" constant="21" id="djt-QL-SRZ"/>
+                            <constraint firstAttribute="width" constant="25" id="djt-QL-SRZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456798975" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zes-pb-BMd" userLabel="NumberValueLabel">
-                        <rect key="frame" x="101" y="43" width="159.5" height="21"/>
+                        <rect key="frame" x="101" y="43" width="157.5" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
