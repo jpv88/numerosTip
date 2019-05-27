@@ -179,21 +179,12 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func deleteHistory(_ sender: UIButton) {
-        if let data = data, !data.isEmpty {
-            
+        if let data = data, !data.isEmpty {            
             ErrorHandler.showAlert(title: Localized.historyDelete, msg: Localized.safeDelete, actionButtonTitle: "Aceptar", action: {
                 self.eraseData()
                 self.data = nil
                 self.historyTableView.reloadData()
                 }, dismissButtonTitle: "Cancelar", dismissAction: nil)
-            
-//            ErrorHandler.showAlert(title: Localized.historyDelete, msg: Localized.safeDelete, dismissButtonTitle: "Aceptar", action: {
-//                print("eyyy")
-//            }, dismissAction: {
-//                self.eraseData()
-//                self.data = nil
-//                self.historyTableView.reloadData()
-//            })
         }
     }
     

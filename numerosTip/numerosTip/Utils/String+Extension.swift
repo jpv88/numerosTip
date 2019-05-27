@@ -18,9 +18,7 @@ extension String {
             let attributedOptions : [NSAttributedString.DocumentReadingOptionKey: Any] = [
                 NSAttributedString.DocumentReadingOptionKey(rawValue: NSAttributedString.DocumentAttributeKey.documentType.rawValue): NSAttributedString.DocumentType.html as AnyObject,
                 NSAttributedString.DocumentReadingOptionKey(rawValue: NSAttributedString.DocumentAttributeKey.characterEncoding.rawValue): String.Encoding.utf8.rawValue as AnyObject
-            ]
-//            NSAttributedString.DocumentReadingOptionKey
-            
+            ]            
             return try NSAttributedString(data: data, options: attributedOptions, documentAttributes: nil)
         } catch let error as NSError {
             print(error.localizedDescription)
