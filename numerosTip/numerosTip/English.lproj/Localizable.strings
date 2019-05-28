@@ -11,17 +11,24 @@
 "general_language_english" = "English";
 "general_language_italian" = "Italian";
 "general_language_german" = "German";
+"general_accept" = "Accept";
+"general_cancel" = "Cancel";
 
 // GlobalPosition
 "global_position_title" = "*Convert a number into numbers to letters";
 "global_position_subtitle" = "*For example enter '13' or with Roman acronym 'XIII'";
 "global_position_searchBar" = "Write an integer or Roman";
+"global_position_error_title" = "Incorrect";
+"global_position_error_msg" = "Make sure you are entering the number correctly";
 
 // Settings
 "settings_navBar_title" = "Settings";
 "settings_language_title" = "Language of search results";
 "settings_history_title" = "History";
 "settings_history_delete" = "Delete";
+"settings_history_safe_delete" = "Are you sure you want to delete?";
+"settings_history_limits_title" = "Maximum history limit:";
+"settings_collapsible_title" = "Collapsing content of Examples, Notes and References";
 
 // Results DetailView
 "results_navBar_title" = "Results";

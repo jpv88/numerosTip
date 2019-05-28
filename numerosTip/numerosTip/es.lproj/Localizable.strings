@@ -11,17 +11,24 @@
 "general_language_english" = "Inglés";
 "general_language_italian" = "Italiano";
 "general_language_german" = "Alemán";
+"general_accept" = "Aceptar";
+"general_cancel" = "Cancelar";
 
 // GlobalPosition
 "global_position_title" = "*Convierta un numéro en cifras a letras";
 "global_position_subtitle" = "*Por ejemplo introduzca '13' o con siglas romanas 'XIII'";
 "global_position_searchBar" = "Escriba un entero o romano";
+"global_position_error_title" = "Incorrecto";
+"global_position_error_msg" = "Asegúrate que estás introduciendo el número correctamente";
 
 // Settings
 "settings_navBar_title" = "Ajustes";
 "settings_language_title" = "Idioma de los resultados de la búsqueda";
 "settings_history_title" = "Historial";
 "settings_history_delete" = "Borrar";
+"settings_history_safe_delete" = "¿Está seguro desea borrar?";
+"settings_history_limits_title" = "Límite máximo del historial:";
+"settings_collapsible_title" = "Colapsar contenido de Ejemplos, Notas y Referencias";
 
 // Results DetailView
 "results_navBar_title" = "Resultados";

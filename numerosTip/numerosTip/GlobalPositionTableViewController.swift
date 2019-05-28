@@ -24,8 +24,8 @@ class GlobalPositionTableViewController: UITableViewController {
     var delegate: SearchResultsSearchBarProtocol?
     
     private enum Localized {
-        static let errorTitle = "Incorrecto"
-        static let errorMsg = "Asegúrate que estás introduciendo el número correctamente"
+        static let errorTitle = "global_position_error_title".localized()
+        static let errorMsg = "global_position_error_msg".localized()
     }
 
     override func viewDidLoad() {

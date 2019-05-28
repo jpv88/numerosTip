@@ -77,11 +77,11 @@ class SettingsViewController: UIViewController {
         static let en = "general_language_english".localized()
         static let it = "general_language_italian".localized()
         static let de = "general_language_german".localized()
-        static let collapsibleTitle = "Colapsar contenido de Ejemplos, Notas y Referencias"
-        static let safeDelete = "¿Está seguro desea borrar?"
-        static let historyLimitsTitle = "Límite máximo del historial:"
-        static let accept = "Aceptar"
-        static let cancel = "Cancel"
+        static let collapsibleTitle = "settings_collapsible_title".localized()
+        static let safeDelete = "settings_history_safe_delete".localized()
+        static let historyLimitsTitle = "settings_history_limits_title".localized()
+        static let accept = "general_accept".localized()
+        static let cancel = "general_cancel".localized()
     }
     
     override func viewDidLoad() {
