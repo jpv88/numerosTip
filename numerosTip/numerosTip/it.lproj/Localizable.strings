@@ -29,6 +29,9 @@
 "settings_history_safe_delete" = "Sei sicuro di voler eliminare?";
 "settings_history_limits_title" = "Limite massimo storico:";
 "settings_collapsible_title" = "Contenuti collassanti di Esempi, Note e Riferimenti";
+"settings_history_date" = "Data:";
+"settings_history_number" = "Numero:";
+"settings_history_language" = "Lingua:";
 
 // Results DetailView
 "results_navBar_title" = "Risultati";

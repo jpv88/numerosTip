@@ -18,6 +18,12 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet private var numberTitleLabel: UILabel!
     @IBOutlet private var dateTitleLabel: UILabel!
     
+    private enum Localizable {
+        static let date = "settings_history_date".localized()
+        static let number = "settings_history_number".localized()
+        static let language = "settings_history_language".localized()
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -25,6 +31,10 @@ class HistoryTableViewCell: UITableViewCell {
         cardView.backgroundColor = .lightGray
         cardView.layer.masksToBounds = true
         cardView.layer.cornerRadius = 20
+        // Labels Title
+        dateTitleLabel.text = Localizable.date
+        numberTitleLabel.text = Localizable.number
+        languageTitleLabel.text = Localizable.language
     }
     
     func display(number: String, language: String, date: String) {

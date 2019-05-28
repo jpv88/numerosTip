@@ -29,6 +29,9 @@
 "settings_history_safe_delete" = "Are you sure you want to delete?";
 "settings_history_limits_title" = "Maximum history limit:";
 "settings_collapsible_title" = "Collapsing content of Examples, Notes and References";
+"settings_history_date" = "Date:";
+"settings_history_number" = "Number:";
+"settings_history_language" = "Language:";
 
 // Results DetailView
 "results_navBar_title" = "Results";

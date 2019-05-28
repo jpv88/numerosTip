@@ -29,6 +29,9 @@
 "settings_history_safe_delete" = "Möchten Sie wirklich löschen?";
 "settings_history_limits_title" = "Maximales Verlaufslimit:";
 "settings_collapsible_title" = "Ausblenden des Inhalts von Beispielen, Notizen und Referenzen";
+"settings_history_date" = "Datum:";
+"settings_history_number" = "Nummer:";
+"settings_history_language" = "Sprache:";
 
 // Results DetailView
 "results_navBar_title" = "Ergebnisse";
