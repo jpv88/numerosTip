@@ -240,20 +240,18 @@ class GlobalPositionTableViewController: UITableViewController {
     // MARK: - CoreData
     
     private func saveHistory(number: String){
-        if retrieveHistory() {
+        if retrieveHistory(number: number) {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
             let context = appDelegate.persistenContainer.viewContext
             context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             
             guard let entity = NSEntityDescription.entity(forEntityName: "History", in: context) else {return}
             let history = NSManagedObject(entity: entity, insertInto: context)
-            ////
             history.setValue(number, forKey: "number")
             let date = getCurrentDate()
             history.setValue(date, forKey: "date")
             let language = getCurrentLanguage()
             history.setValue(language.lowercased(), forKey: "language")
-            ////
             do {
                 try context.save()
             } catch let error {
@@ -262,7 +260,7 @@ class GlobalPositionTableViewController: UITableViewController {
         }
     }
     
-    private func retrieveHistory() -> Bool {
+    private func retrieveHistory(number: String) -> Bool {
         let userDefault = UserDefaults.standard
         guard let historyMaxElements = userDefault.object(forKey: Constans.historyKEY) as? Int else {return false}
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return false}
@@ -270,13 +268,14 @@ class GlobalPositionTableViewController: UITableViewController {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "History")
         do {
             guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else {return false}
-            var elements = [String]()
             for data in result {
-                if let number = data.value(forKey: "number") as? String {
-                    elements.append(number)
+                if let currentNumber = data.value(forKey: "number") as? String {
+                    if currentNumber == number {
+                        return true
+                    }
                 }
             }
-            if elements.count < historyMaxElements {
+            if result.count < historyMaxElements {
                 return true
             }
             return false
