@@ -80,6 +80,8 @@ class SettingsViewController: UIViewController {
         static let collapsibleTitle = "Colapsar contenido de Ejemplos, Notas y Referencias"
         static let safeDelete = "¿Está seguro desea borrar?"
         static let historyLimitsTitle = "Límite máximo del historial:"
+        static let accept = "Aceptar"
+        static let cancel = "Cancel"
     }
     
     override func viewDidLoad() {
@@ -180,11 +182,11 @@ class SettingsViewController: UIViewController {
     
     @IBAction func deleteHistory(_ sender: UIButton) {
         if let data = data, !data.isEmpty {            
-            ErrorHandler.showAlert(title: Localized.historyDelete, msg: Localized.safeDelete, actionButtonTitle: "Aceptar", action: {
+            ErrorHandler.showAlert(title: Localized.historyDelete, msg: Localized.safeDelete, actionButtonTitle: Localized.accept, action: {
                 self.eraseData()
                 self.data = nil
                 self.historyTableView.reloadData()
-                }, dismissButtonTitle: "Cancelar", dismissAction: nil)
+                }, dismissButtonTitle: Localized.cancel, dismissAction: nil)
         }
     }
     

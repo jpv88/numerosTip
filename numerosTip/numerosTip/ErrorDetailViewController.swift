@@ -12,6 +12,7 @@ class ErrorDetailViewController: UIViewController {
 
     @IBOutlet private var detailView: UIView!
     @IBOutlet private var tableView: UITableView!
+    
     var data: ErrorDataModel?
     
     override func viewDidLoad() {

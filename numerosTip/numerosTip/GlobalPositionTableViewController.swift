@@ -22,6 +22,11 @@ class GlobalPositionTableViewController: UITableViewController {
     private var gradientLayer = CAGradientLayer()
     private var lastSearch: String?
     var delegate: SearchResultsSearchBarProtocol?
+    
+    private enum Localized {
+        static let errorTitle = "Incorrecto"
+        static let errorMsg = "Asegúrate que estás introduciendo el número correctamente"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -307,7 +312,7 @@ extension GlobalPositionTableViewController: MainTableViewCellProtocol {
         if !text.isEmpty {
             getNumberTIP(number: text)
         } else {            
-            ErrorHandler.showAlert(title: "Incorrecto", msg: "Asegúrate que estás introduciendo el número correctamente")
+            ErrorHandler.showAlert(title: Localized.errorTitle, msg: Localized.errorMsg)
         }
     }
 }
