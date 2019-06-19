@@ -23,7 +23,7 @@
 
 // Settings
 "settings_navBar_title" = "Impostazioni";
-"settings_language_title" = "Lingua dei risultati di ricerca";
+"settings_language_title" = "Lingua di conversione";
 "settings_history_title" = "Storia";
 "settings_history_delete" = "Cancellare";
 "settings_history_safe_delete" = "Sei sicuro di voler eliminare?";
